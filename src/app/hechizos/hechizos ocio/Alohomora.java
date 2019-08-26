@@ -1,7 +1,0 @@
-/**
- * Alohomora
- */
-public class Alohomora {
-
-    
-}

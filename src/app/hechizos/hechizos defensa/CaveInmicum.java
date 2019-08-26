@@ -1,7 +1,0 @@
-/**
- * CaveInmicum
- */
-public class CaveInmicum  {
-
-    
-}
