@@ -1,0 +1,7 @@
+/**
+ * HechizoOcio
+ */
+public class HechizoOcio {
+
+    
+}

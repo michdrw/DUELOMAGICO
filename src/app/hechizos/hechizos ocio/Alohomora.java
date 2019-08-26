@@ -1,0 +1,7 @@
+/**
+ * Alohomora
+ */
+public class Alohomora {
+
+    
+}

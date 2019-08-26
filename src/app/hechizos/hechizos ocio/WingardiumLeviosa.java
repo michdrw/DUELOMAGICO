@@ -1,0 +1,7 @@
+/**
+ * WingardiumLeviosa
+ */
+public class WingardiumLeviosa {
+
+    
+}
