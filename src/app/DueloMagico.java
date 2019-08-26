@@ -19,7 +19,7 @@ public class DueloMagico {
     public static List<Elfo> elfos = new ArrayList<Elfo>();
     public static List<Muggle> nomags = new ArrayList<Muggle>();
     
-    public static Personaje ElegirPersonaje(String nombre) {
+    public static Personaje elegirPersonaje(String nombre) {
         for (Personaje p : DueloMagico.catalogoPersonajes) {
             if (p.nombre.equals(nombre))
                 return p;
@@ -27,29 +27,15 @@ public class DueloMagico {
         return null;
     }
 
-    public static Hechizo ElegirHechizoWizard (String nombre) {
-        for (Hechizo w : Wizard.hechizos) {
-            if (w.nombre.equals(nombre))
-                return w;
-        }
-        return null;
-    }
-    public static Hechizo ElegirHechizoElfo (String nombre) {
-        for (Hechizo w : Elfo.hechizos) {
-            if (w.nombre.equals(nombre))
-                return w;
-        }
-        return null;
-    }
 
-    public static void InicializarCatalogoPersonajes()
+    public static void inicializarCatalogoPersonajes()
     {
-            DueloMagico.AgregarWizard();
-            DueloMagico.AgregarElfo();
-            DueloMagico.AgregarMuggle();
+            DueloMagico.agregarWizard();
+            DueloMagico.agregarElfo();
+            DueloMagico.agregarMuggle();
     }
     
-    public static void AgregarWizard(){
+    public static void agregarWizard(){
         Wizard mago = new Wizard ();
         mago.nombre = "George Weasley";
         mago.salud = 100;
@@ -66,7 +52,7 @@ public class DueloMagico {
 
     }
 
-    public static void AgregarElfo(){
+    public static void agregarElfo(){
         Elfo duende = new Elfo();
         duende.nombre = "Dobby";
         duende.salud = 100;
@@ -81,12 +67,28 @@ public class DueloMagico {
         DueloMagico.catalogoPersonajes.add(duende);
     }
 
-    public static void AgregarMuggle(){
+    public static void agregarMuggle(){
         Muggle nomag = new Muggle ();
         nomag.nombre = "Dudley Dursley";
         nomag.salud = 100;
         
         nomags.add(nomag);
+    }
+    public static Hechizo elegirHechizoWizard (String nombre) {
+        for (Hechizo w : Wizard.hechizos) {
+            if (w.nombre.equals(nombre))
+                return w;
+        }
+        return null;
+    }
+
+    
+    public static Hechizo elegirHechizoElfo (String nombre) {
+        for (Hechizo w : Elfo.hechizos) {
+            if (w.nombre.equals(nombre))
+                return w;
+        }
+        return null;
     }
     
 }
