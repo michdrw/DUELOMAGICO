@@ -5,5 +5,4 @@ package app.hechizos.ocio;
  */
 public class Alohomora extends HechizoOcio {
 
-    
 }

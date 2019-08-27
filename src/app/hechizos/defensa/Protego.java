@@ -5,5 +5,4 @@ package app.hechizos.defensa;
  */
 public class Protego extends HechizoDefensa {
 
-    
 }

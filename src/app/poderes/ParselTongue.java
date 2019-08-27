@@ -5,5 +5,4 @@ package app.poderes;
  */
 public class ParselTongue extends Poder {
 
-    
 }

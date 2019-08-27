@@ -6,4 +6,5 @@ package app.hechizos;
 public class Hechizo {
 
     public String nombre;
+
 }

@@ -10,5 +10,5 @@ import app.hechizos.Hechizo;
  */
 public class HechizoOcio extends Hechizo {
 
-    public List <HechizoOcio> hechizosdefensa = new ArrayList <HechizoOcio>();
+    public List<HechizoOcio> hechizosdefensa = new ArrayList<HechizoOcio>();
 }

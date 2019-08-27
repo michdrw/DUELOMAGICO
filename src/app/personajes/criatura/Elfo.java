@@ -16,15 +16,15 @@ public class Elfo extends Criatura implements IHacerMagia {
 
     public static List<Hechizo> hechizos = new ArrayList<Hechizo>();
     public static List<Artefacto> artefactos = new ArrayList<Artefacto>();
+    public Poder poderInicial;
 
     public Poder getPoderInicial(){
         return null;
 
     }
-    public Poder setPoderInicial(Poder poder) {
-        return poder;
 
-    }
+   public void setPoderInicial(Poder poder) {
+    this.poderInicial = poder;}
     public void atacar(Personaje enemigo, Hechizo hechizo) {
 
     }

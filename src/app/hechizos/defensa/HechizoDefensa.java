@@ -8,9 +8,8 @@ import app.hechizos.Hechizo;
 /**
  * HechizoDefensa
  */
-public class HechizoDefensa extends Hechizo{
+public class HechizoDefensa extends Hechizo {
 
-    public List <HechizoDefensa> hechizosdefensa = new ArrayList <HechizoDefensa>();
+    public List<HechizoDefensa> hechizosdefensa = new ArrayList<HechizoDefensa>();
 
-    
 }

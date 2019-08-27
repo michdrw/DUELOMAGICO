@@ -5,5 +5,4 @@ package app.personajes.persona;
  */
 public class Muggle extends Persona {
 
-    
 }

@@ -3,7 +3,6 @@ package app.poderes;
 /**
  * Invisibilidad
  */
-public class Invisibilidad extends Poder{
+public class Invisibilidad extends Poder {
 
-    
 }

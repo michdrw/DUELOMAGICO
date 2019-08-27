@@ -5,5 +5,4 @@ package app.hechizos.ataque;
  */
 public class SeptuSempra {
 
-    
 }
