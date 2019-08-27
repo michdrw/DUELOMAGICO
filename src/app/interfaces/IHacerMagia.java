@@ -11,10 +11,15 @@ import app.poderes.Poder;
 public interface IHacerMagia {
 
     public Poder getPoderInicial();
-    public Poder setPoderInicial(Poder poder);
+
+    public void setPoderInicial(Poder poder);
+
     public void atacar(Personaje enemigo, Hechizo hechizo);
+
     public void atacar(Personaje enemigo, String nombreHechizo);
+
     public void aprender(Hechizo hechizo);
+
     public Artefacto getArtefacto();
 
 }

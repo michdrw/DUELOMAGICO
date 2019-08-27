@@ -5,5 +5,4 @@ package app.hechizos.defensa;
  */
 public class CaveInmicum extends HechizoDefensa {
 
-    
 }
