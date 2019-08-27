@@ -3,6 +3,7 @@ package app;
 import java.util.ArrayList;
 import java.util.List;
 
+import app.artefactos.Artefacto;
 import app.hechizos.Hechizo;
 import app.hechizos.ataque.HechizoAtaque;
 import app.hechizos.curacion.HechizoCuracion;
@@ -32,8 +33,9 @@ public class DueloMagico {
     public static List<HechizoDefensa> defensores = new ArrayList<HechizoDefensa>();
     public static List<HechizoOcio> ociadores = new ArrayList<HechizoOcio>();*/
 
+    public static List<Artefacto> artefactos = new ArrayList<Artefacto>();
+
     public static Personaje elegirPersonaje(String nombre) {
-        System.out.println("Elegir personaje: ");
         for (Personaje p : DueloMagico.catalogoPersonajes) {
             if (p.nombre.equals(nombre))
                 return p;
@@ -141,7 +143,7 @@ public class DueloMagico {
     }
 
     public static Hechizo elegirHechizoWizard(String nombre, Wizard mago) {
-        for (Hechizo w : mago.getHechizo()) {
+        for (Hechizo w : Wizard.hechizos) {
             if (w.nombre.equals(nombre))
                 return w;
         }
@@ -149,9 +151,9 @@ public class DueloMagico {
     }
 
     public static Hechizo elegirHechizoElfo(String nombre) {
-        for (Hechizo w : duende.getHechizo()) {
-            if (w.nombre.equals(nombre))
-                return w;
+        for (Hechizo e : Elfo.hechizos){
+            if (e.nombre.equals(nombre))
+                return e;
         }
         return null;
     }
@@ -185,6 +187,19 @@ public class DueloMagico {
             }
         }
         return null;
+    }
+    
+    public Artefacto elegirArtefacto(String nombre) {
+        for (Personaje p : DueloMagico.catalogoPersonajes) {
+            if ((p instanceof IHacerMagia)) {
+                for (Artefacto a : artefactos) {
+                    if (a.nombre.equals(nombre))
+                        return a;
+                }
+                return null;
+            }
 
+        }
+        return null;
     }
 }

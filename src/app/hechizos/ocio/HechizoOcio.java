@@ -1,8 +1,10 @@
 package app.hechizos.ocio;
 
-import app.hechizos.Hechizo;
 import java.util.ArrayList;
 import java.util.List;
+
+import app.hechizos.Hechizo;
+
 /**
  * HechizoOcio
  */

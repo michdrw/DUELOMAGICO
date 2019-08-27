@@ -19,7 +19,7 @@ public class Wizard extends Persona implements IHacerMagia {
     private Artefacto artefacto;
     private Hechizo hechizoElegido;
 
-    private List<Hechizo> hechizos = new ArrayList<Hechizo>();
+    public static List<Hechizo> hechizos = new ArrayList<Hechizo>();
 
     public Poder getPoderInicial() {
         return this.poderInicial;
