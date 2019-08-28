@@ -1,7 +1,6 @@
 package app.hechizos.defensa;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 import app.hechizos.Hechizo;
 
@@ -14,5 +13,5 @@ public class HechizoDefensa extends Hechizo {
         super(nombre, nivelDaño, nivelCuracion);
     }
 
-    public List<HechizoDefensa> defensores = new ArrayList<HechizoDefensa>();
+   
 }
