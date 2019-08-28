@@ -29,16 +29,19 @@ public class DueloMagico {
     private static List<Hechizo> hechizos = new ArrayList<Hechizo>();
     public List<Artefacto> artefactos = new ArrayList<Artefacto>();
 
-    /*public static List<HechizoAtaque> atacadores = new ArrayList<HechizoAtaque>();
-    public static List<HechizoCuracion> curadores = new ArrayList<HechizoCuracion>();
-    public static List<HechizoDefensa> defensores = new ArrayList<HechizoDefensa>();
-    public static List<HechizoOcio> ociadores = new ArrayList<HechizoOcio>();*/
-
+    /*
+     * public static List<HechizoAtaque> atacadores = new
+     * ArrayList<HechizoAtaque>(); public static List<HechizoCuracion> curadores =
+     * new ArrayList<HechizoCuracion>(); public static List<HechizoDefensa>
+     * defensores = new ArrayList<HechizoDefensa>(); public static List<HechizoOcio>
+     * ociadores = new ArrayList<HechizoOcio>();
+     */
 
     public static Personaje elegirPersonaje(String nombre) {
         for (Personaje p : DueloMagico.catalogoPersonajes) {
             if (p.nombre.equals(nombre))
                 return p;
+            System.out.println("El personaje elegido es: " + nombre);
         }
         return null;
     }
@@ -53,8 +56,6 @@ public class DueloMagico {
         Wizard mago = new Wizard();
         mago.nombre = "George Weasley";
         mago.salud = 100;
-
-        wizards.add(mago);
 
         mago = new Wizard();
         mago.nombre = "Fred Weasley";
@@ -76,8 +77,8 @@ public class DueloMagico {
         duende = new Elfo();
         duende.nombre = "Kreacher";
         duende.salud = 100;
-        elfos.add(duende);
 
+        elfos.add(duende);
         DueloMagico.catalogoPersonajes.add(duende);
     }
 
@@ -101,7 +102,7 @@ public class DueloMagico {
         HechizoAtaque ha1 = new HechizoAtaque();
         ha1.nombre = "SeptuSempra";
         hechizos.add(ha1);
-        
+
         HechizoAtaque ha2 = new HechizoAtaque();
         ha2.nombre = "Petrificus Totalus";
         hechizos.add(ha2);
@@ -200,7 +201,7 @@ public class DueloMagico {
 
     public static void add(Artefacto artefacto) {
     }
-  
+
     public Artefacto elegirArtefacto(String nombre) {
         for (Personaje p : DueloMagico.catalogoPersonajes) {
             if ((p instanceof IHacerMagia)) {
