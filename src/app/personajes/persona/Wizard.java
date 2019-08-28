@@ -31,7 +31,7 @@ public class Wizard extends Persona implements IHacerMagia {
     }
 
     public void atacar(Personaje enemigo, Hechizo hechizo) {
-       
+       enemigo.salud -= hechizo.nivelDaño;
     }
 
     public void atacar(Personaje enemigo, String nombreHechizo) {

@@ -56,6 +56,7 @@ public class DueloMagico {
         Wizard mago = new Wizard();
         mago.nombre = "George Weasley";
         mago.salud = 100;
+    
 
         mago = new Wizard();
         mago.nombre = "Fred Weasley";
