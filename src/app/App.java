@@ -26,14 +26,16 @@ public class App {
         System.out.println("Ingrese nombre del 2do personaje:");
         nombreMago2 = Teclado.nextLine();
         IHacerMagia enemigoElegido = (IHacerMagia) DueloMagico.elegirPersonaje(nombreMago2);
+
         //Poder poderelegido = personajeelegido.get 
         System.out.println("La salud del personaje es: " + ((Personaje) personajeElegido).salud);
         System.out.println("La salud del enemigo es: " + ((Personaje) enemigoElegido).salud);
+
         Hechizo ha1 = new SeptuSempra();
 
         //personajeElegido.getArtefacto() 
         
-        personajeElegido.atacar((Personaje)enemigoElegido, ha1);
+        personajeElegido.atacar(((Personaje)enemigoElegido), ha1);
         System.out.println("La salud del enemigo es: " + ((Personaje) enemigoElegido).salud);
     }
 }

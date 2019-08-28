@@ -3,15 +3,15 @@ package app.hechizos.ataque;
 /**
  * SeptuSempra
  */
-public class SeptuSempra extends HechizoAtaque {
+public class SectumSempra extends HechizoAtaque {
 
-    public SeptuSempra(String nombre, double nivelDaño, double nivelCuracion) {
+    public SectumSempra(String nombre, double nivelDaño, double nivelCuracion) {
         super(nombre, nivelDaño, nivelCuracion);
        
     
     }
 
-    public SeptuSempra() {
+    public SectumSempra() {
         super("Sectum Sempra", 90, 0);
     }
 }

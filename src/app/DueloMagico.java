@@ -100,7 +100,7 @@ public class DueloMagico {
 
     public static void agregarHechizoAtaque() {
 
-        HechizoAtaque ha1 = new HechizoAtaque("SeptuSempra", 90, 0);
+        HechizoAtaque ha1 = new HechizoAtaque("Sectum Sempra", 90, 0);
         hechizos.add(ha1);
 
         HechizoAtaque ha2 = new HechizoAtaque("Petrificus Totalus", 30,0);
