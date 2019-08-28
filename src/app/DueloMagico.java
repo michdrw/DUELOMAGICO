@@ -27,13 +27,13 @@ public class DueloMagico {
     public static List<Muggle> nomags = new ArrayList<Muggle>();
     public List<Poder> poderes = new ArrayList<Poder>();
     private static List<Hechizo> hechizos = new ArrayList<Hechizo>();
+    public List<Artefacto> artefactos = new ArrayList<Artefacto>();
 
     /*public static List<HechizoAtaque> atacadores = new ArrayList<HechizoAtaque>();
     public static List<HechizoCuracion> curadores = new ArrayList<HechizoCuracion>();
     public static List<HechizoDefensa> defensores = new ArrayList<HechizoDefensa>();
     public static List<HechizoOcio> ociadores = new ArrayList<HechizoOcio>();*/
 
-    public static List<Artefacto> artefactos = new ArrayList<Artefacto>();
 
     public static Personaje elegirPersonaje(String nombre) {
         for (Personaje p : DueloMagico.catalogoPersonajes) {
@@ -142,22 +142,6 @@ public class DueloMagico {
         hechizos.add(ho2);
     }
 
-    public static Hechizo elegirHechizoWizard(String nombre, Wizard mago) {
-        for (Hechizo w : Wizard.hechizos) {
-            if (w.nombre.equals(nombre))
-                return w;
-        }
-        return null;
-    }
-
-    public static Hechizo elegirHechizoElfo(String nombre) {
-        for (Hechizo e : Elfo.hechizos){
-            if (e.nombre.equals(nombre))
-                return e;
-        }
-        return null;
-    }
-
     public void agregarPoder() {
 
         Poder p1 = new Poder();
@@ -188,7 +172,35 @@ public class DueloMagico {
         }
         return null;
     }
-    
+
+    public void agregarArtefactos() {
+        Artefacto a1 = new Artefacto();
+        a1.nombre = "Horrocrux";
+        artefactos.add(a1);
+
+        Artefacto a2 = new Artefacto();
+        a2.nombre = "Capa Invisible";
+        artefactos.add(a2);
+
+        Artefacto a3 = new Artefacto();
+        a3.nombre = "Varita";
+        artefactos.add(a3);
+    }
+
+    public List<Artefacto> getArtefactos() {
+        return artefactos;
+    }
+
+    public void setArtefactos(List<Artefacto> artefactos) {
+        this.artefactos = artefactos;
+    }
+
+    public static void add(List<Artefacto> artefacto) {
+    }
+
+    public static void add(Artefacto artefacto) {
+    }
+  
     public Artefacto elegirArtefacto(String nombre) {
         for (Personaje p : DueloMagico.catalogoPersonajes) {
             if ((p instanceof IHacerMagia)) {
