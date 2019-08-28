@@ -111,8 +111,7 @@ public class DueloMagico {
 
     public static void agregarHechizoCuracion() {
 
-        HechizoCuracion hc1 = new HechizoCuracion();
-        hc1.nombre = "Vulnera Sanentur";
+        HechizoCuracion hc1 = new HechizoCuracion("Vulnera Sanentur", 0, 80);
         hechizos.add(hc1);
 
         HechizoCuracion hc2 = new HechizoCuracion();

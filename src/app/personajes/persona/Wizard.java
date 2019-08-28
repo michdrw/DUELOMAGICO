@@ -14,7 +14,7 @@ import app.poderes.Poder;
  */
 public class Wizard extends Persona implements IHacerMagia {
 
-    private int energiaMagica;
+    private double energiaMagica;
     private Poder poderInicial;
     private Artefacto artefacto;
     private Hechizo hechizoElegido;
