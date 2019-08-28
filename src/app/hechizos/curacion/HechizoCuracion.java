@@ -9,5 +9,7 @@ import java.util.List;
  */
 public class HechizoCuracion extends Hechizo {
 
-    public List<HechizoCuracion> curadores = new ArrayList<HechizoCuracion>();
+    public HechizoCuracion(String nombre, double nivelDaño, double nivelCuracion) {
+        super(nombre, nivelDaño, nivelCuracion);
+    }
 }
