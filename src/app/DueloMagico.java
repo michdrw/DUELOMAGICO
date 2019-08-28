@@ -29,13 +29,13 @@ public class DueloMagico {
     private static List<Hechizo> hechizos = new ArrayList<Hechizo>();
     public List<Artefacto> artefactos = new ArrayList<Artefacto>();
 
-    /*
-     * public static List<HechizoAtaque> atacadores = new
-     * ArrayList<HechizoAtaque>(); public static List<HechizoCuracion> curadores =
-     * new ArrayList<HechizoCuracion>(); public static List<HechizoDefensa>
-     * defensores = new ArrayList<HechizoDefensa>(); public static List<HechizoOcio>
-     * ociadores = new ArrayList<HechizoOcio>();
-     */
+    
+    public static List<HechizoAtaque> atacadores = new
+    ArrayList<HechizoAtaque>(); public static List<HechizoCuracion> curadores =
+    new ArrayList<HechizoCuracion>(); public static List<HechizoDefensa>
+    defensores = new ArrayList<HechizoDefensa>(); public static List<HechizoOcio>
+    ociadores = new ArrayList<HechizoOcio>();
+    
 
     public static Personaje elegirPersonaje(String nombre) {
         for (Personaje p : DueloMagico.catalogoPersonajes) {
@@ -99,46 +99,39 @@ public class DueloMagico {
 
     public static void agregarHechizoAtaque() {
 
-        HechizoAtaque ha1 = new HechizoAtaque();
-        ha1.nombre = "SeptuSempra";
+        HechizoAtaque ha1 = new HechizoAtaque("SeptuSempra", 90, 0);
         hechizos.add(ha1);
 
-        HechizoAtaque ha2 = new HechizoAtaque();
-        ha2.nombre = "Petrificus Totalus";
+        HechizoAtaque ha2 = new HechizoAtaque("Petrificus Totalus", 30,0);
         hechizos.add(ha2);
 
     }
 
     public static void agregarHechizoCuracion() {
 
-        HechizoCuracion hc1 = new HechizoCuracion("Vulnera Sanentur", 0, 80);
+        HechizoCuracion hc1 = new HechizoCuracion("Vulnera Sanentur", 0,80);
         hechizos.add(hc1);
 
-        HechizoCuracion hc2 = new HechizoCuracion();
-        hc2.nombre = "Reparifors";
+        HechizoCuracion hc2 = new HechizoCuracion("Reparifors",0,50);
         hechizos.add(hc2);
     }
 
     public static void agregarHechizoDefensa() {
 
-        HechizoDefensa hd1 = new HechizoDefensa();
-        hd1.nombre = "Cave Inmicum";
+        HechizoDefensa hd1 = new HechizoDefensa("Cave Inmicum", 0, 0);
         hechizos.add(hd1);
 
-        HechizoDefensa hd2 = new HechizoDefensa();
-        hd2.nombre = "Protego";
+        HechizoDefensa hd2 = new HechizoDefensa("Protego", 0, 0);
         hechizos.add(hd2);
 
     }
 
     public static void agregarHechizoOcio() {
 
-        HechizoOcio ho1 = new HechizoOcio();
-        ho1.nombre = "Alohomora";
+        HechizoOcio ho1 = new HechizoOcio("Alohomora", 0,0);
         hechizos.add(ho1);
 
-        HechizoOcio ho2 = new HechizoOcio();
-        ho2.nombre = "Wingardium Leviosa";
+        HechizoOcio ho2 = new HechizoOcio("Wingardium Leviosa", 0, 0);
         hechizos.add(ho2);
     }
 
