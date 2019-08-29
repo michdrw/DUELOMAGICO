@@ -41,10 +41,17 @@ public class App {
         }
 
         
-    
+        
+        /*public DueloMagico rondaTurnos(){
+            for(DueloMagico.duelo : Iterable) {
+                if (personajeElegido.salud = 0){
+                    return fin;
+                }
+            }
+            }
 
 
-        /*String nombreMago1;
+        String nombreMago1;
         String nombreMago2;
 
         System.out.println("Ingrese nombre del 1er personaje:");
