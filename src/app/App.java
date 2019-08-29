@@ -29,7 +29,7 @@ public class App {
 
         System.out.println("La salud de " + ((Personaje) personajeElegido).nombre + " es " + ((Personaje) personajeElegido).salud);
         System.out.println("La salud de " + ((Personaje) enemigoElegido).nombre + " es " + ((Personaje) enemigoElegido).salud);
-
+ 
         while (personajeElegido.salud > 0) {
 
             personajeElegido.atacar(enemigoElegido, personajeElegido.getHechizo());
@@ -41,14 +41,7 @@ public class App {
         }
 
         
-        
-        public DueloMagico rondaTurnos(){
-            for(DueloMagico.duelo : Iterable) {
-                if (personajeElegido.salud = 0){
-                    return fin;
-                }
-            }
-            }
+    
 
 
         /*String nombreMago1;

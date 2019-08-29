@@ -27,7 +27,6 @@ public class Wizard extends Persona implements IHacerMagia {
         this.hechizoElegido = hechizoElegido;
     }
 
-    
 
 
     public List<Hechizo> hechizos = new ArrayList<Hechizo>();
@@ -43,7 +42,8 @@ public class Wizard extends Persona implements IHacerMagia {
 
     public void atacar(Personaje enemigo, Hechizo hechizo) {
        enemigo.salud -= hechizo.nivelDaño;
-       System.out.println("La salud del enemigo es " + enemigo.salud);
+       enemigo.salud += hechizo.nivelCuracion;
+       /*System.out.println("La salud del enemigo es " + enemigo.salud);*/
     }
 
     public void atacar(Personaje enemigo, String nombreHechizo) {
