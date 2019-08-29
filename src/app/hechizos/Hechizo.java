@@ -14,4 +14,28 @@ public class Hechizo {
         this.nivelCuracion = nivelCuracion;
     }
 
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public double getNivelDaño() {
+		return nivelDaño;
+	}
+
+	public void setNivelDaño(double nivelDaño) {
+		this.nivelDaño = nivelDaño;
+	}
+
+	public double getNivelCuracion() {
+		return nivelCuracion;
+	}
+
+	public void setNivelCuracion(double nivelCuracion) {
+		this.nivelCuracion = nivelCuracion;
+	}
+
 }

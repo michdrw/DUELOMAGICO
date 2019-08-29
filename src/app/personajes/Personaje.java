@@ -23,4 +23,9 @@ public class Personaje {
         this.nombre = nombre;
     }
 
+    public Personaje(String nombre, int salud) {
+        this.nombre = nombre;
+        this.salud = salud;
+    }
+
 }

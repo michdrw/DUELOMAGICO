@@ -15,6 +15,7 @@ import app.personajes.criatura.Elfo;
 import app.personajes.persona.Muggle;
 import app.personajes.persona.Wizard;
 import app.poderes.Poder;
+import app.transporte.Transporte;
 
 /**
  * DueloMagico
@@ -25,17 +26,14 @@ public class DueloMagico {
     public static List<Wizard> wizards = new ArrayList<Wizard>();
     public static List<Elfo> elfos = new ArrayList<Elfo>();
     public static List<Muggle> nomags = new ArrayList<Muggle>();
-    public List<Poder> poderes = new ArrayList<Poder>();
+    public static List<Poder> poderes = new ArrayList<Poder>();
     private static List<Hechizo> hechizos = new ArrayList<Hechizo>();
-    public List<Artefacto> artefactos = new ArrayList<Artefacto>();
-
-    
-    public static List<HechizoAtaque> atacadores = new
-    ArrayList<HechizoAtaque>(); public static List<HechizoCuracion> curadores =
-    new ArrayList<HechizoCuracion>(); public static List<HechizoDefensa>
-    defensores = new ArrayList<HechizoDefensa>(); public static List<HechizoOcio>
-    ociadores = new ArrayList<HechizoOcio>();
-    
+    public static List<Artefacto> artefactos = new ArrayList<Artefacto>();
+    public static List<Transporte> transportes = new ArrayList<Transporte>();
+    public static List<HechizoAtaque> atacadores = new ArrayList<HechizoAtaque>();
+    public static List<HechizoCuracion> curadores = new ArrayList<HechizoCuracion>();
+    public static List<HechizoDefensa> defensores = new ArrayList<HechizoDefensa>();
+    public static List<HechizoOcio> ociadores = new ArrayList<HechizoOcio>();
 
     public static Personaje elegirPersonaje(String nombre) {
         for (Personaje p : DueloMagico.catalogoPersonajes) {
@@ -53,12 +51,13 @@ public class DueloMagico {
     }
 
     public static void agregarWizard() {
-        Wizard mago = new Wizard("George Weasley", 100, 100, this.poderes.get(0), this.artefactos.get(2), this.hechizos.get(7));
+        Wizard mago = new Wizard("George Weasley", 100, 100, this.poderes.get(0), this.artefactos.get(2),
+                this.hechizos.get(7));
 
         wizards.add(mago);
 
-        mago = new Wizard ("Fred Weasley", 100, 100, this.poderes.get(1), this.artefactos.get(1), this.hechizos.get(6));
-        
+        mago = new Wizard("Fred Weasley", 100, 100, this.poderes.get(1), this.artefactos.get(1), this.hechizos.get(6));
+
         wizards.add(mago);
 
         DueloMagico.catalogoPersonajes.add(mago);
@@ -126,14 +125,14 @@ public class DueloMagico {
 
     public static void agregarHechizoOcio() {
 
-        HechizoOcio ho1 = new HechizoOcio("Alohomora", 0,0);
+        HechizoOcio ho1 = new HechizoOcio("Alohomora", 0, 0);
         hechizos.add(ho1);
 
         HechizoOcio ho2 = new HechizoOcio("Wingardium Leviosa", 0, 0);
         hechizos.add(ho2);
     }
 
-    public void agregarPoder() {
+    public static void agregarPoder() {
 
         Poder p1 = new Poder();
         p1.nombre = "Invisibilidad";
@@ -164,7 +163,7 @@ public class DueloMagico {
         return null;
     }
 
-    public void agregarArtefactos() {
+    public static void agregarArtefactos() {
         Artefacto a1 = new Artefacto();
         a1.nombre = "Horrocrux";
         artefactos.add(a1);
@@ -201,8 +200,20 @@ public class DueloMagico {
                 }
                 return null;
             }
-
         }
         return null;
     }
+
+    public Transporte elegirHuida(String nombre){
+        for (Personaje p : DueloMagico.catalogoPersonajes) {
+            if ((p instanceof IHacerMagia)) {
+                for (Transporte t : transportes) {
+                    if (t.nombre.equals(nombre));
+                        return t;
+                }
+                return null;
+            }
+        }return null;
+    }
+
 }

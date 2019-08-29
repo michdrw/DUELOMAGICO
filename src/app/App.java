@@ -2,7 +2,6 @@ package app;
 import java.util.Scanner;
 
 import app.hechizos.Hechizo;
-import app.hechizos.ataque.SeptuSempra;
 import app.interfaces.IHacerMagia;
 import app.personajes.Personaje;
 
@@ -20,7 +19,7 @@ public class App {
 
 
         Personaje personajeElegido = DueloMagico.elegirPersonaje("Fred Weasley");
-        IHacerMagia enemigoElegido = (IHacerMagia) DueloMagico.elegirPersonaje("George Weasley");
+        Personaje enemigoElegido = DueloMagico.elegirPersonaje("George Weasley");
 
 
         personajeElegido.atacar(enemigoElegido, personajeElegido.getHechizo());
@@ -51,6 +50,14 @@ public class App {
         
         personajeElegido.atacar(((Personaje)enemigoElegido), ha1);*/
         System.out.println("La salud del enemigo es: " + ((Personaje) enemigoElegido).salud);
-   
+        
+        public DueloMagico rondaTurnos(){
+            for(DueloMagico.duelo : Iterable) {
+                if (personajeElegido.salud = 0){
+                    return fin;
+                }
+            }
+            }
+
+        }
     }
-}

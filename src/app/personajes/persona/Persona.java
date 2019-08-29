@@ -7,4 +7,8 @@ import app.personajes.Personaje;
  */
 public class Persona extends Personaje {
 
+    public Persona(String nombre, int salud) {
+        super(nombre, salud);
+    }
+
 }
