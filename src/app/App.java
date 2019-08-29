@@ -27,6 +27,29 @@ public class App {
 
         enemigoElegido.atacar(personajeElegido, enemigoElegido.getHechizo());
 
+        System.out.println("La salud de " + ((Personaje) personajeElegido).nombre + " es " + ((Personaje) personajeElegido).salud);
+        System.out.println("La salud de " + ((Personaje) enemigoElegido).nombre + " es " + ((Personaje) enemigoElegido).salud);
+
+        while (personajeElegido.salud > 0) {
+
+            personajeElegido.atacar(enemigoElegido, personajeElegido.getHechizo());
+            enemigoElegido.atacar(personajeElegido, enemigoElegido.getHechizo());
+
+            System.out.println("La salud de " + ((Personaje) personajeElegido).nombre + " es " + ((Personaje) personajeElegido).salud);
+            System.out.println("La salud de " + ((Personaje) enemigoElegido).nombre + " es " + ((Personaje) enemigoElegido).salud);
+
+        }
+
+        
+        
+        public DueloMagico rondaTurnos(){
+            for(DueloMagico.duelo : Iterable) {
+                if (personajeElegido.salud = 0){
+                    return fin;
+                }
+            }
+            }
+
 
         /*String nombreMago1;
         String nombreMago2;
@@ -50,15 +73,6 @@ public class App {
         //personajeElegido.getArtefacto() 
         
         personajeElegido.atacar(((Personaje)enemigoElegido), ha1);*/
-        System.out.println("La salud del enemigo es: " + ((Personaje) enemigoElegido).salud);
-        
-        public DueloMagico rondaTurnos(){
-            for(DueloMagico.duelo : Iterable) {
-                if (personajeElegido.salud = 0){
-                    return fin;
-                }
-            }
-            }
 
         }
     }

@@ -27,7 +27,7 @@ public class DueloMagico {
     public static List<Elfo> elfos = new ArrayList<Elfo>();
     public static List<Muggle> nomags = new ArrayList<Muggle>();
     public static List<Poder> poderes = new ArrayList<Poder>();
-    private static List<Hechizo> hechizos = new ArrayList<Hechizo>();
+    public static List<Hechizo> hechizos = new ArrayList<Hechizo>();
     public static List<Artefacto> artefactos = new ArrayList<Artefacto>();
     public static List<Transporte> transportes = new ArrayList<Transporte>();
     public static List<HechizoAtaque> atacadores = new ArrayList<HechizoAtaque>();
@@ -51,12 +51,12 @@ public class DueloMagico {
     }
 
     public static void agregarWizard() {
-        Wizard mago = new Wizard("George Weasley", 100, 100, this.poderes.get(0), this.artefactos.get(2),
-                this.hechizos.get(7));
+        Wizard mago = new Wizard("George Weasley", 100, 100, DueloMagico.poderes.get(0), DueloMagico.artefactos.get(2),
+                DueloMagico.hechizos.get(7));
 
         wizards.add(mago);
 
-        mago = new Wizard("Fred Weasley", 100, 100, this.poderes.get(1), this.artefactos.get(1), this.hechizos.get(6));
+        mago = new Wizard("Fred Weasley", 100, 100, DueloMagico.poderes.get(1), DueloMagico.artefactos.get(1), DueloMagico.hechizos.get(6));
 
         wizards.add(mago);
 
