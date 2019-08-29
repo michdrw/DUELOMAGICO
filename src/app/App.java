@@ -11,10 +11,24 @@ public class App {
 
     public static Scanner Teclado = new Scanner(System.in);
     public static void main(String[] args) throws Exception {
-        System.out.println("Inicializando Catalogo de personajes");
+        System.out.println("Inicializando Catalogos");
         DueloMagico.inicializarCatalogoPersonajes();
+        DueloMagico.agregarPoder();
+        DueloMagico.agregarArtefactos();
+        DueloMagico.inicializarCatalogoHechizos();
+    
 
-       /* String nombreMago1;
+
+        Personaje personajeElegido = DueloMagico.elegirPersonaje("Fred Weasley");
+        IHacerMagia enemigoElegido = (IHacerMagia) DueloMagico.elegirPersonaje("George Weasley");
+
+
+        personajeElegido.atacar(enemigoElegido, personajeElegido.getHechizo());
+
+        enemigoElegido.atacar(personajeElegido, enemigoElegido.getHechizo());
+
+
+        /*String nombreMago1;
         String nombreMago2;
 
         System.out.println("Ingrese nombre del 1er personaje:");
@@ -35,8 +49,8 @@ public class App {
 
         //personajeElegido.getArtefacto() 
         
-        personajeElegido.atacar(((Personaje)enemigoElegido), ha1);
+        personajeElegido.atacar(((Personaje)enemigoElegido), ha1);*/
         System.out.println("La salud del enemigo es: " + ((Personaje) enemigoElegido).salud);
-*/   IHacerMagia personajeElegido = (IHacerMagia) DueloMagico.elegirPersonaje("Fred Weasley");
+   
     }
 }
