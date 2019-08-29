@@ -11,6 +11,4 @@ public class HechizoAtaque extends Hechizo {
         super(nombre, nivelDaño, nivelCuracion);
     }
 
-    
-
 }

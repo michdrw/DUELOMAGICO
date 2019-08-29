@@ -49,9 +49,8 @@ public class App {
 
         //personajeElegido.getArtefacto() 
         
-        personajeElegido.atacar(((Personaje)enemigoElegido), ha1);
-        System.out.println("La salud del enemigo es: " + ((Personaje) enemigoElegido).salud); */
-
-        
+        personajeElegido.atacar(((Personaje)enemigoElegido), ha1);*/
+        System.out.println("La salud del enemigo es: " + ((Personaje) enemigoElegido).salud);
+   
     }
 }
