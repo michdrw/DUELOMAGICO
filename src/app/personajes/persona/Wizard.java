@@ -14,10 +14,21 @@ import app.poderes.Poder;
  */
 public class Wizard extends Persona implements IHacerMagia {
 
-    private double energiaMagica;
+    private int energiaMagica;
     private Poder poderInicial;
     private Artefacto artefacto;
     private Hechizo hechizoElegido;
+
+     public Wizard(String nombre, int salud, int energiaMagica, String poderInicial, String artefacto, String hechizoElegido) {
+        super (nombre, salud);
+        this.energiaMagica = energiaMagica;
+        this.poderInicial = poderInicial;
+        this.artefacto = artefacto;
+        this.hechizoElegido = hechizoElegido;
+    }
+
+    
+
 
     public static List<Hechizo> hechizos = new ArrayList<Hechizo>();
 

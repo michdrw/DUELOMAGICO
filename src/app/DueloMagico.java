@@ -103,17 +103,17 @@ public class DueloMagico {
         HechizoAtaque ha1 = new HechizoAtaque("Sectum Sempra", 90, 0);
         hechizos.add(ha1);
 
-        HechizoAtaque ha2 = new HechizoAtaque("Petrificus Totalus", 30,0);
+        HechizoAtaque ha2 = new HechizoAtaque("Petrificus Totalus", 30, 0);
         hechizos.add(ha2);
 
     }
 
     public static void agregarHechizoCuracion() {
 
-        HechizoCuracion hc1 = new HechizoCuracion("Vulnera Sanentur", 0,80);
+        HechizoCuracion hc1 = new HechizoCuracion("Vulnera Sanentur", 0, 80);
         hechizos.add(hc1);
 
-        HechizoCuracion hc2 = new HechizoCuracion("Reparifors",0,50);
+        HechizoCuracion hc2 = new HechizoCuracion("Reparifors", 0, 50);
         hechizos.add(hc2);
     }
 

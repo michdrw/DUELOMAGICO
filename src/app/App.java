@@ -14,7 +14,10 @@ public class App {
         System.out.println("Inicializando Catalogo de personajes");
         DueloMagico.inicializarCatalogoPersonajes();
 
-        String nombreMago1;
+        IHacerMagia personajeElegido = (IHacerMagia) DueloMagico.elegirPersonaje("Fred Weasley");
+        IHacerMagia enemigoElegido = (IHacerMagia) DueloMagico.elegirPersonaje("George Weasley");
+        
+        /*String nombreMago1;
         String nombreMago2;
 
         System.out.println("Ingrese nombre del 1er personaje:");
@@ -36,6 +39,8 @@ public class App {
         //personajeElegido.getArtefacto() 
         
         personajeElegido.atacar(((Personaje)enemigoElegido), ha1);
-        System.out.println("La salud del enemigo es: " + ((Personaje) enemigoElegido).salud);
+        System.out.println("La salud del enemigo es: " + ((Personaje) enemigoElegido).salud); */
+
+        
     }
 }
