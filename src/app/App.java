@@ -11,12 +11,23 @@ public class App {
 
     public static Scanner Teclado = new Scanner(System.in);
     public static void main(String[] args) throws Exception {
-        System.out.println("Inicializando Catalogo de personajes");
+        System.out.println("Inicializando Catalogos");
         DueloMagico.inicializarCatalogoPersonajes();
+        DueloMagico.agregarPoder();
+        DueloMagico.agregarArtefactos();
+        DueloMagico.inicializarCatalogoHechizos();
+    
 
-        IHacerMagia personajeElegido = (IHacerMagia) DueloMagico.elegirPersonaje("Fred Weasley");
+
+        Personaje personajeElegido = DueloMagico.elegirPersonaje("Fred Weasley");
         IHacerMagia enemigoElegido = (IHacerMagia) DueloMagico.elegirPersonaje("George Weasley");
-        
+
+
+        personajeElegido.atacar(enemigoElegido, personajeElegido.getHechizo());
+
+        enemigoElegido.atacar(personajeElegido, enemigoElegido.getHechizo());
+
+
         /*String nombreMago1;
         String nombreMago2;
 

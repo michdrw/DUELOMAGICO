@@ -53,15 +53,12 @@ public class DueloMagico {
     }
 
     public static void agregarWizard() {
-        Wizard mago = new Wizard();
-        mago.nombre = "George Weasley";
-        mago.salud = 100;
-    
+        Wizard mago = new Wizard("George Weasley", 100, 100, this.poderes.get(0), this.artefactos.get(2), this.hechizos.get(7));
 
-        mago = new Wizard();
-        mago.nombre = "Fred Weasley";
-        mago.salud = 100;
+        wizards.add(mago);
 
+        mago = new Wizard ("Fred Weasley", 100, 100, this.poderes.get(1), this.artefactos.get(1), this.hechizos.get(6));
+        
         wizards.add(mago);
 
         DueloMagico.catalogoPersonajes.add(mago);
@@ -177,7 +174,7 @@ public class DueloMagico {
         artefactos.add(a2);
 
         Artefacto a3 = new Artefacto();
-        a3.nombre = "Varita";
+        a3.nombre = "VaritaSauco";
         artefactos.add(a3);
     }
 

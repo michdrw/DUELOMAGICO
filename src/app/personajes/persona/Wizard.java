@@ -19,7 +19,7 @@ public class Wizard extends Persona implements IHacerMagia {
     private Artefacto artefacto;
     private Hechizo hechizoElegido;
 
-     public Wizard(String nombre, int salud, int energiaMagica, String poderInicial, String artefacto, String hechizoElegido) {
+     public Wizard(String nombre, int salud, int energiaMagica, Poder poderInicial, Artefacto artefacto, Hechizo hechizoElegido) {
         super (nombre, salud);
         this.energiaMagica = energiaMagica;
         this.poderInicial = poderInicial;
@@ -30,7 +30,7 @@ public class Wizard extends Persona implements IHacerMagia {
     
 
 
-    public static List<Hechizo> hechizos = new ArrayList<Hechizo>();
+    public List<Hechizo> hechizos = new ArrayList<Hechizo>();
 
     public Poder getPoderInicial() {
         return this.poderInicial;
@@ -43,6 +43,7 @@ public class Wizard extends Persona implements IHacerMagia {
 
     public void atacar(Personaje enemigo, Hechizo hechizo) {
        enemigo.salud -= hechizo.nivelDaño;
+       System.out.println("La salud del enemigo es " + enemigo.salud);
     }
 
     public void atacar(Personaje enemigo, String nombreHechizo) {
@@ -55,6 +56,11 @@ public class Wizard extends Persona implements IHacerMagia {
 
     public Hechizo getHechizo() {
         return this.hechizoElegido;
+    }
+
+    public void setHechizo(Hechizo hechizo) {
+        this.hechizoElegido = hechizo;
+        this.aprender(hechizo);
     }
 
     public Artefacto getArtefacto() {
