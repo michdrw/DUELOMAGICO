@@ -59,7 +59,7 @@ public class DueloMagico {
 
         wizards.add(mago);
 
-        DueloMagico.catalogoPersonajes.add(mago);
+        DueloMagico.catalogoPersonajes.add((Personaje) wizards);
 
     }
 
@@ -70,12 +70,13 @@ public class DueloMagico {
         duende = new Elfo("Kreacher", 100,100, DueloMagico.poderes.get(0),DueloMagico.artefactos.get(2), DueloMagico.hechizos.get(4));
 
         elfos.add(duende);
-        DueloMagico.catalogoPersonajes.add(duende);
+        DueloMagico.catalogoPersonajes.add((Personaje) elfos);
     }
 
     public static void agregarMuggle() {
         Muggle nomag = new Muggle("Dudley Dursley", 100);
         nomags.add(nomag);
+        DueloMagico.catalogoPersonajes.add(nomags);
     }
 
     public static void inicializarCatalogoHechizos() {
@@ -87,58 +88,58 @@ public class DueloMagico {
 
     public static void agregarHechizoAtaque() {
 
-        HechizoAtaque ha1 = new HechizoAtaque("Sectum Sempra", 90, 0);
-        hechizos.add(ha1);
+        SectumSempra sectumSempra= new SectumSempra ("Sectum Sempra", 90, 0);
+        hechizos.add(sectumSempra);
 
-        HechizoAtaque ha2 = new HechizoAtaque("Petrificus Totalus", 30, 0);
-        hechizos.add(ha2);
+        PetrificusTotalus  petrificusTotalus = new PetrificusTotalus( "Petrificus Totalus", 30, 0);
+        hechizos.add(petrificusTotalus);
 
     }
 
     public static void agregarHechizoCuracion() {
 
-        HechizoCuracion hc1 = new HechizoCuracion("Vulnera Sanentur", 0, 80);
-        hechizos.add(hc1);
+        VulneraSanentur vulneraSanentur = new VulneraSanentur ("Vulnera Sanentur", 0, 80);
+        hechizos.add(vulneraSanentur);
 
-        HechizoCuracion hc2 = new HechizoCuracion("Reparifors", 0, 50);
-        hechizos.add(hc2);
+        Reparifors reparifors = new Reparifors("Reparifors", 0, 50);
+        hechizos.add(reparifors);
     }
 
     public static void agregarHechizoDefensa() {
 
-        HechizoDefensa hd1 = new HechizoDefensa("Cave Inmicum", 0, 0);
-        hechizos.add(hd1);
+        CaveInmicum caveInmicum = new CaveInmicum("Cave Inmicum", 0, 0);
+        hechizos.add(caveInmicum);
 
-        HechizoDefensa hd2 = new HechizoDefensa("Protego", 0, 0);
-        hechizos.add(hd2);
+        Protego protego = new Protego("Protego", 0, 0);
+        hechizos.add(protego);
 
     }
 
     public static void agregarHechizoOcio() {
 
-        HechizoOcio ho1 = new HechizoOcio("Alohomora", 0, 0);
-        hechizos.add(ho1);
+        Alohomora alohomora = new Alohomora("Alohomora", 0, 0);
+        hechizos.add(alohomora);
 
-        HechizoOcio ho2 = new HechizoOcio("Wingardium Leviosa", 0, 0);
-        hechizos.add(ho2);
+        WingardiumLeviosa wingardiumLeviosa = new WingardiumLeviosa("Wingardium Leviosa", 0, 0);
+        hechizos.add(wingardiumLeviosa);
     }
 
     public static void agregarPoder() {
 
-        Poder p1 = new Poder();
-        p1.nombre = "Invisibilidad";
-        p1.nro = 1;
-        poderes.add(p1);
+        Invisibilidad invisibilidad = new Invisibilidad();
+        invisibilidad.nombre = "Invisibilidad";
+        invisibilidad.nro = 1;
+        poderes.add(invisibilidad);
 
-        Poder p2 = new Poder();
-        p2.nombre = "Metamorfosis";
-        p2.nro = 2;
-        poderes.add(p2);
+        Metamorfosis metamorfosis = new Metamorfosis();
+        metamorfosis.nombre = "Metamorfosis";
+        metamorfosis.nro = 2;
+        poderes.add(metamorfosis);
 
-        Poder p3 = new Poder();
-        p3.nombre = "ParselTongue";
-        p3.nro = 3;
-        poderes.add(p3);
+        ParcelTongue parcelTongue = new ParcelTongue();
+        parcelTongue.nombre = "ParselTongue";
+        parcelTongue.nro = 3;
+        poderes.add(parcelTongue);
     }
 
     public Poder elegirPoder(String nombre) {
@@ -155,31 +156,21 @@ public class DueloMagico {
     }
 
     public static void agregarArtefactos() {
-        Artefacto a1 = new Artefacto();
-        a1.nombre = "Horrocrux";
-        artefactos.add(a1);
+        Horrocrux horrocrux = new Horrocrux();
+        horrocrux.nombre = "Horrocrux";
+        artefactos.add(horrocrux);
 
-        Artefacto a2 = new Artefacto();
-        a2.nombre = "Capa Invisible";
-        artefactos.add(a2);
+        CapaInvisible capaInvisible = new CapaInvisible();
+        capaInvisible.nombre = "Capa Invisible";
+        artefactos.add(capaInvisible);
 
-        Artefacto a3 = new Artefacto();
-        a3.nombre = "VaritaSauco";
-        artefactos.add(a3);
-    }
-
-    public List<Artefacto> getArtefactos() {
-        return artefactos;
+        VaritaSauco varitaSauco = new VaritaSauco();
+        varitaSauco.nombre = "VaritaSauco";
+        artefactos.add(varitaSauco);
     }
 
     public void setArtefactos(List<Artefacto> artefactos) {
         this.artefactos = artefactos;
-    }
-
-    public static void add(List<Artefacto> artefacto) {
-    }
-
-    public static void add(Artefacto artefacto) {
     }
 
     public Artefacto elegirArtefacto(String nombre) {
