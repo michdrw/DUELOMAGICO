@@ -9,7 +9,7 @@ import app.hechizos.Hechizo;
  */
 public class HechizoOcio extends Hechizo {
 
-    public HechizoOcio(String nombre, double nivelDaño, double nivelCuracion) {
+    public HechizoOcio(String nombre, int nivelDaño, int nivelCuracion) {
         super(nombre, nivelDaño, nivelCuracion);}
 
     

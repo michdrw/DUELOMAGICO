@@ -4,15 +4,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 import app.artefactos.Artefacto;
+import app.artefactos.CapaInvisible;
+import app.artefactos.Horrocrux;
+import app.artefactos.VaritaSauco;
 import app.hechizos.Hechizo;
 import app.hechizos.ataque.HechizoAtaque;
+import app.hechizos.ataque.PetrificusTotalus;
+import app.hechizos.ataque.SectumSempra;
 import app.hechizos.curacion.HechizoCuracion;
+import app.hechizos.curacion.Reparifors;
+import app.hechizos.curacion.VulneraSanentur;
+import app.hechizos.defensa.CaveInmicum;
+import app.hechizos.defensa.HechizoDefensa;
+import app.hechizos.defensa.Protego;
+import app.hechizos.ocio.Alohomora;
 import app.hechizos.ocio.HechizoOcio;
+import app.hechizos.ocio.WingardiumLeviosa;
 import app.interfaces.IHacerMagia;
 import app.personajes.Personaje;
 import app.personajes.criatura.Elfo;
 import app.personajes.persona.Muggle;
 import app.personajes.persona.Wizard;
+import app.poderes.Invisibilidad;
+import app.poderes.Metamorfosis;
+import app.poderes.ParselTongue;
 import app.poderes.Poder;
 import app.transporte.Transporte;
 
@@ -76,7 +91,7 @@ public class DueloMagico {
     public static void agregarMuggle() {
         Muggle nomag = new Muggle("Dudley Dursley", 100);
         nomags.add(nomag);
-        DueloMagico.catalogoPersonajes.add(nomags);
+        DueloMagico.catalogoPersonajes.add((Personaje) nomags);
     }
 
     public static void inicializarCatalogoHechizos() {
@@ -136,7 +151,7 @@ public class DueloMagico {
         metamorfosis.nro = 2;
         poderes.add(metamorfosis);
 
-        ParcelTongue parcelTongue = new ParcelTongue();
+        ParselTongue parcelTongue = new ParselTongue();
         parcelTongue.nombre = "ParselTongue";
         parcelTongue.nro = 3;
         poderes.add(parcelTongue);
