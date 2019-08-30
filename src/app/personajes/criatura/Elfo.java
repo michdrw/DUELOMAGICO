@@ -14,6 +14,8 @@ import app.poderes.Poder;
  */
 public class Elfo extends Criatura implements IHacerMagia {
 
+   
+
     private int energiaMagica;
     private Poder poderInicial;
     private Artefacto artefacto;
@@ -54,6 +56,15 @@ public class Elfo extends Criatura implements IHacerMagia {
 
     public void setArtefacto(Artefacto artefacto) {
         this.artefacto = artefacto;
+    }
+
+    public Elfo(String nombre, int salud, int energiaMagica, Poder poderInicial, Artefacto artefacto,
+            Hechizo hechizoElegido) {
+        super(nombre, salud);
+        this.energiaMagica = energiaMagica;
+        this.poderInicial = poderInicial;
+        this.artefacto = artefacto;
+        this.hechizoElegido = hechizoElegido;
     }
 
 }

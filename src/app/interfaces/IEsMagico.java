@@ -9,6 +9,7 @@ public interface IEsMagico {
 
     public boolean esInvisible();
 
+    
 
 
 }

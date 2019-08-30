@@ -7,4 +7,9 @@ import app.personajes.Personaje;
  */
 public class Criatura extends Personaje {
 
+    public Criatura(String nombre, int salud) {
+        super(nombre, salud);
+    }
+    
+
 }

@@ -2,6 +2,7 @@ package app;
 import java.util.Scanner;
 
 import app.hechizos.Hechizo;
+import app.hechizos.ataque.SectumSempra;
 import app.interfaces.IHacerMagia;
 import app.personajes.Personaje;
 
@@ -40,17 +41,6 @@ public class App {
 
         }
 
-        
-        
-        /*public DueloMagico rondaTurnos(){
-            for(DueloMagico.duelo : Iterable) {
-                if (personajeElegido.salud = 0){
-                    return fin;
-                }
-            }
-            }
-
-
         String nombreMago1;
         String nombreMago2;
 
@@ -58,7 +48,7 @@ public class App {
         nombreMago1 = Teclado.nextLine();
 
         IHacerMagia personajeElegido = (IHacerMagia) DueloMagico.elegirPersonaje(nombreMago1);
-        personajeElegido.aprender(new SeptuSempra());
+        personajeElegido.aprender(new SectumSempra());
 
         System.out.println("Ingrese nombre del 2do personaje:");
         nombreMago2 = Teclado.nextLine();
@@ -68,11 +58,11 @@ public class App {
         System.out.println("La salud del personaje es: " + ((Personaje) personajeElegido).salud);
         System.out.println("La salud del enemigo es: " + ((Personaje) enemigoElegido).salud);
 
-        Hechizo ha1 = new SeptuSempra();
+        Hechizo ha1 = new SectumSempra();
 
         //personajeElegido.getArtefacto() 
         
-        personajeElegido.atacar(((Personaje)enemigoElegido), ha1);*/
+        personajeElegido.atacar(((Personaje)enemigoElegido), ha1);
 
         }
     }

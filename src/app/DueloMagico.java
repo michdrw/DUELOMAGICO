@@ -7,7 +7,6 @@ import app.artefactos.Artefacto;
 import app.hechizos.Hechizo;
 import app.hechizos.ataque.HechizoAtaque;
 import app.hechizos.curacion.HechizoCuracion;
-import app.hechizos.defensa.HechizoDefensa;
 import app.hechizos.ocio.HechizoOcio;
 import app.interfaces.IHacerMagia;
 import app.personajes.Personaje;
@@ -65,25 +64,17 @@ public class DueloMagico {
     }
 
     public static void agregarElfo() {
-        Elfo duende = new Elfo();
-        duende.nombre = "Dobby";
-        duende.salud = 100;
-
+        Elfo duende = new Elfo("Dobby", 100, 100, DueloMagico.poderes.get(2), DueloMagico.artefactos.get(4), DueloMagico.hechizos.get(0));
         elfos.add(duende);
 
-        duende = new Elfo();
-        duende.nombre = "Kreacher";
-        duende.salud = 100;
+        duende = new Elfo("Kreacher", 100,100, DueloMagico.poderes.get(0),DueloMagico.artefactos.get(2), DueloMagico.hechizos.get(4));
 
         elfos.add(duende);
         DueloMagico.catalogoPersonajes.add(duende);
     }
 
     public static void agregarMuggle() {
-        Muggle nomag = new Muggle();
-        nomag.nombre = "Dudley Dursley";
-        nomag.salud = 100;
-
+        Muggle nomag = new Muggle("Dudley Dursley", 100);
         nomags.add(nomag);
     }
 

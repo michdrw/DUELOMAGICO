@@ -1,11 +1,10 @@
 package app.transporte;
 
-import app.interfaces.IEsMagico;
 
 /**
  * Transporte
  */
-public class Transporte //implements IEsMagico 
+public class Transporte 
 {
 
     public String nombre;
