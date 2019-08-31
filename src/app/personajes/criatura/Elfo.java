@@ -2,6 +2,7 @@ package app.personajes.criatura;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import app.artefactos.Artefacto;
 import app.hechizos.Hechizo;
@@ -20,13 +21,11 @@ public class Elfo extends Criatura implements IHacerMagia {
     private Hechizo hechizoElegido;
 
 
-    public Elfo(String nombre, int salud, int energiaMagica, Poder poderInicial, Artefacto artefacto,
-            Hechizo hechizoElegido) {
+    public Elfo(String nombre, int salud, int energiaMagica, Poder poderInicial, Artefacto artefacto) {
         super(nombre, salud);
         this.energiaMagica = energiaMagica;
         this.poderInicial = poderInicial;
         this.artefacto = artefacto;
-        this.hechizoElegido = hechizoElegido;
     }
 
     private List<Hechizo> hechizos = new ArrayList<Hechizo>();
@@ -53,7 +52,12 @@ public class Elfo extends Criatura implements IHacerMagia {
         this.hechizos.add(hechizo);
     }
 
+    
     public Hechizo getHechizo() {
+        int size = this.hechizos.size();
+        Random rand = new Random();
+        int hechizoRandom = rand.nextInt(size);
+        this.hechizoElegido = this.hechizos.get(hechizoRandom);
         return this.hechizoElegido;
     }
 

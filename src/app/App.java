@@ -4,6 +4,7 @@ import app.hechizos.Hechizo;
 import app.hechizos.ataque.SectumSempra;
 import app.interfaces.IHacerMagia;
 import app.personajes.Personaje;
+import app.personajes.persona.Wizard;
 
 public class App {
 
@@ -18,25 +19,21 @@ public class App {
         Personaje personajeElegido = DueloMagico.elegirPersonaje("Fred Weasley");
         Personaje enemigoElegido = DueloMagico.elegirPersonaje("George Weasley");
 
-        personajeElegido.atacar(enemigoElegido, personajeElegido.getHechizo());
-
-        enemigoElegido.atacar(personajeElegido, enemigoElegido.getHechizo());
-
-        System.out.println(
-                "La salud de " + ((Personaje) personajeElegido).nombre + " es " + ((Personaje) personajeElegido).salud);
-        System.out.println(
-                "La salud de " + ((Personaje) enemigoElegido).nombre + " es " + ((Personaje) enemigoElegido).salud);
-
         while (personajeElegido.salud > 0) {
            // for (Personaje p : DueloMagico) {
-            personajeElegido.atacar(enemigoElegido, personajeElegido.getHechizo());
-            enemigoElegido.atacar(personajeElegido, enemigoElegido.getHechizo());
-
+                if (personajeElegido instanceof Wizard) {
+                        personajeElegido.atacar(enemigoElegido, personajeElegido.getHechizo());
+                }
+                if (enemigoElegido instanceof Wizard) {
+                        enemigoElegido.atacar(personajeElegido, enemigoElegido.getHechizo());
+                }
+            
             System.out.println("La salud de " + ((Personaje) personajeElegido).nombre + " es "
                     + ((Personaje) personajeElegido).salud);
             System.out.println(
                     "La salud de " + ((Personaje) enemigoElegido).nombre + " es " + ((Personaje) enemigoElegido).salud);
                 }
+        
         }
 
         /*

@@ -2,6 +2,7 @@ package app.personajes.persona;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import app.artefactos.Artefacto;
 import app.hechizos.Hechizo;
@@ -19,12 +20,11 @@ public class Wizard extends Persona implements IHacerMagia {
     private Artefacto artefacto;
     private Hechizo hechizoElegido;
 
-     public Wizard(String nombre, int salud, int energiaMagica, Poder poderInicial, Artefacto artefacto, Hechizo hechizoElegido) {
+     public Wizard(String nombre, int salud, int energiaMagica, Poder poderInicial, Artefacto artefacto) {
         super (nombre, salud);
         this.energiaMagica = energiaMagica;
         this.poderInicial = poderInicial;
         this.artefacto = artefacto;
-        this.hechizoElegido = hechizoElegido;
     }
 
 
@@ -55,6 +55,10 @@ public class Wizard extends Persona implements IHacerMagia {
     }
 
     public Hechizo getHechizo() {
+        int size = this.hechizos.size();
+        Random rand = new Random();
+        int hechizoRandom = rand.nextInt(size);
+        this.hechizoElegido = this.hechizos.get(hechizoRandom);
         return this.hechizoElegido;
     }
 

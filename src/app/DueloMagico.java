@@ -65,12 +65,11 @@ public class DueloMagico {
     }
 
     public static void agregarWizard() {
-        Wizard mago = new Wizard("George Weasley", 100, 100, DueloMagico.poderes.get(0), DueloMagico.artefactos.get(2),
-                DueloMagico.hechizos.get(7));
+        Wizard mago = new Wizard ("George Weasley", 100, 100, DueloMagico.poderes.get(0), DueloMagico.artefactos.get(2));
 
         wizards.add(mago);
 
-        mago = new Wizard("Fred Weasley", 100, 100, DueloMagico.poderes.get(1), DueloMagico.artefactos.get(1), DueloMagico.hechizos.get(6));
+        mago = new Wizard("Fred Weasley", 100, 100, DueloMagico.poderes.get(1), DueloMagico.artefactos.get(1));
 
         wizards.add(mago);
 
@@ -79,10 +78,10 @@ public class DueloMagico {
     }
 
     public static void agregarElfo() {
-        Elfo duende = new Elfo("Dobby", 100, 100, DueloMagico.poderes.get(2), DueloMagico.artefactos.get(4), DueloMagico.hechizos.get(0));
+        Elfo duende = new Elfo("Dobby", 100, 100, DueloMagico.poderes.get(2), DueloMagico.artefactos.get(4));
         elfos.add(duende);
 
-        duende = new Elfo("Kreacher", 100,100, DueloMagico.poderes.get(0),DueloMagico.artefactos.get(2), DueloMagico.hechizos.get(4));
+        duende = new Elfo("Kreacher", 100,100, DueloMagico.poderes.get(0),DueloMagico.artefactos.get(2));
 
         elfos.add(duende);
         DueloMagico.catalogoPersonajes.add((Personaje) elfos);
