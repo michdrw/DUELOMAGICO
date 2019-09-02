@@ -43,7 +43,7 @@ public class Wizard extends Persona implements IHacerMagia {
     public void atacar(Personaje enemigo, Hechizo hechizo) {
         this.energiaMagica = energiaMagica - 10;
         enemigo.salud -= hechizo.nivelDaño;
-        if (this.salud < 100 && hechizoElegido.nombre.equals("Vulnera Sanentur") || this.salud < 100 && hechizoElegido.nombre.equals("Reparifors")) {
+        if (this.salud < 1000 && hechizoElegido.nombre.equals("Vulnera Sanentur") || this.salud < 100 && hechizoElegido.nombre.equals("Reparifors")) {
             this.salud += hechizo.nivelCuracion;
         }
         System.out.println("El hechizo utilizado fue " + this.hechizoElegido.nombre + ".");
