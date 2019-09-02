@@ -75,6 +75,7 @@ public class Wizard extends Persona implements IHacerMagia {
     }
 
     public Artefacto getArtefacto() {
+        
         return this.artefacto;
 
     }
