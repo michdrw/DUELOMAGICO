@@ -9,6 +9,6 @@ public class AvadaKedavra extends Maldicion{
         super(nombre, nivelDaño, nivelCuracion);
     }
     public AvadaKedavra(){
-        super("Avada Kedavra", 500, 0);
+        super("Avada Kedavra", 1000, 0);
     }
 }

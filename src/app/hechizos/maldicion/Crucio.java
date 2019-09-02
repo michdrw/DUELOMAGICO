@@ -9,7 +9,7 @@ public class Crucio extends Maldicion{
         super(nombre, nivelDaño, nivelCuracion);
     }
     public Crucio(){
-        super("Crucio", 700, 0);
+        super("Crucio", 500, 0);
     }
 
     

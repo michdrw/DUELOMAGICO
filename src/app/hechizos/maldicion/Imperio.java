@@ -9,7 +9,7 @@ public class Imperio extends Maldicion{
         super(nombre, nivelDaño, nivelCuracion);
     }
     public Imperio(){
-        super("Imperio", 450, 0);
+        super("Imperio", 300, 0);
     }
     
 

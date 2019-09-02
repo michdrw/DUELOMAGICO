@@ -42,7 +42,15 @@ public class Wizard extends Persona implements IHacerMagia {
 
     public void atacar(Personaje enemigo, Hechizo hechizo) {
         this.energiaMagica = energiaMagica - 10;
-        enemigo.salud -= hechizo.nivelDaño;
+        if (esOscuro = false) {
+            if ( hechizoElegido.nombre.equals("Crucio") ||  hechizoElegido.nombre.equals("Imperio") ||  hechizoElegido.nombre.equals("Avada Kedavra")) {
+            enemigo.salud = enemigo.salud;
+            System.out.println(this.nombre + " eligió " + hechizoElegido.nombre + " sin ser mago oscuro, no causa daño."); 
+            } else {enemigo.salud -= hechizo.nivelDaño;
+            }
+        } else {
+            enemigo.salud -= hechizo.nivelDaño;
+        }
         if (this.salud < 100 && hechizoElegido.nombre.equals("Vulnera Sanentur") || this.salud < 100 && hechizoElegido.nombre.equals("Reparifors")) {
             this.salud += hechizo.nivelCuracion;
         }
