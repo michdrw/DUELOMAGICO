@@ -19,7 +19,7 @@ public class App {
 
                 Personaje enemigoElegido = (Personaje) DueloMagico.elegirPersonaje2("George Weasley");
 
-                System.out.println("¡¡¡¡¡Comienza el duelo!!!!!");
+                System.out.println("¡Comienza el duelo!");
                 while (personajeElegido.salud > 0 && enemigoElegido.salud > 0) {
 
                         if (personajeElegido instanceof Wizard && ((Wizard) personajeElegido).energiaMagica > 0) {
