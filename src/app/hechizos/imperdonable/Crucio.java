@@ -1,9 +1,9 @@
-package app.hechizos.maldicion;
+package app.hechizos.imperdonable;
 
 /**
  * Crucio
  */
-public class Crucio extends Maldicion{
+public class Crucio extends HechizoImperdonable{
 
     public Crucio(String nombre, double nivelDaño, double nivelCuracion) {
         super(nombre, nivelDaño, nivelCuracion);
