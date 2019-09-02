@@ -6,11 +6,11 @@ package app.hechizos.ocio;
 public class Alohomora extends HechizoOcio {
 
     public Alohomora() {
-        super("Alohomora", 0, 0);
+        super("Alohomora", 0, 0, 10);
     }
 
-    public Alohomora(String nombre, int nivelDaño, int nivelCuracion) {
-        super(nombre, nivelDaño, nivelCuracion);
+    public Alohomora(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica ) {
+        super(nombre, nivelDaño, nivelCuracion, nivelEnergiaMagica);
     }
     
     

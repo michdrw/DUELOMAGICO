@@ -5,10 +5,10 @@ package app.hechizos.defensa;
  */
 public class CaveInmicum extends HechizoDefensa {
 
-    public CaveInmicum(String nombre, double nivelDaño, double nivelCuracion) {
-        super(nombre, nivelDaño, nivelCuracion);
+    public CaveInmicum(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica ) {
+        super(nombre, nivelDaño, nivelCuracion, nivelEnergiaMagica);
     }
     public CaveInmicum() {
-        super("CaveInmicum", 0, 0);
+        super("CaveInmicum", 0, 0, 10);
     }
 }

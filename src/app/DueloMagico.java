@@ -68,20 +68,19 @@ public class DueloMagico {
     }
 
     public static void agregarWizard() {
-        Wizard mago = new Wizard("George Weasley", 1000, 100, DueloMagico.poderes.get(0),
-                DueloMagico.artefactos.get(2));
+        Wizard mago = new Wizard("George Weasley", 1000, 100, DueloMagico.poderes.get(0), DueloMagico.artefactos.get(2), false);
 
         catalogoPersonajes.add(mago);
 
-        mago = new Wizard("Fred Weasley", 1000, 100, DueloMagico.poderes.get(1), DueloMagico.artefactos.get(1));
+        mago = new Wizard("Fred Weasley", 1000, 100, DueloMagico.poderes.get(1), DueloMagico.artefactos.get(1), false);
 
         catalogoPersonajes.add(mago);
 
-        mago = new Wizard("Lucius Malfoy", 1000, 100, DueloMagico.poderes.get(0), DueloMagico.artefactos.get(2));
+        mago = new Wizard("Lucius Malfoy", 1000, 100, DueloMagico.poderes.get(0), DueloMagico.artefactos.get(2), true);
 
         catalogoPersonajes.add(mago);
 
-        mago = new Wizard("Severus Snape", 1000, 100, DueloMagico.poderes.get(0), DueloMagico.artefactos.get(2));
+        mago = new Wizard("Severus Snape", 1000, 100, DueloMagico.poderes.get(0), DueloMagico.artefactos.get(2), true);
 
         catalogoPersonajes.add(mago);
     }
@@ -146,10 +145,6 @@ public class DueloMagico {
         artefactos.add(varitaSauco);
     }
 
-    /*
-     * public void setArtefactos(List<Artefacto> artefactos) { this.artefactos =
-     * artefactos; }
-     */
 
     public Artefacto elegirArtefacto(String nombre) {
         for (Personaje p : DueloMagico.catalogoPersonajes) {
@@ -174,51 +169,51 @@ public class DueloMagico {
 
     public static void agregarHechizoAtaque() {
 
-        SectumSempra sectumSempra = new SectumSempra("Sectum Sempra", 90, 0);
+        SectumSempra sectumSempra = new SectumSempra("Sectum Sempra", 90, 0, 10);
         hechizos.add(sectumSempra);
 
-        PetrificusTotalus petrificusTotalus = new PetrificusTotalus("Petrificus Totalus", 30, 0);
+        PetrificusTotalus petrificusTotalus = new PetrificusTotalus("Petrificus Totalus", 30, 0, 10);
         hechizos.add(petrificusTotalus);
 
     }
 
     public static void agregarHechizoCuracion() {
 
-        VulneraSanentur vulneraSanentur = new VulneraSanentur("Vulnera Sanentur", 0, 80);
+        VulneraSanentur vulneraSanentur = new VulneraSanentur("Vulnera Sanentur", 0, 80, 10);
         hechizos.add(vulneraSanentur);
 
-        Reparifors reparifors = new Reparifors("Reparifors", 0, 50);
+        Reparifors reparifors = new Reparifors("Reparifors", 0, 50, 10);
         hechizos.add(reparifors);
     }
 
     public static void agregarHechizoDefensa() {
 
-        CaveInmicum caveInmicum = new CaveInmicum("Cave Inmicum", 0, 0);
+        CaveInmicum caveInmicum = new CaveInmicum("Cave Inmicum", 0, 0, 10);
         hechizos.add(caveInmicum);
 
-        Protego protego = new Protego("Protego", 0, 0);
+        Protego protego = new Protego("Protego", 0, 0, 10);
         hechizos.add(protego);
 
     }
 
     public static void agregarHechizoOcio() {
 
-        Alohomora alohomora = new Alohomora("Alohomora", 0, 0);
+        Alohomora alohomora = new Alohomora("Alohomora", 0, 0, 10);
         hechizos.add(alohomora);
 
-        WingardiumLeviosa wingardiumLeviosa = new WingardiumLeviosa("Wingardium Leviosa", 0, 0);
+        WingardiumLeviosa wingardiumLeviosa = new WingardiumLeviosa("Wingardium Leviosa", 0, 0, 10);
         hechizos.add(wingardiumLeviosa);
     }
 
     public static void agregarHechizoImperdonable() {
 
-        Crucio crucio = new Crucio("Crucio", 500, 0);
+        Crucio crucio = new Crucio("Crucio", 500, 0, 70);
         hechizos.add(crucio);
 
-        Imperio imperio = new Imperio("Imperio", 300, 0);
+        Imperio imperio = new Imperio("Imperio", 300, 0, 30);
         hechizos.add(imperio);
 
-        AvadaKedavra avadaKedabra = new AvadaKedavra("Avada Kedavra", 1000, 0);
+        AvadaKedavra avadaKedabra = new AvadaKedavra("Avada Kedavra", 1000, 0, 100);
         hechizos.add(avadaKedabra);
     }
 

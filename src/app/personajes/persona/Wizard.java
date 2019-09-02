@@ -22,11 +22,12 @@ public class Wizard extends Persona implements IHacerMagia {
     private Hechizo hechizoElegido;
     public boolean esOscuro;
 
-    public Wizard(String nombre, int salud, int energiaMagica, Poder poderInicial, Artefacto artefacto) {
+    public Wizard(String nombre, int salud, int energiaMagica, Poder poderInicial, Artefacto artefacto, boolean esOscuro) {
         super(nombre, salud);
         this.energiaMagica = energiaMagica;
         this.poderInicial = poderInicial;
         this.artefacto = artefacto;
+        this.esOscuro = esOscuro;
     }
 
     public List<Hechizo> hechizos = new ArrayList<Hechizo>();
@@ -41,13 +42,14 @@ public class Wizard extends Persona implements IHacerMagia {
     }
 
     public void atacar(Personaje enemigo, Hechizo hechizo) {
-        this.energiaMagica = energiaMagica - 10;
-        if (esOscuro = false) {
+        if (esOscuro == false) {
+            
             if (hechizoElegido.nombre.equals("Crucio") || hechizoElegido.nombre.equals("Imperio") || hechizoElegido.nombre.equals("Avada Kedavra")) {
                System.out.println(this.nombre + " eligió " + hechizoElegido.nombre + " sin ser mago oscuro, no causa daño.");
                return;        
             } else {
                 enemigo.salud -= hechizo.nivelDaño;
+
             }
         } else {
             enemigo.salud -= hechizo.nivelDaño;
@@ -56,11 +58,7 @@ public class Wizard extends Persona implements IHacerMagia {
                 || this.salud < 1000 && hechizoElegido.nombre.equals("Reparifors")) {
             this.salud += hechizo.nivelCuracion;
         }
-        System.out.println("El hechizo utilizado fue " + this.hechizoElegido.nombre + ".");
-        System.out.println("La salud de " + this.nombre + " es " + this.salud + ".");
-        System.out.println("La salud de " + enemigo.nombre + " es " + enemigo.salud + ".");
-        System.out.println("La energia magica de " + this.nombre + " es " + this.energiaMagica + ".");
-
+    
     }
 
     public void atacar(Personaje enemigo, String nombreHechizo) {
@@ -95,11 +93,13 @@ public class Wizard extends Persona implements IHacerMagia {
         this.artefacto = artefacto;
     }
 
-    public boolean esOscuro() {
+    /*public boolean esOscuro() {
         boolean oscuro = false;
         if (this.nombre.equals("Lucius Malfoy") || this.nombre.equals("Severus Snape")) {
             oscuro = true;
         }
         return oscuro;
-    }
+    }*/
+
+
 }

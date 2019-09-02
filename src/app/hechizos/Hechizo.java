@@ -5,13 +5,15 @@ package app.hechizos;
  */
 public class Hechizo {
     public String nombre;
-    public double nivelDaño;
-    public double nivelCuracion;
+    public int nivelDaño;
+	public int nivelCuracion;
+	public int nivelEnergiaMagica;
 
-    public Hechizo(String nombre, double nivelDaño, double nivelCuracion) {
+    public Hechizo(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica) {
         this.nombre = nombre;
         this.nivelDaño = nivelDaño;
-        this.nivelCuracion = nivelCuracion;
+		this.nivelCuracion = nivelCuracion;
+		this.nivelEnergiaMagica = nivelEnergiaMagica;
     }
 
 	public String getNombre() {
@@ -26,7 +28,7 @@ public class Hechizo {
 		return nivelDaño;
 	}
 
-	public void setNivelDaño(double nivelDaño) {
+	public void setNivelDaño(int nivelDaño) {
 		this.nivelDaño = nivelDaño;
 	}
 
@@ -34,7 +36,7 @@ public class Hechizo {
 		return nivelCuracion;
 	}
 
-	public void setNivelCuracion(double nivelCuracion) {
+	public void setNivelCuracion(int nivelCuracion) {
 		this.nivelCuracion = nivelCuracion;
 	}
 
