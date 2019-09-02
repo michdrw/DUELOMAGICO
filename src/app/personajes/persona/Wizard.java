@@ -20,6 +20,7 @@ public class Wizard extends Persona implements IHacerMagia {
     private Poder poderInicial;
     private Artefacto artefacto;
     private Hechizo hechizoElegido;
+    public boolean esOscuro;
 
     public Wizard(String nombre, int salud, int energiaMagica, Poder poderInicial, Artefacto artefacto) {
         super(nombre, salud);
@@ -82,5 +83,13 @@ public class Wizard extends Persona implements IHacerMagia {
 
     public void setArtefacto(Artefacto artefacto) {
         this.artefacto = artefacto;
+    }
+
+    public boolean esOscuro() {
+        boolean oscuro = false;
+        if (this.nombre.equals("Lucius Malfoy") || this.nombre.equals("Severus Snape")) {
+            oscuro = true;
+        }
+        return oscuro;
     }
 }

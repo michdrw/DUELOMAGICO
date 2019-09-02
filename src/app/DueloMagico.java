@@ -37,21 +37,24 @@ public class DueloMagico {
     public static List<Hechizo> hechizos = new ArrayList<Hechizo>();
     public static List<Artefacto> artefactos = new ArrayList<Artefacto>();
     public static List<Transporte> transportes = new ArrayList<Transporte>();
+    public static List<Maldicion> maldiciones = new ArrayList<Maldicion>();
 
     public static Personaje elegirPersonaje1(String nombre) {
         for (Personaje p : DueloMagico.catalogoPersonajes) {
-            if (p.nombre.equals(nombre))
+            if (p.nombre.equals(nombre)) {
+                System.out.println("El personaje elegido es: " + nombre);
                 return p;
-            System.out.println("El personaje elegido es: " + nombre);
+            }
         }
         return null;
     }
 
     public static Personaje elegirPersonaje2(String nombre) {
         for (Personaje p : DueloMagico.catalogoPersonajes) {
-            if (p.nombre.equals(nombre))
+            if (p.nombre.equals(nombre)) {
+                System.out.println("El enemigo elegido es: " + nombre);
                 return p;
-            System.out.println("El enemigo elegido es: " + nombre);
+            }
         }
         return null;
     }
@@ -63,7 +66,7 @@ public class DueloMagico {
     }
 
     public static void agregarWizard() {
-        Wizard mago = new Wizard ("George Weasley", 100, 100, DueloMagico.poderes.get(0), DueloMagico.artefactos.get(2));
+        Wizard mago = new Wizard("George Weasley", 100, 100, DueloMagico.poderes.get(0), DueloMagico.artefactos.get(2));
 
         catalogoPersonajes.add(mago);
 
@@ -71,16 +74,23 @@ public class DueloMagico {
 
         catalogoPersonajes.add(mago);
 
+        mago = new Wizard("Lucius Malfoy", 100, 100, DueloMagico.poderes.get(0), DueloMagico.artefactos.get(2));
+
+        catalogoPersonajes.add(mago);
+
+        mago = new Wizard("Severus Snape", 100, 100, DueloMagico.poderes.get(0), DueloMagico.artefactos.get(2));
+
+        catalogoPersonajes.add(mago);
     }
 
     public static void agregarElfo() {
         Elfo duende = new Elfo("Dobby", 100, 100, DueloMagico.poderes.get(1), DueloMagico.artefactos.get(2));
         catalogoPersonajes.add(duende);
 
-        duende = new Elfo("Kreacher", 100,100, DueloMagico.poderes.get(0),DueloMagico.artefactos.get(2));
+        duende = new Elfo("Kreacher", 100, 100, DueloMagico.poderes.get(0), DueloMagico.artefactos.get(2));
 
         catalogoPersonajes.add(duende);
-        
+
     }
 
     public static void agregarMuggle() {
@@ -133,9 +143,10 @@ public class DueloMagico {
         artefactos.add(varitaSauco);
     }
 
-    /*public void setArtefactos(List<Artefacto> artefactos) {
-        this.artefactos = artefactos;
-    }*/
+    /*
+     * public void setArtefactos(List<Artefacto> artefactos) { this.artefactos =
+     * artefactos; }
+     */
 
     public Artefacto elegirArtefacto(String nombre) {
         for (Personaje p : DueloMagico.catalogoPersonajes) {
@@ -150,27 +161,27 @@ public class DueloMagico {
         return null;
     }
 
-
     public static void inicializarCatalogoHechizos() {
         DueloMagico.agregarHechizoAtaque();
         DueloMagico.agregarHechizoCuracion();
         DueloMagico.agregarHechizoDefensa();
         DueloMagico.agregarHechizoOcio();
+        DueloMagico.agregarMaldicionImperdonable();
     }
 
     public static void agregarHechizoAtaque() {
 
-        SectumSempra sectumSempra= new SectumSempra ("Sectum Sempra", 90, 0);
+        SectumSempra sectumSempra = new SectumSempra("Sectum Sempra", 90, 0);
         hechizos.add(sectumSempra);
 
-        PetrificusTotalus  petrificusTotalus = new PetrificusTotalus( "Petrificus Totalus", 30, 0);
+        PetrificusTotalus petrificusTotalus = new PetrificusTotalus("Petrificus Totalus", 30, 0);
         hechizos.add(petrificusTotalus);
 
     }
 
     public static void agregarHechizoCuracion() {
 
-        VulneraSanentur vulneraSanentur = new VulneraSanentur ("Vulnera Sanentur", 0, 80);
+        VulneraSanentur vulneraSanentur = new VulneraSanentur("Vulnera Sanentur", 0, 80);
         hechizos.add(vulneraSanentur);
 
         Reparifors reparifors = new Reparifors("Reparifors", 0, 50);
@@ -196,18 +207,30 @@ public class DueloMagico {
         hechizos.add(wingardiumLeviosa);
     }
 
-    
+    public static void agregarMaldicionImperdonable() {
 
-    public Transporte elegirHuida(String nombre){
+        Crucio crucio = new Crucio("Crucio", 100, 0);
+        maldiciones.add(crucio);
+
+        Imperio imperio = new Imperio("Imperio", 100, 0);
+        maldiciones.add(imperio);
+
+        AvadaKedavra avadaKedabra = new AvadaKedavra("Imperio", 100, 0);
+        maldiciones.add(avadaKedabra);
+    }
+
+    public Transporte elegirHuida(String nombre) {
         for (Personaje p : DueloMagico.catalogoPersonajes) {
             if ((p instanceof IHacerMagia)) {
                 for (Transporte t : transportes) {
-                    if (t.nombre.equals(nombre));
-                        return t;
+                    if (t.nombre.equals(nombre))
+                        ;
+                    return t;
                 }
                 return null;
             }
-        }return null;
+        }
+        return null;
     }
 
 }
