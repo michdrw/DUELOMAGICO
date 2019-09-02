@@ -18,15 +18,14 @@ public class Wizard extends Persona implements IHacerMagia {
 
     public int energiaMagica;
     private Poder poderInicial;
-    private Artefacto artefacto;
+    private Artefacto artefactoElegido;
     private Hechizo hechizoElegido;
     public boolean esOscuro;
 
-    public Wizard(String nombre, int salud, int energiaMagica, Poder poderInicial, Artefacto artefacto, boolean esOscuro) {
+    public Wizard(String nombre, int salud, int energiaMagica, Poder poderInicial, boolean esOscuro) {
         super(nombre, salud);
         this.energiaMagica = energiaMagica;
         this.poderInicial = poderInicial;
-        this.artefacto = artefacto;
         this.esOscuro = esOscuro;
     }
 
@@ -42,6 +41,7 @@ public class Wizard extends Persona implements IHacerMagia {
     }
 
     public void atacar(Personaje enemigo, Hechizo hechizo) {
+       this.energiaMagica = energiaMagica -10;
         if (esOscuro == false) {
             
             if (hechizoElegido.nombre.equals("Crucio") || hechizoElegido.nombre.equals("Imperio") || hechizoElegido.nombre.equals("Avada Kedavra")) {
@@ -84,13 +84,16 @@ public class Wizard extends Persona implements IHacerMagia {
     }
 
     public Artefacto getArtefacto() {
-
-        return this.artefacto;
+        int size = DueloMagico.artefactos.size();
+        Random rand = new Random();
+        int artefactoRandom = rand.nextInt(size);
+        this.artefactoElegido = DueloMagico.artefactos.get(artefactoRandom);
+        return this.artefactoElegido;
 
     }
 
     public void setArtefacto(Artefacto artefacto) {
-        this.artefacto = artefacto;
+        this.artefactoElegido = artefacto;
     }
 
     /*public boolean esOscuro() {

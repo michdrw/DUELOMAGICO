@@ -21,11 +21,11 @@ public class Elfo extends Criatura implements IHacerMagia {
     private Hechizo hechizoElegido;
 
 
-    public Elfo(String nombre, int salud, int energiaMagica, Poder poderInicial, Artefacto artefacto) {
+    public Elfo(String nombre, int salud, int energiaMagica, Poder poderInicial) {
         super(nombre, salud);
         this.energiaMagica = energiaMagica;
         this.poderInicial = poderInicial;
-        this.artefacto = artefacto;
+        
     }
 
     private List<Hechizo> hechizos = new ArrayList<Hechizo>();

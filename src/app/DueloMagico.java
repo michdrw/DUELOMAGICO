@@ -68,28 +68,28 @@ public class DueloMagico {
     }
 
     public static void agregarWizard() {
-        Wizard mago = new Wizard("George Weasley", 1000, 100, DueloMagico.poderes.get(0), DueloMagico.artefactos.get(2), false);
+        Wizard mago = new Wizard("George Weasley", 1000, 100, DueloMagico.poderes.get(0), false);
 
         catalogoPersonajes.add(mago);
 
-        mago = new Wizard("Fred Weasley", 1000, 100, DueloMagico.poderes.get(1), DueloMagico.artefactos.get(1), false);
+        mago = new Wizard("Fred Weasley", 1000, 100, DueloMagico.poderes.get(1), false);
 
         catalogoPersonajes.add(mago);
 
-        mago = new Wizard("Lucius Malfoy", 1000, 100, DueloMagico.poderes.get(0), DueloMagico.artefactos.get(2), true);
+        mago = new Wizard("Lucius Malfoy", 1000, 100, DueloMagico.poderes.get(0), true);
 
         catalogoPersonajes.add(mago);
 
-        mago = new Wizard("Severus Snape", 1000, 100, DueloMagico.poderes.get(0), DueloMagico.artefactos.get(2), true);
+        mago = new Wizard("Severus Snape", 1000, 100, DueloMagico.poderes.get(0), true);
 
         catalogoPersonajes.add(mago);
     }
 
     public static void agregarElfo() {
-        Elfo duende = new Elfo("Dobby", 1000, 100, DueloMagico.poderes.get(1), DueloMagico.artefactos.get(2));
+        Elfo duende = new Elfo("Dobby", 1000, 100, DueloMagico.poderes.get(1));
         catalogoPersonajes.add(duende);
 
-        duende = new Elfo("Kreacher", 1000, 100, DueloMagico.poderes.get(0), DueloMagico.artefactos.get(2));
+        duende = new Elfo("Kreacher", 1000, 100, DueloMagico.poderes.get(0));
 
         catalogoPersonajes.add(duende);
 
