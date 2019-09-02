@@ -14,16 +14,17 @@ public class App {
                 DueloMagico.inicializarCatalogoHechizos();
                 DueloMagico.inicializarCatalogoPersonajes();
                 
+                
+                Personaje personajeElegido = (Personaje) DueloMagico.elegirPersonaje1("Fred Weasley");
 
-                Personaje personajeElegido = DueloMagico.elegirPersonaje("Fred Weasley");
-                Personaje enemigoElegido = DueloMagico.elegirPersonaje("George Weasley");
+                Personaje enemigoElegido = (Personaje)  DueloMagico.elegirPersonaje2("George Weasley");
 
+                System.out.println("Que comience el duelo: ");
                 while (personajeElegido.salud > 0 && enemigoElegido.salud > 0) {
-                        // for (Personaje p : DueloMagico) {
-                        if (personajeElegido instanceof Wizard) {
+                        if (personajeElegido instanceof Wizard && ((Wizard) personajeElegido).energiaMagica > 0)  {
                                 ((IHacerMagia) personajeElegido).atacar(enemigoElegido,((Wizard) personajeElegido).getHechizo());
                         }
-                        if (enemigoElegido instanceof Wizard) {
+                        if (enemigoElegido instanceof Wizard && ((Wizard) enemigoElegido).energiaMagica > 0) {
                                 ((IHacerMagia) enemigoElegido).atacar(personajeElegido,((Wizard) enemigoElegido).getHechizo());
                         }
 

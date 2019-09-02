@@ -16,7 +16,7 @@ import app.poderes.Poder;
  */
 public class Wizard extends Persona implements IHacerMagia {
 
-    private int energiaMagica;
+    public int energiaMagica;
     private Poder poderInicial;
     private Artefacto artefacto;
     private Hechizo hechizoElegido;
@@ -40,14 +40,16 @@ public class Wizard extends Persona implements IHacerMagia {
     }
 
     public void atacar(Personaje enemigo, Hechizo hechizo) {
-
+        this.energiaMagica = energiaMagica - 10;
         enemigo.salud -= hechizo.nivelDaño;
-        this.salud += hechizo.nivelCuracion;
-        this.energiaMagica -= energiaMagica;
+        if (this.salud < 100 && hechizoElegido.nombre.equals("Vulnera Sanentur") || this.salud < 100 && hechizoElegido.nombre.equals("Reparifors")) {
+            this.salud += hechizo.nivelCuracion;
+        }
         System.out.println("El hechizo utilizado fue " + this.hechizoElegido.nombre + ".");
         System.out.println("La salud de " + this.nombre + " es " + this.salud + ".");
-        System.out.println("La salud de " + enemigo.nombre + " es" + enemigo.salud + ".");
+        System.out.println("La salud de " + enemigo.nombre + " es " + enemigo.salud + ".");
         System.out.println("La energia magica de " + this.nombre + " es " + this.energiaMagica + ".");
+       
     }
 
     public void atacar(Personaje enemigo, String nombreHechizo) {
