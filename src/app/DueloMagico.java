@@ -14,6 +14,10 @@ import app.hechizos.curacion.Reparifors;
 import app.hechizos.curacion.VulneraSanentur;
 import app.hechizos.defensa.CaveInmicum;
 import app.hechizos.defensa.Protego;
+import app.hechizos.maldicion.AvadaKedavra;
+import app.hechizos.maldicion.Crucio;
+import app.hechizos.maldicion.Imperio;
+import app.hechizos.maldicion.Maldicion;
 import app.hechizos.ocio.Alohomora;
 import app.hechizos.ocio.WingardiumLeviosa;
 import app.interfaces.IHacerMagia;
@@ -66,28 +70,29 @@ public class DueloMagico {
     }
 
     public static void agregarWizard() {
-        Wizard mago = new Wizard("George Weasley", 100, 100, DueloMagico.poderes.get(0), DueloMagico.artefactos.get(2));
+        Wizard mago = new Wizard("George Weasley", 1000, 100, DueloMagico.poderes.get(0),
+                DueloMagico.artefactos.get(2));
 
         catalogoPersonajes.add(mago);
 
-        mago = new Wizard("Fred Weasley", 100, 100, DueloMagico.poderes.get(1), DueloMagico.artefactos.get(1));
+        mago = new Wizard("Fred Weasley", 1000, 100, DueloMagico.poderes.get(1), DueloMagico.artefactos.get(1));
 
         catalogoPersonajes.add(mago);
 
-        mago = new Wizard("Lucius Malfoy", 100, 100, DueloMagico.poderes.get(0), DueloMagico.artefactos.get(2));
+        mago = new Wizard("Lucius Malfoy", 1000, 100, DueloMagico.poderes.get(0), DueloMagico.artefactos.get(2));
 
         catalogoPersonajes.add(mago);
 
-        mago = new Wizard("Severus Snape", 100, 100, DueloMagico.poderes.get(0), DueloMagico.artefactos.get(2));
+        mago = new Wizard("Severus Snape", 1000, 100, DueloMagico.poderes.get(0), DueloMagico.artefactos.get(2));
 
         catalogoPersonajes.add(mago);
     }
 
     public static void agregarElfo() {
-        Elfo duende = new Elfo("Dobby", 100, 100, DueloMagico.poderes.get(1), DueloMagico.artefactos.get(2));
+        Elfo duende = new Elfo("Dobby", 1000, 100, DueloMagico.poderes.get(1), DueloMagico.artefactos.get(2));
         catalogoPersonajes.add(duende);
 
-        duende = new Elfo("Kreacher", 100, 100, DueloMagico.poderes.get(0), DueloMagico.artefactos.get(2));
+        duende = new Elfo("Kreacher", 1000, 100, DueloMagico.poderes.get(0), DueloMagico.artefactos.get(2));
 
         catalogoPersonajes.add(duende);
 
