@@ -183,9 +183,9 @@ public class DueloMagico {
         artefactos.add(varitaSauco);
     }
 
-    public void setArtefactos(List<Artefacto> artefactos) {
+    /*public void setArtefactos(List<Artefacto> artefactos) {
         this.artefactos = artefactos;
-    }
+    }*/
 
     public Artefacto elegirArtefacto(String nombre) {
         for (Personaje p : DueloMagico.catalogoPersonajes) {

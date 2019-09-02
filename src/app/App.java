@@ -1,39 +1,37 @@
 package app;
 
-import app.hechizos.Hechizo;
-import app.hechizos.ataque.SectumSempra;
 import app.interfaces.IHacerMagia;
 import app.personajes.Personaje;
 import app.personajes.persona.Wizard;
 
 public class App {
 
-    public static void main(String[] args) throws Exception {
+        public static void main(String[] args) throws Exception {
 
-        System.out.println("Inicializando Catalogos");
-        DueloMagico.inicializarCatalogoPersonajes();
-        DueloMagico.agregarPoder();
-        DueloMagico.agregarArtefactos();
-        DueloMagico.inicializarCatalogoHechizos();
+                System.out.println("Inicializando Catalogos");
+                DueloMagico.inicializarCatalogoPersonajes();
+                DueloMagico.agregarPoder();
+                DueloMagico.agregarArtefactos();
+                DueloMagico.inicializarCatalogoHechizos();
 
-        Personaje personajeElegido = DueloMagico.elegirPersonaje("Fred Weasley");
-        Personaje enemigoElegido = DueloMagico.elegirPersonaje("George Weasley");
+                Personaje personajeElegido = DueloMagico.elegirPersonaje("Fred Weasley");
+                Personaje enemigoElegido = DueloMagico.elegirPersonaje("George Weasley");
 
-        while (personajeElegido.salud > 0) {
-           // for (Personaje p : DueloMagico) {
-                if (personajeElegido instanceof Wizard) {
-                        personajeElegido.atacar(enemigoElegido, personajeElegido.getHechizo());
-                }
-                if (enemigoElegido instanceof Wizard) {
-                        enemigoElegido.atacar(personajeElegido, enemigoElegido.getHechizo());
-                }
-            
-            System.out.println("La salud de " + ((Personaje) personajeElegido).nombre + " es "
-                    + ((Personaje) personajeElegido).salud);
-            System.out.println(
-                    "La salud de " + ((Personaje) enemigoElegido).nombre + " es " + ((Personaje) enemigoElegido).salud);
-                }
-        
+                while (personajeElegido.salud > 0) {
+                        // for (Personaje p : DueloMagico) {
+                        if (personajeElegido instanceof Wizard) {
+                                ((IHacerMagia) personajeElegido).atacar(enemigoElegido,((Wizard) personajeElegido).getHechizo());
+                        }
+                        if (enemigoElegido instanceof Wizard) {
+                                ((IHacerMagia) enemigoElegido).atacar(personajeElegido,((Wizard) enemigoElegido).getHechizo());
+                        }
+
+                        System.out.println("La salud de " + ((Personaje) personajeElegido).nombre + " es "
+                                        + ((Personaje) personajeElegido).salud);
+                        System.out.println("La salud de " + ((Personaje) enemigoElegido).nombre + " es "
+                                        + ((Personaje) enemigoElegido).salud);
+                } 
+
         }
 
         /*
@@ -63,4 +61,4 @@ public class App {
          * 
          * }
          */
-    }
+}

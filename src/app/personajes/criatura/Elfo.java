@@ -42,6 +42,7 @@ public class Elfo extends Criatura implements IHacerMagia {
     public void atacar(Personaje enemigo, Hechizo hechizo) {
         enemigo.salud -= hechizo.nivelDaño; 
         enemigo.salud += hechizo.nivelCuracion;
+        this.energiaMagica -= energiaMagica;
     }
 
     public void atacar(Personaje enemigo, String nombreHechizo) {

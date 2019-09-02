@@ -28,4 +28,5 @@ public class Personaje {
         this.salud = salud;
     }
 
+
 }

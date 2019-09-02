@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import app.DueloMagico;
 import app.artefactos.Artefacto;
 import app.hechizos.Hechizo;
 import app.interfaces.IHacerMagia;
@@ -43,7 +44,7 @@ public class Wizard extends Persona implements IHacerMagia {
     public void atacar(Personaje enemigo, Hechizo hechizo) {
        enemigo.salud -= hechizo.nivelDaño;
        enemigo.salud += hechizo.nivelCuracion;
-       /*System.out.println("La salud del enemigo es " + enemigo.salud);*/
+       this.energiaMagica -= energiaMagica;
     }
 
     public void atacar(Personaje enemigo, String nombreHechizo) {
@@ -55,11 +56,14 @@ public class Wizard extends Persona implements IHacerMagia {
     }
 
     public Hechizo getHechizo() {
-        int size = this.hechizos.size();
+        int size = DueloMagico.hechizos.size();
         Random rand = new Random();
         int hechizoRandom = rand.nextInt(size);
-        this.hechizoElegido = this.hechizos.get(hechizoRandom);
+        this.hechizoElegido = DueloMagico.hechizos.get(hechizoRandom);
+        
         return this.hechizoElegido;
+        
+
     }
 
     public void setHechizo(Hechizo hechizo) {
