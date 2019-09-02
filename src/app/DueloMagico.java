@@ -6,6 +6,7 @@ import java.util.List;
 import app.artefactos.Artefacto;
 import app.artefactos.CapaInvisible;
 import app.artefactos.Horrocrux;
+import app.artefactos.PiedraResurreccion;
 import app.artefactos.VaritaSauco;
 import app.hechizos.Hechizo;
 import app.hechizos.ataque.PetrificusTotalus;
@@ -135,11 +136,13 @@ public class DueloMagico {
         Horrocrux horrocrux = new Horrocrux("Horrocrux", 100, 0 );
         artefactos.add(horrocrux);
 
-        CapaInvisible capaInvisible = new CapaInvisible("Capa Invisible", 50, 50);
+        CapaInvisible capaInvisible = new CapaInvisible("Capa de la Invisibilidad", 50, 50);
         artefactos.add(capaInvisible);
 
-        VaritaSauco varitaSauco = new VaritaSauco("VaritaSauco", 100, 100);
+        VaritaSauco varitaSauco = new VaritaSauco("Varita de Sauco", 100, 100);
         artefactos.add(varitaSauco);
+
+        PiedraResurreccion piedraResurreccion =new PiedraResurreccion("Piedra de la Resurreción", 0, 100);
     }
 
 
