@@ -132,16 +132,13 @@ public class DueloMagico {
     }
 
     public static void agregarArtefactos() {
-        Horrocrux horrocrux = new Horrocrux();
-        horrocrux.nombre = "Horrocrux";
+        Horrocrux horrocrux = new Horrocrux("Horrocrux", 100, 0 );
         artefactos.add(horrocrux);
 
-        CapaInvisible capaInvisible = new CapaInvisible();
-        capaInvisible.nombre = "Capa Invisible";
+        CapaInvisible capaInvisible = new CapaInvisible("Capa Invisible", 50, 50);
         artefactos.add(capaInvisible);
 
-        VaritaSauco varitaSauco = new VaritaSauco();
-        varitaSauco.nombre = "VaritaSauco";
+        VaritaSauco varitaSauco = new VaritaSauco("VaritaSauco", 100, 100);
         artefactos.add(varitaSauco);
     }
 
