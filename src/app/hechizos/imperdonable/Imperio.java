@@ -1,9 +1,9 @@
-package app.hechizos.maldicion;
+package app.hechizos.imperdonable;
 
 /**
  * Imperio
  */
-public class Imperio extends Maldicion{
+public class Imperio extends HechizoImperdonable{
 
     public Imperio(String nombre, double nivelDaño, double nivelCuracion) {
         super(nombre, nivelDaño, nivelCuracion);

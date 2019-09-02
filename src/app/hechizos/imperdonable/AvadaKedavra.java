@@ -1,9 +1,9 @@
-package app.hechizos.maldicion;
+package app.hechizos.imperdonable;
 
 /**
  * AvadaKedavra
  */
-public class AvadaKedavra extends Maldicion{
+public class AvadaKedavra extends HechizoImperdonable{
 
     public AvadaKedavra(String nombre, double nivelDaño, double nivelCuracion) {
         super(nombre, nivelDaño, nivelCuracion);

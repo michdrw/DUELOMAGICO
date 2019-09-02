@@ -43,22 +43,24 @@ public class Wizard extends Persona implements IHacerMagia {
     public void atacar(Personaje enemigo, Hechizo hechizo) {
         this.energiaMagica = energiaMagica - 10;
         if (esOscuro = false) {
-            if ( hechizoElegido.nombre.equals("Crucio") ||  hechizoElegido.nombre.equals("Imperio") ||  hechizoElegido.nombre.equals("Avada Kedavra")) {
-            enemigo.salud = enemigo.salud;
-            System.out.println(this.nombre + " eligió " + hechizoElegido.nombre + " sin ser mago oscuro, no causa daño."); 
-            } else {enemigo.salud -= hechizo.nivelDaño;
+            if (hechizoElegido.nombre.equals("Crucio") || hechizoElegido.nombre.equals("Imperio") || hechizoElegido.nombre.equals("Avada Kedavra")) {
+               System.out.println(this.nombre + " eligió " + hechizoElegido.nombre + " sin ser mago oscuro, no causa daño.");
+               return;        
+            } else {
+                enemigo.salud -= hechizo.nivelDaño;
             }
         } else {
             enemigo.salud -= hechizo.nivelDaño;
         }
-        if (this.salud < 100 && hechizoElegido.nombre.equals("Vulnera Sanentur") || this.salud < 100 && hechizoElegido.nombre.equals("Reparifors")) {
+        if (this.salud < 1000 && hechizoElegido.nombre.equals("Vulnera Sanentur")
+                || this.salud < 1000 && hechizoElegido.nombre.equals("Reparifors")) {
             this.salud += hechizo.nivelCuracion;
         }
         System.out.println("El hechizo utilizado fue " + this.hechizoElegido.nombre + ".");
         System.out.println("La salud de " + this.nombre + " es " + this.salud + ".");
         System.out.println("La salud de " + enemigo.nombre + " es " + enemigo.salud + ".");
         System.out.println("La energia magica de " + this.nombre + " es " + this.energiaMagica + ".");
-       
+
     }
 
     public void atacar(Personaje enemigo, String nombreHechizo) {
@@ -84,7 +86,7 @@ public class Wizard extends Persona implements IHacerMagia {
     }
 
     public Artefacto getArtefacto() {
-        
+
         return this.artefacto;
 
     }

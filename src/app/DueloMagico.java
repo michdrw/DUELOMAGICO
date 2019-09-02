@@ -14,10 +14,9 @@ import app.hechizos.curacion.Reparifors;
 import app.hechizos.curacion.VulneraSanentur;
 import app.hechizos.defensa.CaveInmicum;
 import app.hechizos.defensa.Protego;
-import app.hechizos.maldicion.AvadaKedavra;
-import app.hechizos.maldicion.Crucio;
-import app.hechizos.maldicion.Imperio;
-import app.hechizos.maldicion.Maldicion;
+import app.hechizos.imperdonable.AvadaKedavra;
+import app.hechizos.imperdonable.Crucio;
+import app.hechizos.imperdonable.Imperio;
 import app.hechizos.ocio.Alohomora;
 import app.hechizos.ocio.WingardiumLeviosa;
 import app.interfaces.IHacerMagia;
@@ -41,7 +40,6 @@ public class DueloMagico {
     public static List<Hechizo> hechizos = new ArrayList<Hechizo>();
     public static List<Artefacto> artefactos = new ArrayList<Artefacto>();
     public static List<Transporte> transportes = new ArrayList<Transporte>();
-    public static List<Maldicion> maldiciones = new ArrayList<Maldicion>();
 
     public static Personaje elegirPersonaje1(String nombre) {
         for (Personaje p : DueloMagico.catalogoPersonajes) {
@@ -171,7 +169,7 @@ public class DueloMagico {
         DueloMagico.agregarHechizoCuracion();
         DueloMagico.agregarHechizoDefensa();
         DueloMagico.agregarHechizoOcio();
-        DueloMagico.agregarMaldicionImperdonable();
+        DueloMagico.agregarHechizoImperdonable();
     }
 
     public static void agregarHechizoAtaque() {
@@ -212,16 +210,16 @@ public class DueloMagico {
         hechizos.add(wingardiumLeviosa);
     }
 
-    public static void agregarMaldicionImperdonable() {
+    public static void agregarHechizoImperdonable() {
 
         Crucio crucio = new Crucio("Crucio", 500, 0);
-        maldiciones.add(crucio);
+        hechizos.add(crucio);
 
         Imperio imperio = new Imperio("Imperio", 300, 0);
-        maldiciones.add(imperio);
+        hechizos.add(imperio);
 
         AvadaKedavra avadaKedabra = new AvadaKedavra("Avada Kedavra", 1000, 0);
-        maldiciones.add(avadaKedabra);
+        hechizos.add(avadaKedabra);
     }
 
     public Transporte elegirHuida(String nombre) {
