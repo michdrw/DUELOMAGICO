@@ -22,4 +22,6 @@ public interface IHacerMagia {
 
     public Artefacto getArtefacto();
 
+    public Hechizo getHechizo();
+
 }

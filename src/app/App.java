@@ -9,15 +9,16 @@ public class App {
         public static void main(String[] args) throws Exception {
 
                 System.out.println("Inicializando Catalogos");
-                DueloMagico.inicializarCatalogoPersonajes();
                 DueloMagico.agregarPoder();
                 DueloMagico.agregarArtefactos();
                 DueloMagico.inicializarCatalogoHechizos();
+                DueloMagico.inicializarCatalogoPersonajes();
+                
 
                 Personaje personajeElegido = DueloMagico.elegirPersonaje("Fred Weasley");
                 Personaje enemigoElegido = DueloMagico.elegirPersonaje("George Weasley");
 
-                while (personajeElegido.salud > 0) {
+                while (personajeElegido.salud > 0 && enemigoElegido.salud > 0) {
                         // for (Personaje p : DueloMagico) {
                         if (personajeElegido instanceof Wizard) {
                                 ((IHacerMagia) personajeElegido).atacar(enemigoElegido,((Wizard) personajeElegido).getHechizo());
@@ -26,10 +27,6 @@ public class App {
                                 ((IHacerMagia) enemigoElegido).atacar(personajeElegido,((Wizard) enemigoElegido).getHechizo());
                         }
 
-                        System.out.println("La salud de " + ((Personaje) personajeElegido).nombre + " es "
-                                        + ((Personaje) personajeElegido).salud);
-                        System.out.println("La salud de " + ((Personaje) enemigoElegido).nombre + " es "
-                                        + ((Personaje) enemigoElegido).salud);
                 } 
 
         }

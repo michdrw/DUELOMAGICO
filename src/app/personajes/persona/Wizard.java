@@ -21,14 +21,12 @@ public class Wizard extends Persona implements IHacerMagia {
     private Artefacto artefacto;
     private Hechizo hechizoElegido;
 
-     public Wizard(String nombre, int salud, int energiaMagica, Poder poderInicial, Artefacto artefacto) {
-        super (nombre, salud);
+    public Wizard(String nombre, int salud, int energiaMagica, Poder poderInicial, Artefacto artefacto) {
+        super(nombre, salud);
         this.energiaMagica = energiaMagica;
         this.poderInicial = poderInicial;
         this.artefacto = artefacto;
     }
-
-
 
     public List<Hechizo> hechizos = new ArrayList<Hechizo>();
 
@@ -42,9 +40,14 @@ public class Wizard extends Persona implements IHacerMagia {
     }
 
     public void atacar(Personaje enemigo, Hechizo hechizo) {
-       enemigo.salud -= hechizo.nivelDaño;
-       enemigo.salud += hechizo.nivelCuracion;
-       this.energiaMagica -= energiaMagica;
+
+        enemigo.salud -= hechizo.nivelDaño;
+        this.salud += hechizo.nivelCuracion;
+        this.energiaMagica -= energiaMagica;
+        System.out.println("El hechizo utilizado fue " + this.hechizoElegido.nombre + ".");
+        System.out.println("La salud de " + this.nombre + " es " + this.salud + ".");
+        System.out.println("La salud de " + enemigo.nombre + " es" + enemigo.salud + ".");
+        System.out.println("La energia magica de " + this.nombre + " es " + this.energiaMagica + ".");
     }
 
     public void atacar(Personaje enemigo, String nombreHechizo) {
@@ -60,9 +63,7 @@ public class Wizard extends Persona implements IHacerMagia {
         Random rand = new Random();
         int hechizoRandom = rand.nextInt(size);
         this.hechizoElegido = DueloMagico.hechizos.get(hechizoRandom);
-        
         return this.hechizoElegido;
-        
 
     }
 

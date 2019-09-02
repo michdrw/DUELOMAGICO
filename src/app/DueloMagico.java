@@ -8,17 +8,13 @@ import app.artefactos.CapaInvisible;
 import app.artefactos.Horrocrux;
 import app.artefactos.VaritaSauco;
 import app.hechizos.Hechizo;
-import app.hechizos.ataque.HechizoAtaque;
 import app.hechizos.ataque.PetrificusTotalus;
 import app.hechizos.ataque.SectumSempra;
-import app.hechizos.curacion.HechizoCuracion;
 import app.hechizos.curacion.Reparifors;
 import app.hechizos.curacion.VulneraSanentur;
 import app.hechizos.defensa.CaveInmicum;
-import app.hechizos.defensa.HechizoDefensa;
 import app.hechizos.defensa.Protego;
 import app.hechizos.ocio.Alohomora;
-import app.hechizos.ocio.HechizoOcio;
 import app.hechizos.ocio.WingardiumLeviosa;
 import app.interfaces.IHacerMagia;
 import app.personajes.Personaje;
@@ -37,17 +33,10 @@ import app.transporte.Transporte;
 public class DueloMagico {
 
     public static List<Personaje> catalogoPersonajes = new ArrayList<Personaje>();
-    public static List<Wizard> wizards = new ArrayList<Wizard>();
-    public static List<Elfo> elfos = new ArrayList<Elfo>();
-    public static List<Muggle> nomags = new ArrayList<Muggle>();
     public static List<Poder> poderes = new ArrayList<Poder>();
     public static List<Hechizo> hechizos = new ArrayList<Hechizo>();
     public static List<Artefacto> artefactos = new ArrayList<Artefacto>();
     public static List<Transporte> transportes = new ArrayList<Transporte>();
-    public static List<HechizoAtaque> atacadores = new ArrayList<HechizoAtaque>();
-    public static List<HechizoCuracion> curadores = new ArrayList<HechizoCuracion>();
-    public static List<HechizoDefensa> defensores = new ArrayList<HechizoDefensa>();
-    public static List<HechizoOcio> ociadores = new ArrayList<HechizoOcio>();
 
     public static Personaje elegirPersonaje(String nombre) {
         for (Personaje p : DueloMagico.catalogoPersonajes) {
@@ -58,6 +47,8 @@ public class DueloMagico {
         return null;
     }
 
+    
+
     public static void inicializarCatalogoPersonajes() {
         DueloMagico.agregarWizard();
         DueloMagico.agregarElfo();
@@ -67,75 +58,27 @@ public class DueloMagico {
     public static void agregarWizard() {
         Wizard mago = new Wizard ("George Weasley", 100, 100, DueloMagico.poderes.get(0), DueloMagico.artefactos.get(2));
 
-        wizards.add(mago);
+        catalogoPersonajes.add(mago);
 
         mago = new Wizard("Fred Weasley", 100, 100, DueloMagico.poderes.get(1), DueloMagico.artefactos.get(1));
 
-        wizards.add(mago);
-
-        DueloMagico.catalogoPersonajes.add((Personaje) wizards);
+        catalogoPersonajes.add(mago);
 
     }
 
     public static void agregarElfo() {
-        Elfo duende = new Elfo("Dobby", 100, 100, DueloMagico.poderes.get(2), DueloMagico.artefactos.get(4));
-        elfos.add(duende);
+        Elfo duende = new Elfo("Dobby", 100, 100, DueloMagico.poderes.get(1), DueloMagico.artefactos.get(2));
+        catalogoPersonajes.add(duende);
 
         duende = new Elfo("Kreacher", 100,100, DueloMagico.poderes.get(0),DueloMagico.artefactos.get(2));
 
-        elfos.add(duende);
-        DueloMagico.catalogoPersonajes.add((Personaje) elfos);
+        catalogoPersonajes.add(duende);
+        
     }
 
     public static void agregarMuggle() {
         Muggle nomag = new Muggle("Dudley Dursley", 100);
-        nomags.add(nomag);
-        DueloMagico.catalogoPersonajes.add((Personaje) nomags);
-    }
-
-    public static void inicializarCatalogoHechizos() {
-        DueloMagico.agregarHechizoAtaque();
-        DueloMagico.agregarHechizoCuracion();
-        DueloMagico.agregarHechizoDefensa();
-        DueloMagico.agregarHechizoOcio();
-    }
-
-    public static void agregarHechizoAtaque() {
-
-        SectumSempra sectumSempra= new SectumSempra ("Sectum Sempra", 90, 0);
-        hechizos.add(sectumSempra);
-
-        PetrificusTotalus  petrificusTotalus = new PetrificusTotalus( "Petrificus Totalus", 30, 0);
-        hechizos.add(petrificusTotalus);
-
-    }
-
-    public static void agregarHechizoCuracion() {
-
-        VulneraSanentur vulneraSanentur = new VulneraSanentur ("Vulnera Sanentur", 0, 80);
-        hechizos.add(vulneraSanentur);
-
-        Reparifors reparifors = new Reparifors("Reparifors", 0, 50);
-        hechizos.add(reparifors);
-    }
-
-    public static void agregarHechizoDefensa() {
-
-        CaveInmicum caveInmicum = new CaveInmicum("Cave Inmicum", 0, 0);
-        hechizos.add(caveInmicum);
-
-        Protego protego = new Protego("Protego", 0, 0);
-        hechizos.add(protego);
-
-    }
-
-    public static void agregarHechizoOcio() {
-
-        Alohomora alohomora = new Alohomora("Alohomora", 0, 0);
-        hechizos.add(alohomora);
-
-        WingardiumLeviosa wingardiumLeviosa = new WingardiumLeviosa("Wingardium Leviosa", 0, 0);
-        hechizos.add(wingardiumLeviosa);
+        catalogoPersonajes.add(nomag);
     }
 
     public static void agregarPoder() {
@@ -199,6 +142,54 @@ public class DueloMagico {
         }
         return null;
     }
+
+
+    public static void inicializarCatalogoHechizos() {
+        DueloMagico.agregarHechizoAtaque();
+        DueloMagico.agregarHechizoCuracion();
+        DueloMagico.agregarHechizoDefensa();
+        DueloMagico.agregarHechizoOcio();
+    }
+
+    public static void agregarHechizoAtaque() {
+
+        SectumSempra sectumSempra= new SectumSempra ("Sectum Sempra", 90, 0);
+        hechizos.add(sectumSempra);
+
+        PetrificusTotalus  petrificusTotalus = new PetrificusTotalus( "Petrificus Totalus", 30, 0);
+        hechizos.add(petrificusTotalus);
+
+    }
+
+    public static void agregarHechizoCuracion() {
+
+        VulneraSanentur vulneraSanentur = new VulneraSanentur ("Vulnera Sanentur", 0, 80);
+        hechizos.add(vulneraSanentur);
+
+        Reparifors reparifors = new Reparifors("Reparifors", 0, 50);
+        hechizos.add(reparifors);
+    }
+
+    public static void agregarHechizoDefensa() {
+
+        CaveInmicum caveInmicum = new CaveInmicum("Cave Inmicum", 0, 0);
+        hechizos.add(caveInmicum);
+
+        Protego protego = new Protego("Protego", 0, 0);
+        hechizos.add(protego);
+
+    }
+
+    public static void agregarHechizoOcio() {
+
+        Alohomora alohomora = new Alohomora("Alohomora", 0, 0);
+        hechizos.add(alohomora);
+
+        WingardiumLeviosa wingardiumLeviosa = new WingardiumLeviosa("Wingardium Leviosa", 0, 0);
+        hechizos.add(wingardiumLeviosa);
+    }
+
+    
 
     public Transporte elegirHuida(String nombre){
         for (Personaje p : DueloMagico.catalogoPersonajes) {
