@@ -214,13 +214,13 @@ public class DueloMagico {
 
     public static void agregarMaldicionImperdonable() {
 
-        Crucio crucio = new Crucio("Crucio", 100, 0);
+        Crucio crucio = new Crucio("Crucio", 500, 0);
         maldiciones.add(crucio);
 
-        Imperio imperio = new Imperio("Imperio", 100, 0);
+        Imperio imperio = new Imperio("Imperio", 300, 0);
         maldiciones.add(imperio);
 
-        AvadaKedavra avadaKedabra = new AvadaKedavra("Imperio", 100, 0);
+        AvadaKedavra avadaKedabra = new AvadaKedavra("Avada Kedavra", 1000, 0);
         maldiciones.add(avadaKedabra);
     }
 
