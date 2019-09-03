@@ -9,7 +9,9 @@ public class Horrocrux extends Artefacto {
         super(nombre, amplificadorDaño, amplificadorCuracion);
     }
 
-
+    public Horrocrux() {
+        super("Horrocrux", 2, 0);
+    }
 
 	
 }

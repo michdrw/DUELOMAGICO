@@ -29,6 +29,8 @@ import app.poderes.Invisibilidad;
 import app.poderes.Metamorfosis;
 import app.poderes.ParselTongue;
 import app.poderes.Poder;
+import app.transporte.Escoba;
+import app.transporte.HogwartsExpress;
 import app.transporte.Transporte;
 
 /**
@@ -134,10 +136,10 @@ public class DueloMagico {
         Horrocrux horrocrux = new Horrocrux("Horrocrux", 2, 0 );
         artefactos.add(horrocrux);
 
-        CapaInvisible capaInvisible = new CapaInvisible("Capa de la Invisibilidad", 1.5, 1.5);
+        CapaInvisible capaInvisible = new CapaInvisible("Capa de la Invisibilidad", 0, 2);
         artefactos.add(capaInvisible);
 
-        VaritaSauco varitaSauco = new VaritaSauco("Varita de Sauco", 2, 2);
+        VaritaSauco varitaSauco = new VaritaSauco();
         artefactos.add(varitaSauco);
 
         PiedraResurreccion piedraResurreccion =new PiedraResurreccion("Piedra de la Resurreción", 0, 2);
@@ -151,6 +153,28 @@ public class DueloMagico {
                 for (Artefacto a : artefactos) {
                     if (a.nombre.equals(nombre))
                         return a;
+                }
+                return null;
+            }
+        }
+        return null;
+    }
+
+    public static void agregarTransportes() {
+        HogwartsExpress hogwartsExpress = new HogwartsExpress(" el Expreso Hogwarts");
+        transportes.add(hogwartsExpress);
+
+        Escoba escoba = new Escoba("una Escoba voladora");
+        transportes.add(escoba);
+    }
+
+    public Transporte elegirHuida(String nombre) {
+        for (Personaje p : DueloMagico.catalogoPersonajes) {
+            if ((p instanceof IHacerMagia)) {
+                for (Transporte t : DueloMagico.transportes) {
+                    if (t.nombre.equals(nombre))
+                        ;
+                    return t;
                 }
                 return null;
             }
@@ -216,18 +240,6 @@ public class DueloMagico {
         hechizos.add(avadaKedabra);
     }
 
-    public Transporte elegirHuida(String nombre) {
-        for (Personaje p : DueloMagico.catalogoPersonajes) {
-            if ((p instanceof IHacerMagia)) {
-                for (Transporte t : transportes) {
-                    if (t.nombre.equals(nombre))
-                        ;
-                    return t;
-                }
-                return null;
-            }
-        }
-        return null;
-    }
+
 
 }

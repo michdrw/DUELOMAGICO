@@ -6,6 +6,7 @@ package app.personajes;
 public class Personaje {
     public double salud;
     public String nombre;
+    public boolean estaVivo;
 
     public double getSalud() {
         return salud;

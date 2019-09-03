@@ -18,6 +18,9 @@ public class VaritaSauco extends Varita implements IReliquiaMuerte {
         super(nombre, amplificadorDaño, amplificadorCuracion);
     }
 
-    
+    public VaritaSauco() {
+        super("Varita de Sauco", 2, 2);
+    }
+
 
 }

@@ -16,5 +16,9 @@ public class PiedraResurreccion extends Artefacto implements IReliquiaMuerte {
         super(nombre, amplificadorDaño, amplificadorCuracion);
     }
 
+    public PiedraResurreccion() {
+        super("Piedra de la Resurreción", 0, 2);
+    }
+
     
 }
