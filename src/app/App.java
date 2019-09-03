@@ -1,5 +1,6 @@
 package app;
 
+import app.artefactos.Artefacto;
 import app.hechizos.Hechizo;
 import app.interfaces.IHacerMagia;
 import app.personajes.Personaje;
@@ -16,8 +17,10 @@ public class App {
                 DueloMagico.inicializarCatalogoPersonajes();
 
                 Personaje personajeElegido = (Personaje) DueloMagico.elegirPersonaje1("Lucius Malfoy");
-
                 Personaje enemigoElegido = (Personaje) DueloMagico.elegirPersonaje2("George Weasley");
+
+                Artefacto artefactoPersonaje = ((Wizard) personajeElegido).getArtefacto();
+                Artefacto artefactoEnemigo = ((Wizard) enemigoElegido).getArtefacto();
 
                 System.out.println("¡Comienza el duelo!");
                 while (personajeElegido.salud > 0 && enemigoElegido.salud > 0) {

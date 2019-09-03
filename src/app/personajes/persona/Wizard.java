@@ -96,6 +96,11 @@ public class Wizard extends Persona implements IHacerMagia {
         this.artefactoElegido = artefacto;
     }
 
+    public void amplificar(Hechizo hechizo, Artefacto artefacto){
+        
+
+    }
+
     /*public boolean esOscuro() {
         boolean oscuro = false;
         if (this.nombre.equals("Lucius Malfoy") || this.nombre.equals("Severus Snape")) {
