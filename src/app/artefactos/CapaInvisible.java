@@ -14,12 +14,12 @@ public class CapaInvisible extends Artefacto implements IReliquiaMuerte {
 
     }
 
-    public CapaInvisible(String nombre, double amplificadorDaño, double amplificadorCuracion) {
+    public CapaInvisible(String nombre, int amplificadorDaño, int amplificadorCuracion) {
         super(nombre, amplificadorDaño, amplificadorCuracion);
     }
 
     public CapaInvisible() {
-        super("Capa de la Invisibilidad", 0, 2);
+        super("Capa de la Invisibilidad", 0, 10);
     }
 
 }

@@ -6,10 +6,10 @@ package app.hechizos.ocio;
 public class WingardiumLeviosa extends HechizoOcio {
     
     public WingardiumLeviosa() {
-        super("Wingardium Leviosa", 0, 0, 10);
+        super("Wingardium Leviosa", 0, 0, 10, "ocio");
     }
 
-    public WingardiumLeviosa(String nombre, double nivelDaño, double nivelCuracion, int nivelEnergiaMagica ) {
-        super(nombre, nivelDaño, nivelCuracion, nivelEnergiaMagica);
+    public WingardiumLeviosa(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica, String tipoHechizo) {
+        super(nombre, nivelDaño, nivelCuracion, nivelEnergiaMagica, tipoHechizo);
     }
 }

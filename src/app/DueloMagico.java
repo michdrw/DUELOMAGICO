@@ -69,28 +69,28 @@ public class DueloMagico {
     }
 
     public static void agregarWizard() {
-        Wizard mago = new Wizard("George Weasley", 1000, 100, DueloMagico.poderes.get(0), false);
+        Wizard mago = new Wizard("George Weasley", 100, 100, DueloMagico.poderes.get(0), false);
 
         catalogoPersonajes.add(mago);
 
-        mago = new Wizard("Fred Weasley", 1000, 100, DueloMagico.poderes.get(1), false);
+        mago = new Wizard("Fred Weasley", 100, 100, DueloMagico.poderes.get(1), false);
 
         catalogoPersonajes.add(mago);
 
-        mago = new Wizard("Lucius Malfoy", 1000, 100, DueloMagico.poderes.get(0), true);
+        mago = new Wizard("Lucius Malfoy", 100, 100, DueloMagico.poderes.get(0), true);
 
         catalogoPersonajes.add(mago);
 
-        mago = new Wizard("Severus Snape", 1000, 100, DueloMagico.poderes.get(0), true);
+        mago = new Wizard("Severus Snape", 100, 100, DueloMagico.poderes.get(0), true);
 
         catalogoPersonajes.add(mago);
     }
 
     public static void agregarElfo() {
-        Elfo duende = new Elfo("Dobby", 1000, 100, DueloMagico.poderes.get(1));
+        Elfo duende = new Elfo("Dobby", 100, 100, DueloMagico.poderes.get(1));
         catalogoPersonajes.add(duende);
 
-        duende = new Elfo("Kreacher", 1000, 100, DueloMagico.poderes.get(0));
+        duende = new Elfo("Kreacher", 100, 100, DueloMagico.poderes.get(0));
 
         catalogoPersonajes.add(duende);
 
@@ -133,16 +133,16 @@ public class DueloMagico {
     }
 
     public static void agregarArtefactos() {
-        Horrocrux horrocrux = new Horrocrux("Horrocrux", 2, 0 );
+        Horrocrux horrocrux = new Horrocrux("Horrocrux", 20, 0 );
         artefactos.add(horrocrux);
 
-        CapaInvisible capaInvisible = new CapaInvisible("Capa de la Invisibilidad", 0, 2);
+        CapaInvisible capaInvisible = new CapaInvisible("Capa de la Invisibilidad", 0, 10);
         artefactos.add(capaInvisible);
 
-        VaritaSauco varitaSauco = new VaritaSauco();
+        VaritaSauco varitaSauco = new VaritaSauco("Varita de Sauco", 20, 20);
         artefactos.add(varitaSauco);
 
-        PiedraResurreccion piedraResurreccion =new PiedraResurreccion("Piedra de la Resurreción", 0, 2);
+        PiedraResurreccion piedraResurreccion =new PiedraResurreccion("Piedra de la Resurreción", 0, 20);
         artefactos.add(piedraResurreccion);
     }
 
@@ -164,7 +164,7 @@ public class DueloMagico {
         HogwartsExpress hogwartsExpress = new HogwartsExpress(" el Expreso Hogwarts");
         transportes.add(hogwartsExpress);
 
-        Escoba escoba = new Escoba("una Escoba voladora");
+        Escoba escoba = new Escoba("una escoba voladora");
         transportes.add(escoba);
     }
 
@@ -192,20 +192,20 @@ public class DueloMagico {
 
     public static void agregarHechizoAtaque() {
 
-        SectumSempra sectumSempra = new SectumSempra("Sectum Sempra", 90, 0, 10);
+        SectumSempra sectumSempra = new SectumSempra("Sectum Sempra", 40, 0, 10);
         hechizos.add(sectumSempra);
 
-        PetrificusTotalus petrificusTotalus = new PetrificusTotalus("Petrificus Totalus", 30, 0, 10);
+        PetrificusTotalus petrificusTotalus = new PetrificusTotalus("Petrificus Totalus", 20, 0, 10);
         hechizos.add(petrificusTotalus);
 
     }
 
     public static void agregarHechizoCuracion() {
 
-        VulneraSanentur vulneraSanentur = new VulneraSanentur("Vulnera Sanentur", 0, 80, 10);
+        VulneraSanentur vulneraSanentur = new VulneraSanentur("Vulnera Sanentur", 0, 40, 10);
         hechizos.add(vulneraSanentur);
 
-        Reparifors reparifors = new Reparifors("Reparifors", 0, 50, 10);
+        Reparifors reparifors = new Reparifors("Reparifors", 0, 20, 10);
         hechizos.add(reparifors);
     }
 
@@ -230,13 +230,13 @@ public class DueloMagico {
 
     public static void agregarHechizoImperdonable() {
 
-        Crucio crucio = new Crucio("Crucio", 500, 0, 70);
+        Crucio crucio = new Crucio("Crucio", 70, 0, 20);
         hechizos.add(crucio);
 
-        Imperio imperio = new Imperio("Imperio", 300, 0, 30);
+        Imperio imperio = new Imperio("Imperio", 80, 0, 20);
         hechizos.add(imperio);
 
-        AvadaKedavra avadaKedabra = new AvadaKedavra("Avada Kedavra", 1000, 0, 100);
+        AvadaKedavra avadaKedabra = new AvadaKedavra("Avada Kedavra", 100, 0, 20);
         hechizos.add(avadaKedabra);
     }
 

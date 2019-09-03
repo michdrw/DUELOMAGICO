@@ -4,15 +4,15 @@ package app.personajes;
  * Personajes
  */
 public class Personaje {
-    public double salud;
-    public String nombre;
-    public boolean estaVivo;
+    private int salud;
+    private String nombre;
+    private boolean estaVivo ;
 
-    public double getSalud() {
+    public int getSalud() {
         return salud;
     }
 
-    public void setSalud(double salud) {
+    public void setSalud(int salud) {
         this.salud = salud;
     }
 
@@ -24,9 +24,18 @@ public class Personaje {
         this.nombre = nombre;
     }
 
-    public Personaje(String nombre, double salud) {
+    public Personaje(String nombre, int salud) {
         this.nombre = nombre;
         this.salud = salud;
+        this.estaVivo = true;
+    }
+
+    public boolean isEstaVivo() {
+        return estaVivo;
+    }
+
+    public void setEstaVivo(boolean estaVivo) {
+        this.estaVivo = estaVivo;
     }
 
 

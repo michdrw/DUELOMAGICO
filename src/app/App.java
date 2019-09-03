@@ -5,7 +5,7 @@ import app.hechizos.Hechizo;
 import app.interfaces.IHacerMagia;
 import app.personajes.Personaje;
 import app.personajes.persona.Wizard;
-import app.transporte.Transporte;
+/*import app.transporte.Transporte;*/
 
 public class App {
 
@@ -41,18 +41,18 @@ public class App {
                                                         + " y le resta " + hechizoElegido.nivelDaño
                                                         + " de salud al enemigo.");
                                         if (artefactoPersonaje.amplificadorDaño > 0) {
-                                                System.out.println("La potencia del hechizo fue amplificada x"
+                                                System.out.println("La potencia del hechizo fue amplificada "
                                                                 + artefactoEnemigo.amplificadorDaño
-                                                                + " por el artefacto.");
+                                                                + " puntos por el artefacto.");
                                         }
                                 } else if (hechizoElegido.nivelCuracion > 0) {
                                         System.out.println("El hechizo conjurado fue " + hechizoElegido.nombre
                                                         + " y le suma " + hechizoElegido.nivelCuracion
                                                         + " de salud al personaje.");
                                         if (artefactoPersonaje.amplificadorCuracion > 0) {
-                                                System.out.println("La potencia del hechizo fue amplificada x"
+                                                System.out.println("La potencia del hechizo fue amplificada "
                                                                 + artefactoEnemigo.amplificadorCuracion
-                                                                + " por el artefacto.");
+                                                                + " puntos por el artefacto.");
                                         }
                                 } else {
                                         System.out.println("El hechizo conjurado fue " + hechizoElegido.nombre
@@ -68,7 +68,7 @@ public class App {
                         }
                         if (enemigoElegido instanceof Wizard && ((Wizard) enemigoElegido).energiaMagica > 0
                                         && enemigoElegido.salud > 0) {
-
+                                System.out.println("");
                                 System.out.println("¡Turno de " + enemigoElegido.nombre + "!");
                                 System.out.println("");
                                 Hechizo hechizoElegido = ((Wizard) enemigoElegido).getHechizo();
@@ -78,18 +78,18 @@ public class App {
                                                         + " y le resta " + hechizoElegido.nivelDaño
                                                         + " de salud al personaje.");
                                         if (artefactoEnemigo.amplificadorDaño > 0) {
-                                                System.out.println("La potencia del hechizo fue amplificada x"
+                                                System.out.println("La potencia del hechizo fue amplificada "
                                                                 + artefactoEnemigo.amplificadorDaño
-                                                                + " por el artefacto.");
+                                                                + " puntos por el artefacto.");
                                         }
                                 } else if (hechizoElegido.nivelCuracion > 0) {
                                         System.out.println("El hechizo conjurado fue " + hechizoElegido.nombre
                                                         + " y le suma " + hechizoElegido.nivelCuracion
                                                         + " de salud al enemigo.");
                                         if (artefactoEnemigo.amplificadorCuracion > 0) {
-                                                System.out.println("La potencia del hechizo fue amplificada x"
+                                                System.out.println("La potencia del hechizo fue amplificada "
                                                                 + artefactoEnemigo.amplificadorCuracion
-                                                                + " por el artefacto.");
+                                                                + " puntos por el artefacto.");
                                         }
                                 } else {
                                         System.out.println("El hechizo conjurado fue " + hechizoElegido.nombre
@@ -106,15 +106,15 @@ public class App {
 
                 }
 
-                if (enemigoElegido.salud == 0) {
-                        Transporte transporteElegido = ((Wizard) personajeElegido).getTransporte();
+                if (enemigoElegido.estaVivo == false) {
+                        /*Transporte transporteElegido = ((Wizard) personajeElegido).getTransporte();*/
                         System.out.println("¡¡¡¡ " + personajeElegido.nombre + " ganó el duelo !!!!");
-                        System.out.println(personajeElegido.nombre + "ha huido en " + transporteElegido.nombre);
+                        /*System.out.println(personajeElegido.nombre + "ha huido en " + transporteElegido.nombre);*/
 
-                } else if (personajeElegido.salud == 0) {
-                        Transporte transporteElegido = ((Wizard) enemigoElegido).getTransporte();
+                } else if (personajeElegido.estaVivo == false) {
+                        /*Transporte transporteElegido = ((Wizard) enemigoElegido).getTransporte();*/
                         System.out.println("¡¡¡¡ " + enemigoElegido.nombre + " ganó el duelo !!!!");
-                        System.out.println(enemigoElegido.nombre + "ha huido en " + transporteElegido.nombre);
+                        /*System.out.println(enemigoElegido.nombre + "ha huido en " + transporteElegido.nombre);*/
                 }
 
         }

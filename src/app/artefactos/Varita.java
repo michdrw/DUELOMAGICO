@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class Varita extends Artefacto {
     
-    public Varita(String nombre, double amplificadorDaño, double amplificadorCuracion) {
+    public Varita(String nombre, int amplificadorDaño, int amplificadorCuracion) {
         super(nombre, amplificadorDaño, amplificadorCuracion);
     }
 

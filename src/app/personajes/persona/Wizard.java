@@ -24,7 +24,7 @@ public class Wizard extends Persona implements IHacerMagia {
     private Transporte transporteElegido;
     public boolean esOscuro;
 
-    public Wizard(String nombre, double salud, int energiaMagica, Poder poderInicial, boolean esOscuro) {
+    public Wizard(String nombre, int salud, int energiaMagica, Poder poderInicial, boolean esOscuro) {
         super(nombre, salud);
         this.energiaMagica = energiaMagica;
         this.poderInicial = poderInicial;
@@ -47,79 +47,83 @@ public class Wizard extends Persona implements IHacerMagia {
     }
 
     public void atacar(Personaje enemigo, Hechizo hechizo) {
-        Artefacto artefactoElegido = this.getArtefacto();
-        this.energiaMagica = energiaMagica - 10;
         if (esOscuro == false) {
 
-            if (hechizoElegido.nombre.equals("Crucio") || hechizoElegido.nombre.equals("Imperio")
-                    || hechizoElegido.nombre.equals("Avada Kedavra")) {
+            if (hechizoElegido.getNombre().equals("Crucio") || hechizoElegido.getNombre().equals("Imperio")
+                    || hechizoElegido.getNombre().equals("Avada Kedavra")) {
                 System.out.println(
-                        this.nombre + " eligió " + hechizoElegido.nombre + " sin ser mago oscuro, no causa daño.");
+                        this.getNombre() + " eligió " + hechizoElegido.getNombre()
+                                + " sin ser mago oscuro, no causa daño.");
                 return;
-            } else if (artefactoElegido.nombre.equals("Varita de Sauco")) {
-                enemigo.salud -= (hechizo.nivelDaño * artefactoElegido.amplificadorDaño);
-                if (enemigo.salud < 0 || enemigo.salud == 0) {
-                    enemigo.estaVivo = false;
-                    enemigo.salud = 0;
+            } else if (artefactoElegido.getNombre().equals("Varita de Sauco")) {
+                enemigo.setSalud(enemigo.getSalud() - (hechizo.getNivelDaño() + artefactoElegido.getAmplificadorDaño()));
+                if (enemigo.getSalud() < 0 || enemigo.getSalud() == 0) {
+                    enemigo.setEstaVivo(false);
+                    enemigo.setSalud(0);
                 }
-            } else if (artefactoElegido.nombre.equals("Horrocrux")) {
-                enemigo.salud -= (hechizo.nivelDaño * artefactoElegido.amplificadorDaño);
-                if (enemigo.salud < 0 || enemigo.salud == 0) {
-                    enemigo.estaVivo = false;
-                    enemigo.salud = 0;
+            } else if (artefactoElegido.getNombre().equals("Horrocrux")) {
+                enemigo.setSalud(enemigo.getSalud() - (hechizo.getNivelDaño() + artefactoElegido.getAmplificadorDaño()));
+                if (enemigo.getSalud() < 0 || enemigo.getSalud() == 0) {
+                    enemigo.setEstaVivo(false);
+                    enemigo.setSalud(0);
                 }
             } else {
-                enemigo.salud -= hechizo.nivelDaño;
-                if (enemigo.salud < 0 || enemigo.salud == 0) {
-                    enemigo.estaVivo = false;
-                    enemigo.salud = 0;
+                enemigo.setSalud(enemigo.getSalud() - hechizo.getNivelDaño());
+                if (enemigo.getSalud() < 0 || enemigo.getSalud() == 0) {
+                    enemigo.setEstaVivo(false);
+                    enemigo.setSalud(0);
                 }
             }
-        } else if (artefactoElegido.nombre.equals("Varita de Sauco")) {
-            enemigo.salud -= (hechizo.nivelDaño * artefactoElegido.amplificadorDaño);
-            if (enemigo.salud < 0 || enemigo.salud == 0) {
-                enemigo.estaVivo = false;
-                enemigo.salud = 0;
+        } else if (artefactoElegido.getNombre().equals("Varita de Sauco")) {
+            enemigo.setSalud(enemigo.getSalud() - (hechizo.getNivelDaño() + artefactoElegido.getAmplificadorDaño()));
+            if (enemigo.getSalud() < 0 || enemigo.getSalud() == 0) {
+                enemigo.setEstaVivo(false);
+                enemigo.setSalud(0);
             }
-        } else if (artefactoElegido.nombre.equals("Horrocrux")) {
-            enemigo.salud -= (hechizo.nivelDaño * artefactoElegido.amplificadorDaño);
-            if (enemigo.salud < 0 || enemigo.salud == 0) {
-                enemigo.estaVivo = false;
-                enemigo.salud = 0;
+        } else if (artefactoElegido.getNombre().equals("Horrocrux")) {
+            enemigo.setSalud(enemigo.getSalud() - (hechizo.getNivelDaño() + artefactoElegido.getAmplificadorDaño()));
+            if (enemigo.getSalud() < 0 || enemigo.getSalud() == 0) {
+                enemigo.setEstaVivo(false);
+                enemigo.setSalud(0);
             }
         } else {
-            enemigo.salud -= hechizo.nivelDaño;
-            if (enemigo.salud < 0 || enemigo.salud == 0) {
+            enemigo.setSalud(enemigo.getSalud() - hechizo.getNivelDaño);
+            if (enemigo.getSalud() < 0 || enemigo.salud == 0) {
                 enemigo.estaVivo = false;
                 enemigo.salud = 0;
             }
         }
-        if (this.salud < 1000 && hechizoElegido.nombre.equals("Vulnera Sanentur")
-                || this.salud < 1000 && hechizoElegido.nombre.equals("Reparifors")) {
+
+    }  
+    public void curar(Hechizo hechizo) {
+        if (hechizoElegido.nombre.equals("Vulnera Sanentur")
+                || hechizoElegido.nombre.equals("Reparifors")) {
             if (artefactoElegido.nombre.equals("Capa de la Invisibilidad")) {
-                this.salud += (hechizo.nivelCuracion * artefactoElegido.amplificadorCuracion);
-                if (this.salud > 1000) {
-                    this.salud = 1000;
+                this.salud += (hechizo.nivelCuracion + artefactoElegido.amplificadorCuracion);
+                if (this.salud > 100) {
+                    this.salud = 100;
                 }
             } else if (artefactoElegido.nombre.equals("Varita de Sauco")) {
-                this.salud += (hechizo.nivelCuracion * artefactoElegido.amplificadorCuracion);
-                if (this.salud > 1000) {
-                    this.salud = 1000;
+                this.salud += (hechizo.nivelCuracion + artefactoElegido.amplificadorCuracion);
+                if (this.salud > 100) {
+                    this.salud = 100;
                 }
             } else if (artefactoElegido.nombre.equals("Piedra de la Resurreción")) {
-                this.salud += (hechizo.nivelCuracion * artefactoElegido.amplificadorCuracion);
-                if (this.salud > 1000) {
-                    this.salud = 1000;
+                this.salud += (hechizo.nivelCuracion + artefactoElegido.amplificadorCuracion);
+                if (this.salud > 100) {
+                    this.salud = 100;
                 }
             } else {
                 this.salud += hechizo.nivelCuracion;
-                if (this.salud > 1000) {
-                    this.salud = 1000;
+                if (this.salud > 100) {
+                    this.salud = 100;
                 }
             }
         }
 
     }
+
+
 
     public void atacar(Personaje enemigo, String nombreHechizo) {
 

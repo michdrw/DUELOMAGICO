@@ -5,9 +5,11 @@ import app.hechizos.Hechizo;
 /**
  * HechizoCuracion
  */
-public class HechizoCuracion extends Hechizo {
+public abstract class HechizoCuracion extends Hechizo {
 
-    public HechizoCuracion(String nombre, double nivelDaño, double nivelCuracion, int nivelEnergiaMagica ) {
-        super(nombre, nivelDaño, nivelCuracion, nivelEnergiaMagica);
+    public HechizoCuracion(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica, String tipoHechizo) {
+        super(nombre, nivelDaño, nivelCuracion, nivelEnergiaMagica, tipoHechizo);
     }
+
+    
 }

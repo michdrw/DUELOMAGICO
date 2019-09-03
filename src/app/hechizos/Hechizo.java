@@ -3,17 +3,19 @@ package app.hechizos;
 /**
  * Hechizo
  */
-public class Hechizo {
-    public String nombre;
-    public double nivelDaño;
-	public double nivelCuracion;
-	public int nivelEnergiaMagica;
+public abstract class Hechizo {
+    private String nombre;
+    private int nivelDaño;
+	private int nivelCuracion;
+	private int nivelEnergiaMagica;
+	private String tipoHechizo;
 
-    public Hechizo(String nombre, double nivelDaño, double nivelCuracion, int nivelEnergiaMagica) {
+    public Hechizo(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica, String tipoHechizo) {
         this.nombre = nombre;
         this.nivelDaño = nivelDaño;
 		this.nivelCuracion = nivelCuracion;
 		this.nivelEnergiaMagica = nivelEnergiaMagica;
+		this.tipoHechizo = tipoHechizo;
     }
 
 	public String getNombre() {
@@ -24,20 +26,37 @@ public class Hechizo {
 		this.nombre = nombre;
 	}
 
-	public double getNivelDaño() {
+	public int getNivelDaño() {
 		return nivelDaño;
 	}
 
-	public void setNivelDaño(double nivelDaño) {
+	public void setNivelDaño(int nivelDaño) {
 		this.nivelDaño = nivelDaño;
 	}
 
-	public double getNivelCuracion() {
+	public int getNivelCuracion() {
 		return nivelCuracion;
 	}
 
-	public void setNivelCuracion(double nivelCuracion) {
+	public void setNivelCuracion(int nivelCuracion) {
 		this.nivelCuracion = nivelCuracion;
 	}
+
+	public int getNivelEnergiaMagica() {
+		return nivelEnergiaMagica;
+	}
+
+	public void setNivelEnergiaMagica(int nivelEnergiaMagica) {
+		this.nivelEnergiaMagica = nivelEnergiaMagica;
+	}
+
+	public String getTipoHechizo() {
+		return tipoHechizo;
+	}
+
+	public void setTipoHechizo(String tipoHechizo) {
+		this.tipoHechizo = tipoHechizo;
+	}
+
 
 }
