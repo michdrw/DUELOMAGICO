@@ -29,13 +29,12 @@ public class Wizard extends Persona implements IHacerMagia {
         this.energiaMagica = energiaMagica;
         this.poderInicial = poderInicial;
         this.esOscuro = esOscuro;
-        
+
     }
 
     public List<Hechizo> hechizos = new ArrayList<Hechizo>();
     public List<Artefacto> artefactos = new ArrayList<Artefacto>();
     public List<Transporte> transportes = new ArrayList<Transporte>();
-    
 
     public Poder getPoderInicial() {
         return this.poderInicial;
@@ -51,18 +50,19 @@ public class Wizard extends Persona implements IHacerMagia {
 
             if (hechizoElegido.getNombre().equals("Crucio") || hechizoElegido.getNombre().equals("Imperio")
                     || hechizoElegido.getNombre().equals("Avada Kedavra")) {
-                System.out.println(
-                        this.getNombre() + " eligió " + hechizoElegido.getNombre()
-                                + " sin ser mago oscuro, no causa daño.");
+                System.out.println(this.getNombre() + " eligió " + hechizoElegido.getNombre()
+                        + " sin ser mago oscuro, no causa daño.");
                 return;
             } else if (artefactoElegido.getNombre().equals("Varita de Sauco")) {
-                enemigo.setSalud(enemigo.getSalud() - (hechizo.getNivelDaño() + artefactoElegido.getAmplificadorDaño()));
+                enemigo.setSalud(
+                        enemigo.getSalud() - (hechizo.getNivelDaño() + artefactoElegido.getAmplificadorDaño()));
                 if (enemigo.getSalud() < 0 || enemigo.getSalud() == 0) {
                     enemigo.setEstaVivo(false);
                     enemigo.setSalud(0);
                 }
             } else if (artefactoElegido.getNombre().equals("Horrocrux")) {
-                enemigo.setSalud(enemigo.getSalud() - (hechizo.getNivelDaño() + artefactoElegido.getAmplificadorDaño()));
+                enemigo.setSalud(
+                        enemigo.getSalud() - (hechizo.getNivelDaño() + artefactoElegido.getAmplificadorDaño()));
                 if (enemigo.getSalud() < 0 || enemigo.getSalud() == 0) {
                     enemigo.setEstaVivo(false);
                     enemigo.setSalud(0);
@@ -87,34 +87,34 @@ public class Wizard extends Persona implements IHacerMagia {
                 enemigo.setSalud(0);
             }
         } else {
-            enemigo.setSalud(enemigo.getSalud() - hechizo.getNivelDaño);
-            if (enemigo.getSalud() < 0 || enemigo.salud == 0) {
-                enemigo.estaVivo = false;
-                enemigo.salud = 0;
+            enemigo.setSalud(enemigo.getSalud() - hechizo.getNivelDaño());
+            if (enemigo.getSalud() < 0 || enemigo.getSalud() == 0) {
+                enemigo.setEstaVivo(false);
+                enemigo.setSalud(0);
             }
         }
 
-    }  
+    }
+
     public void curar(Hechizo hechizo) {
-        if (hechizoElegido.nombre.equals("Vulnera Sanentur")
-                || hechizoElegido.nombre.equals("Reparifors")) {
-            if (artefactoElegido.nombre.equals("Capa de la Invisibilidad")) {
-                this.salud += (hechizo.nivelCuracion + artefactoElegido.amplificadorCuracion);
-                if (this.salud > 100) {
-                    this.salud = 100;
+        if (hechizoElegido.getNombre().equals("Vulnera Sanentur") || hechizoElegido.getNombre().equals("Reparifors")) {
+            if (artefactoElegido.getNombre().equals("Capa de la Invisibilidad")) {
+                this.setSalud(this.getSalud() + (hechizo.getNivelCuracion() + artefactoElegido.getAmplificadorCuracion()))  ;
+                if (this.getSalud() > 100) {
+                    this.setSalud(100);
                 }
-            } else if (artefactoElegido.nombre.equals("Varita de Sauco")) {
-                this.salud += (hechizo.nivelCuracion + artefactoElegido.amplificadorCuracion);
-                if (this.salud > 100) {
-                    this.salud = 100;
+            } else if (artefactoElegido.getNombre().equals("Varita de Sauco")) {
+                this.setSalud(this.getSalud() + (hechizo.getNivelCuracion() + artefactoElegido.getAmplificadorCuracion());
+                if (this.getSalud > 100) {
+                    this.setSalud(100);
                 }
-            } else if (artefactoElegido.nombre.equals("Piedra de la Resurreción")) {
-                this.salud += (hechizo.nivelCuracion + artefactoElegido.amplificadorCuracion);
+            } else if (artefactoElegido.getNombre().equals("Piedra de la Resurreción")) {
+                this.salud += (hechizo.getNivelCuracion() + artefactoElegido.getAmplificadorCuracion());
                 if (this.salud > 100) {
                     this.salud = 100;
                 }
             } else {
-                this.salud += hechizo.nivelCuracion;
+                this.salud += hechizo.getNivelCuracion();
                 if (this.salud > 100) {
                     this.salud = 100;
                 }
@@ -122,8 +122,6 @@ public class Wizard extends Persona implements IHacerMagia {
         }
 
     }
-
-
 
     public void atacar(Personaje enemigo, String nombreHechizo) {
 
@@ -147,14 +145,13 @@ public class Wizard extends Persona implements IHacerMagia {
         this.aprender(hechizo);
     }
 
-    public Transporte getTransporte(){
+    public Transporte getTransporte() {
         int size = DueloMagico.transportes.size();
         Random rand = new Random();
         int transporteRandom = rand.nextInt(size);
         this.transporteElegido = DueloMagico.transportes.get(transporteRandom);
         return this.transporteElegido;
     }
-    
 
     public Artefacto getArtefacto() {
         int size = DueloMagico.artefactos.size();
@@ -168,8 +165,6 @@ public class Wizard extends Persona implements IHacerMagia {
     public void setArtefacto(Artefacto artefacto) {
         this.artefactoElegido = artefacto;
     }
-
-   
 
     /*
      * public boolean esOscuro() { boolean oscuro = false; if
