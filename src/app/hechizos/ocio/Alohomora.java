@@ -9,7 +9,7 @@ public class Alohomora extends HechizoOcio {
         super("Alohomora", 0, 0, 10);
     }
 
-    public Alohomora(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica ) {
+    public Alohomora(String nombre, double nivelDaño, double nivelCuracion, int nivelEnergiaMagica ) {
         super(nombre, nivelDaño, nivelCuracion, nivelEnergiaMagica);
     }
     

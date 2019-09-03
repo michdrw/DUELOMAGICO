@@ -45,7 +45,6 @@ public class DueloMagico {
     public static Personaje elegirPersonaje1(String nombre) {
         for (Personaje p : DueloMagico.catalogoPersonajes) {
             if (p.nombre.equals(nombre)) {
-                System.out.println("El personaje elegido es: " + nombre);
                 return p;
             }
         }
@@ -55,7 +54,6 @@ public class DueloMagico {
     public static Personaje elegirPersonaje2(String nombre) {
         for (Personaje p : DueloMagico.catalogoPersonajes) {
             if (p.nombre.equals(nombre)) {
-                System.out.println("El enemigo elegido es: " + nombre);
                 return p;
             }
         }
@@ -133,16 +131,16 @@ public class DueloMagico {
     }
 
     public static void agregarArtefactos() {
-        Horrocrux horrocrux = new Horrocrux("Horrocrux", 100, 0 );
+        Horrocrux horrocrux = new Horrocrux("Horrocrux", 2, 0 );
         artefactos.add(horrocrux);
 
-        CapaInvisible capaInvisible = new CapaInvisible("Capa de la Invisibilidad", 50, 50);
+        CapaInvisible capaInvisible = new CapaInvisible("Capa de la Invisibilidad", 1.5, 1.5);
         artefactos.add(capaInvisible);
 
-        VaritaSauco varitaSauco = new VaritaSauco("Varita de Sauco", 100, 100);
+        VaritaSauco varitaSauco = new VaritaSauco("Varita de Sauco", 2, 2);
         artefactos.add(varitaSauco);
 
-        PiedraResurreccion piedraResurreccion =new PiedraResurreccion("Piedra de la Resurreción", 0, 100);
+        PiedraResurreccion piedraResurreccion =new PiedraResurreccion("Piedra de la Resurreción", 0, 2);
     }
 
 

@@ -5,9 +5,11 @@ package app.artefactos;
  */
 public class Horrocrux extends Artefacto {
 
-    public Horrocrux(String nombre, int amplificadorDaño, int amplificadorCuracion) {
+    public Horrocrux(String nombre, double amplificadorDaño, double amplificadorCuracion) {
         super(nombre, amplificadorDaño, amplificadorCuracion);
     }
+
+
 
 	
 }

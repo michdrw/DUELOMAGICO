@@ -8,14 +8,14 @@ import java.util.List;
  */
 public class Varita extends Artefacto {
     
-    public Varita(String nombre, int amplificadorDaño, int amplificadorCuracion) {
+    public Varita(String nombre, double amplificadorDaño, double amplificadorCuracion) {
         super(nombre, amplificadorDaño, amplificadorCuracion);
     }
 
     public static List<Varita> varitas = new ArrayList<Varita>();
 
     public static void agregarVarita() {
-        Varita varitaSauco = new Varita("Varita sauco", 100, 100);
+        Varita varitaSauco = new Varita("Varita sauco", 1.1, 1.1);
         varitas.add(varitaSauco);
     }
 

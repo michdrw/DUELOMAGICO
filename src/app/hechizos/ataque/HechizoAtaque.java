@@ -7,7 +7,7 @@ import app.hechizos.Hechizo;
  */
 public class HechizoAtaque extends Hechizo {
 
-    public HechizoAtaque(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica) {
+    public HechizoAtaque(String nombre, double nivelDaño, double nivelCuracion, int nivelEnergiaMagica) {
         super(nombre, nivelDaño, nivelCuracion, nivelEnergiaMagica);
     }
 

@@ -22,7 +22,7 @@ public class Wizard extends Persona implements IHacerMagia {
     private Hechizo hechizoElegido;
     public boolean esOscuro;
 
-    public Wizard(String nombre, int salud, int energiaMagica, Poder poderInicial, boolean esOscuro) {
+    public Wizard(String nombre, double salud, int energiaMagica, Poder poderInicial, boolean esOscuro) {
         super(nombre, salud);
         this.energiaMagica = energiaMagica;
         this.poderInicial = poderInicial;
@@ -41,6 +41,7 @@ public class Wizard extends Persona implements IHacerMagia {
     }
 
     public void atacar(Personaje enemigo, Hechizo hechizo) {
+        Artefacto artefactoElegido = this.getArtefacto();
        this.energiaMagica = energiaMagica -10;
         if (esOscuro == false) {
             
@@ -56,6 +57,14 @@ public class Wizard extends Persona implements IHacerMagia {
         }
         if (this.salud < 1000 && hechizoElegido.nombre.equals("Vulnera Sanentur")
                 || this.salud < 1000 && hechizoElegido.nombre.equals("Reparifors")) {
+                    if (artefactoElegido.nombre.equals("Capa de la Invisibilidad")) {
+                        this.salud =this.salud + (hechizo.nivelCuracion *1.5);
+                    } else if (artefactoElegido.nombre.equals("Varita de Sauco")) {
+                        this.salud =this.salud + (hechizo.nivelCuracion *2);
+                    } else if (artefactoElegido.nombre.equals("Piedra de la Resurreción")) {
+                        this.salud =this.salud + (hechizo.nivelCuracion *2);
+                    } 
+
             this.salud += hechizo.nivelCuracion;
         }
     
@@ -96,10 +105,7 @@ public class Wizard extends Persona implements IHacerMagia {
         this.artefactoElegido = artefacto;
     }
 
-    public void amplificar(Hechizo hechizo, Artefacto artefacto){
-        
-
-    }
+    
 
     /*public boolean esOscuro() {
         boolean oscuro = false;

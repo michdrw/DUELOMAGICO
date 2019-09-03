@@ -14,7 +14,7 @@ public class VaritaSauco extends Varita implements IReliquiaMuerte {
 
     }
 
-    public VaritaSauco(String nombre, int amplificadorDaño, int amplificadorCuracion) {
+    public VaritaSauco(String nombre, double amplificadorDaño, double amplificadorCuracion) {
         super(nombre, amplificadorDaño, amplificadorCuracion);
     }
 

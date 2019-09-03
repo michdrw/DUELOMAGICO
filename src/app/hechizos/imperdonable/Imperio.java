@@ -5,7 +5,7 @@ package app.hechizos.imperdonable;
  */
 public class Imperio extends HechizoImperdonable{
 
-    public Imperio(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica ) {
+    public Imperio(String nombre, double nivelDaño, double nivelCuracion, int nivelEnergiaMagica ) {
         super(nombre, nivelDaño, nivelCuracion, nivelEnergiaMagica);
     }
     public Imperio(){

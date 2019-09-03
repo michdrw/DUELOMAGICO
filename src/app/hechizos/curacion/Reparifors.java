@@ -5,7 +5,7 @@ package app.hechizos.curacion;
  */
 public class Reparifors extends HechizoCuracion {
 
-    public Reparifors(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica ) {
+    public Reparifors(String nombre,  double nivelDaño, double nivelCuracion, int nivelEnergiaMagica ) {
         super(nombre, nivelDaño, nivelCuracion, nivelEnergiaMagica);
     }
     public Reparifors() {

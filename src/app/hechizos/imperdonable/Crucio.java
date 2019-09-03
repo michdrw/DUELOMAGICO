@@ -5,7 +5,7 @@ package app.hechizos.imperdonable;
  */
 public class Crucio extends HechizoImperdonable{
 
-    public Crucio(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica ) {
+    public Crucio(String nombre, double nivelDaño, double nivelCuracion, int nivelEnergiaMagica ) {
         super(nombre, nivelDaño, nivelCuracion, nivelEnergiaMagica);
     }
     public Crucio(){

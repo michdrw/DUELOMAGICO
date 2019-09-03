@@ -7,8 +7,8 @@ import app.interfaces.IEsMagico;
  */
 public class Artefacto implements IEsMagico {
     public String nombre;
-    public int amplificadorDaño;
-    public int amplificadorCuracion;
+    public double amplificadorDaño;
+    public double amplificadorCuracion;
 
     @Override
     public boolean esInvisibleAMuggles() {
@@ -20,7 +20,7 @@ public class Artefacto implements IEsMagico {
         return false;
     }
 
-    public Artefacto(String nombre, int amplificadorDaño, int amplificadorCuracion) {
+    public Artefacto(String nombre, double amplificadorDaño, double amplificadorCuracion) {
         this.nombre = nombre;
         this.amplificadorDaño = amplificadorDaño;
         this.amplificadorCuracion = amplificadorCuracion;
@@ -34,7 +34,7 @@ public class Artefacto implements IEsMagico {
         this.nombre = nombre;
     }
 
-    public int getAmplificadorDaño() {
+    public double getAmplificadorDaño() {
         return amplificadorDaño;
     }
 
@@ -42,7 +42,7 @@ public class Artefacto implements IEsMagico {
         this.amplificadorDaño = amplificadorDaño;
     }
 
-    public int getAmplificadorCuracion() {
+    public double getAmplificadorCuracion() {
         return amplificadorCuracion;
     }
 

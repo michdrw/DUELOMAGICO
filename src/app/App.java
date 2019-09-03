@@ -16,11 +16,14 @@ public class App {
                 DueloMagico.inicializarCatalogoHechizos();
                 DueloMagico.inicializarCatalogoPersonajes();
 
-                Personaje personajeElegido = (Personaje) DueloMagico.elegirPersonaje1("Lucius Malfoy");
-                Personaje enemigoElegido = (Personaje) DueloMagico.elegirPersonaje2("George Weasley");
-
+                Personaje personajeElegido = (Personaje) DueloMagico.elegirPersonaje1("Fred Weasley");
                 Artefacto artefactoPersonaje = ((Wizard) personajeElegido).getArtefacto();
+                System.out.println("El personaje elegido es: " + personajeElegido.nombre + " y su artefacto elegido es " + artefactoPersonaje.nombre);                
+
+                Personaje enemigoElegido = (Personaje) DueloMagico.elegirPersonaje2("Severus Snape");
                 Artefacto artefactoEnemigo = ((Wizard) enemigoElegido).getArtefacto();
+                System.out.println("El enemigo elegido es: " + enemigoElegido.nombre + " y su artefacto elegido es " + artefactoEnemigo.nombre);
+
 
                 System.out.println("¡Comienza el duelo!");
                 while (personajeElegido.salud > 0 && enemigoElegido.salud > 0) {
@@ -39,6 +42,9 @@ public class App {
                                         System.out.println("El hechizo conjurado fue " + hechizoElegido.nombre
                                                         + " y le suma " + hechizoElegido.nivelCuracion
                                                         + " de salud al personaje.");
+                                                        if (artefactoPersonaje.amplificadorCuracion > 0) {
+                                                                System.out.println("La potencia del hechizo fue amplificada por el artefacto en un " + artefactoPersonaje.amplificadorCuracion + "% ." );
+                                                        }
                                 } else {
                                         System.out.println("El hechizo conjurado fue " + hechizoElegido.nombre + " y no resta ni suma salud.");
                                 }
@@ -65,6 +71,9 @@ public class App {
                                         System.out.println("El hechizo conjurado fue " + hechizoElegido.nombre
                                                         + " y le suma " + hechizoElegido.nivelCuracion
                                                         + " de salud al enemigo.");
+                                                        if (artefactoEnemigo.amplificadorCuracion > 0) {
+                                                                System.out.println("La potencia del hechizo fue amplificada por el artefacto en un " + artefactoEnemigo.amplificadorCuracion + "% ." );
+                                                        }
                                 } else {
                                         System.out.println("El hechizo conjurado fue " + hechizoElegido.nombre + " y no resta ni suma salud.");
                                 }
@@ -79,9 +88,9 @@ public class App {
 
                 }
 
-                if (personajeElegido.salud > enemigoElegido.salud) {
+                if (((Wizard) personajeElegido).energiaMagica == 0 && personajeElegido.salud > enemigoElegido.salud) {
                         System.out.println("¡¡¡¡ " + personajeElegido.nombre + " ganó el duelo !!!!");
-                } else {
+                } else if (((Wizard) enemigoElegido).energiaMagica == 0 && enemigoElegido.salud > personajeElegido.salud){
                         System.out.println("¡¡¡¡ " + enemigoElegido.nombre + " ganó el duelo !!!!");
                 }
 

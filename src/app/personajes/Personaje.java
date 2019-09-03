@@ -4,14 +4,14 @@ package app.personajes;
  * Personajes
  */
 public class Personaje {
-    public int salud;
+    public double salud;
     public String nombre;
 
-    public int getSalud() {
+    public double getSalud() {
         return salud;
     }
 
-    public void setSalud(int salud) {
+    public void setSalud(double salud) {
         this.salud = salud;
     }
 
@@ -23,7 +23,7 @@ public class Personaje {
         this.nombre = nombre;
     }
 
-    public Personaje(String nombre, int salud) {
+    public Personaje(String nombre, double salud) {
         this.nombre = nombre;
         this.salud = salud;
     }

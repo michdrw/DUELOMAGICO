@@ -12,7 +12,7 @@ public class PiedraResurreccion extends Artefacto implements IReliquiaMuerte {
 
     }
 
-    public PiedraResurreccion(String nombre, int amplificadorDaño, int amplificadorCuracion) {
+    public PiedraResurreccion(String nombre, double amplificadorDaño, double amplificadorCuracion) {
         super(nombre, amplificadorDaño, amplificadorCuracion);
     }
 

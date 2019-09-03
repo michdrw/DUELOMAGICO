@@ -9,7 +9,7 @@ public class WingardiumLeviosa extends HechizoOcio {
         super("Wingardium Leviosa", 0, 0, 10);
     }
 
-    public WingardiumLeviosa(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica ) {
+    public WingardiumLeviosa(String nombre, double nivelDaño, double nivelCuracion, int nivelEnergiaMagica ) {
         super(nombre, nivelDaño, nivelCuracion, nivelEnergiaMagica);
     }
 }

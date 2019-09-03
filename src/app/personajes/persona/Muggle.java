@@ -5,7 +5,7 @@ package app.personajes.persona;
  */
 public class Muggle extends Persona {
 
-    public Muggle(String nombre, int salud) {
+    public Muggle(String nombre, double salud) {
         super(nombre, salud);
     }
 
