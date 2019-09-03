@@ -141,6 +141,7 @@ public class DueloMagico {
         artefactos.add(varitaSauco);
 
         PiedraResurreccion piedraResurreccion =new PiedraResurreccion("Piedra de la Resurreción", 0, 2);
+        artefactos.add(piedraResurreccion);
     }
 
 

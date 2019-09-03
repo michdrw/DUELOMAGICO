@@ -38,6 +38,9 @@ public class App {
                                         System.out.println("El hechizo conjurado fue " + hechizoElegido.nombre
                                                         + " y le resta " + hechizoElegido.nivelDaño
                                                         + " de salud al enemigo.");
+                                                        if (artefactoPersonaje.amplificadorDaño > 0) {
+                                                                System.out.println("La potencia del hechizo fue amplificada por el artefacto en un " + artefactoPersonaje.amplificadorDaño + "% ." );
+                                                        }
                                 } else if (hechizoElegido.nivelCuracion > 0) {
                                         System.out.println("El hechizo conjurado fue " + hechizoElegido.nombre
                                                         + " y le suma " + hechizoElegido.nivelCuracion
@@ -67,6 +70,9 @@ public class App {
                                         System.out.println("El hechizo conjurado fue " + hechizoElegido.nombre
                                                         + " y le resta " + hechizoElegido.nivelDaño
                                                         + " de salud al personaje.");
+                                                        if (artefactoEnemigo.amplificadorDaño > 0) {
+                                                                System.out.println("La potencia del hechizo fue amplificada por el artefacto en un " + artefactoEnemigo.amplificadorDaño + "% ." );
+                                                        }
                                 } else if (hechizoElegido.nivelCuracion > 0) {
                                         System.out.println("El hechizo conjurado fue " + hechizoElegido.nombre
                                                         + " y le suma " + hechizoElegido.nivelCuracion
