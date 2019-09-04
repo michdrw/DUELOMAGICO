@@ -44,16 +44,7 @@ public class DueloMagico {
     public static List<Artefacto> artefactos = new ArrayList<Artefacto>();
     public static List<Transporte> transportes = new ArrayList<Transporte>();
 
-    public static Personaje elegirPersonaje1(String nombre) {
-        for (Personaje p : DueloMagico.catalogoPersonajes) {
-            if (p.getNombre().equals(nombre)) {
-                return p;
-            }
-        }
-        return null;
-    }
-
-    public static Personaje elegirPersonaje2(String nombre) {
+    public static Personaje elegirPersonaje(String nombre) {
         for (Personaje p : DueloMagico.catalogoPersonajes) {
             if (p.getNombre().equals(nombre)) {
                 return p;

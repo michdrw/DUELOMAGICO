@@ -18,13 +18,14 @@ public class App {
                 DueloMagico.AgregarTransportes();
                 DueloMagico.InicializarCatalogoPersonajes();
                 System.out.println("");
-                Personaje personajeElegido = (Personaje) DueloMagico.elegirPersonaje1("Ojoloco Moody");
+                
+                Personaje personajeElegido = (Personaje) DueloMagico.elegirPersonaje("Ojoloco Moody");
                 Artefacto artefactoPersonaje = ((Wizard) personajeElegido).getArtefacto();
                 System.out.println("El personaje elegido es [" + personajeElegido.getNombre()
                                 + "] y el artefacto elegido es ["
                                 + artefactoPersonaje.getNombre() + "]");
                 System.out.println("");
-                Personaje enemigoElegido = (Personaje) DueloMagico.elegirPersonaje2("Severus Snape");
+                Personaje enemigoElegido = (Personaje) DueloMagico.elegirPersonaje("Severus Snape");
                 Artefacto artefactoEnemigo = ((Wizard) enemigoElegido).getArtefacto();
                 System.out.println("El enemigo elegido es [" + enemigoElegido.getNombre()
                                 + "] y el artefacto elegido es ["
@@ -32,7 +33,6 @@ public class App {
                 System.out.println("");
                 System.out.println("¡¡¡¡ Que comience el duelo !!!!");
                 while (personajeElegido.getSalud() > 0 && enemigoElegido.getSalud() > 0) {
-
                         if (personajeElegido instanceof Wizard && ((Wizard) personajeElegido).getEnergiaMagica() > 0) {
                                 System.out.println("");
                                 System.out.println("¡Turno de " + personajeElegido.getNombre() + "!");
