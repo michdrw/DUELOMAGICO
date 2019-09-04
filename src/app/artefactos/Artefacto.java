@@ -5,7 +5,7 @@ import app.interfaces.IEsMagico;
 /**
  * Artefacto
  */
-public class Artefacto implements IEsMagico {
+public abstract class Artefacto implements IEsMagico {
     private String nombre;
     private int amplificadorDaño;
     private int amplificadorCuracion;

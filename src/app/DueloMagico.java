@@ -64,13 +64,13 @@ public class DueloMagico {
 
     
 
-    public static void inicializarCatalogoPersonajes() {
-        DueloMagico.agregarWizard();
-        DueloMagico.agregarElfo();
-        DueloMagico.agregarMuggle();
+    public static void InicializarCatalogoPersonajes() {
+        DueloMagico.AgregarWizard();
+        DueloMagico.AgregarElfo();
+        DueloMagico.AgregarMuggle();
     }
 
-    public static void agregarWizard() {
+    public static void AgregarWizard() {
         Wizard mago = new Wizard("Ojoloco Moody", 100, 100, DueloMagico.poderes.get(0), false);
 
         catalogoPersonajes.add(mago);
@@ -88,7 +88,7 @@ public class DueloMagico {
         catalogoPersonajes.add(mago);
     }
 
-    public static void agregarElfo() {
+    public static void AgregarElfo() {
         Elfo duende = new Elfo("Dobby", 100, 100, DueloMagico.poderes.get(1));
         catalogoPersonajes.add(duende);
 
@@ -98,12 +98,12 @@ public class DueloMagico {
 
     }
 
-    public static void agregarMuggle() {
+    public static void AgregarMuggle() {
         Muggle nomag = new Muggle("Dudley Dursley", 100);
         catalogoPersonajes.add(nomag);
     }
 
-    public static void agregarPoder() {
+    public static void AgregarPoder() {
 
         Invisibilidad invisibilidad = new Invisibilidad("Invisibilidad", 1);
         poderes.add(invisibilidad);
@@ -128,7 +128,7 @@ public class DueloMagico {
         return null;
     }
 
-    public static void agregarArtefactos() {
+    public static void AgregarArtefactos() {
         Horrocrux horrocrux = new Horrocrux("Horrocrux", 20, 0 );
         artefactos.add(horrocrux);
 
@@ -156,7 +156,7 @@ public class DueloMagico {
         return null;
     }
 
-    public static void agregarTransportes() {
+    public static void AgregarTransportes() {
         HogwartsExpress hogwartsExpress = new HogwartsExpress("el Expreso Hogwarts");
         transportes.add(hogwartsExpress);
 
@@ -178,15 +178,15 @@ public class DueloMagico {
         return null;
     }
 
-    public static void inicializarCatalogoHechizos() {
-        DueloMagico.agregarHechizoAtaque();
-        DueloMagico.agregarHechizoCuracion();
-        DueloMagico.agregarHechizoDefensa();
-        DueloMagico.agregarHechizoOcio();
-        DueloMagico.agregarHechizoImperdonable();
+    public static void InicializarCatalogoHechizos() {
+        DueloMagico.AgregarHechizoAtaque();
+        DueloMagico.AgregarHechizoCuracion();
+        DueloMagico.AgregarHechizoDefensa();
+        DueloMagico.AgregarHechizoOcio();
+        DueloMagico.AgregarHechizoImperdonable();
     }
 
-    public static void agregarHechizoAtaque() {
+    public static void AgregarHechizoAtaque() {
 
         SectumSempra sectumSempra = new SectumSempra("Sectum Sempra", 40, 0, 10);
         hechizos.add(sectumSempra);
@@ -196,7 +196,7 @@ public class DueloMagico {
 
     }
 
-    public static void agregarHechizoCuracion() {
+    public static void AgregarHechizoCuracion() {
 
         VulneraSanentur vulneraSanentur = new VulneraSanentur("Vulnera Sanentur", 0, 40, 10);
         hechizos.add(vulneraSanentur);
@@ -205,7 +205,7 @@ public class DueloMagico {
         hechizos.add(reparifors);
     }
 
-    public static void agregarHechizoDefensa() {
+    public static void AgregarHechizoDefensa() {
 
         CaveInmicum caveInmicum = new CaveInmicum("Cave Inmicum", 0, 0, 10);
         hechizos.add(caveInmicum);
@@ -215,7 +215,7 @@ public class DueloMagico {
 
     }
 
-    public static void agregarHechizoOcio() {
+    public static void AgregarHechizoOcio() {
 
         Alohomora alohomora = new Alohomora("Alohomora", 0, 0, 10);
         hechizos.add(alohomora);
@@ -224,7 +224,7 @@ public class DueloMagico {
         hechizos.add(wingardiumLeviosa);
     }
 
-    public static void agregarHechizoImperdonable() {
+    public static void AgregarHechizoImperdonable() {
 
         Crucio crucio = new Crucio("Crucio", 70, 0, 20);
         hechizos.add(crucio);
