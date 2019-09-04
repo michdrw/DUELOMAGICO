@@ -10,13 +10,13 @@ public abstract class Hechizo {
 	private int nivelEnergiaMagica;
 	private String tipoHechizo;
 
-    public Hechizo(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica, String tipoHechizo) {
+    public Hechizo(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica) {
         this.nombre = nombre;
         this.nivelDaño = nivelDaño;
 		this.nivelCuracion = nivelCuracion;
 		this.nivelEnergiaMagica = nivelEnergiaMagica;
-		this.tipoHechizo = tipoHechizo;
-    }
+	}
+	
 
 	public String getNombre() {
 		return nombre;
@@ -51,7 +51,7 @@ public abstract class Hechizo {
 	}
 
 	public String getTipoHechizo() {
-		return tipoHechizo;
+		return "desconocido";
 	}
 
 	public void setTipoHechizo(String tipoHechizo) {

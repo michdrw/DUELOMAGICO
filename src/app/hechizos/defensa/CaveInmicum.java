@@ -5,10 +5,15 @@ package app.hechizos.defensa;
  */
 public class CaveInmicum extends HechizoDefensa {
 
-    public CaveInmicum (String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica, String tipoHechizo) {
-        super(nombre, nivelDaño, nivelCuracion, nivelEnergiaMagica, tipoHechizo);
+    public CaveInmicum (String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica) {
+        super(nombre, nivelDaño, nivelCuracion, nivelEnergiaMagica);
     }
     public CaveInmicum() {
-        super("CaveInmicum", 0, 0, 10, "defensa");
+        super("CaveInmicum", 0, 0, 10);
     }
+
+    @Override
+    public String getTipoHechizo() {
+		return "defensa";
+	}
 }

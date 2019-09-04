@@ -7,7 +7,12 @@ import app.hechizos.Hechizo;
  */
 public class HechizoImperdonable extends Hechizo{
 
-    public HechizoImperdonable(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica, String tipoHechizo) {
-        super(nombre, nivelDaño, nivelCuracion, nivelEnergiaMagica, tipoHechizo);
+    public HechizoImperdonable(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica) {
+        super(nombre, nivelDaño, nivelCuracion, nivelEnergiaMagica);
     }
+    
+    @Override
+    public String getTipoHechizo() {
+		return "imperdonable";
+	}
 }

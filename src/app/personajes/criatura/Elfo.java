@@ -40,11 +40,15 @@ public class Elfo extends Criatura implements IHacerMagia {
     }
 
     public void atacar(Personaje enemigo, Hechizo hechizo) {
-        this.energiaMagica = energiaMagica - 10;
-        enemigo.setSalud(enemigo.getSalud() - hechizo.getNivelDaño());
-        if (this.getSalud() < 100 && hechizoElegido.getNombre().equals("Vulnera Sanentur")
+        if (hechizoElegido.getNombre().equals("Crucio") || hechizoElegido.getNombre().equals("Imperio")
+                    || hechizoElegido.getNombre().equals("Avada Kedavra")) {
+                return;
+            } 
+        else if (this.getSalud() < 100 && hechizoElegido.getNombre().equals("Vulnera Sanentur")
                 || this.getSalud() < 100 && hechizoElegido.getNombre().equals("Reparifors")) {
             this.setSalud(this.getSalud() + hechizo.getNivelCuracion());
+        } else {
+        enemigo.setSalud(enemigo.getSalud() - hechizo.getNivelDaño());
         }
     }
 

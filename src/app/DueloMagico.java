@@ -62,6 +62,8 @@ public class DueloMagico {
         return null;
     }
 
+    
+
     public static void inicializarCatalogoPersonajes() {
         DueloMagico.agregarWizard();
         DueloMagico.agregarElfo();
@@ -69,7 +71,7 @@ public class DueloMagico {
     }
 
     public static void agregarWizard() {
-        Wizard mago = new Wizard("George Weasley", 100, 100, DueloMagico.poderes.get(0), false);
+        Wizard mago = new Wizard("Ojoloco Moody", 100, 100, DueloMagico.poderes.get(0), false);
 
         catalogoPersonajes.add(mago);
 
@@ -155,7 +157,7 @@ public class DueloMagico {
     }
 
     public static void agregarTransportes() {
-        HogwartsExpress hogwartsExpress = new HogwartsExpress(" el Expreso Hogwarts");
+        HogwartsExpress hogwartsExpress = new HogwartsExpress("el Expreso Hogwarts");
         transportes.add(hogwartsExpress);
 
         Escoba escoba = new Escoba("una escoba voladora");
@@ -186,51 +188,51 @@ public class DueloMagico {
 
     public static void agregarHechizoAtaque() {
 
-        SectumSempra sectumSempra = new SectumSempra("Sectum Sempra", 40, 0, 10, "ataque");
+        SectumSempra sectumSempra = new SectumSempra("Sectum Sempra", 40, 0, 10);
         hechizos.add(sectumSempra);
 
-        PetrificusTotalus petrificusTotalus = new PetrificusTotalus("Petrificus Totalus", 20, 0, 10, "ataque");
+        PetrificusTotalus petrificusTotalus = new PetrificusTotalus("Petrificus Totalus", 20, 0, 10);
         hechizos.add(petrificusTotalus);
 
     }
 
     public static void agregarHechizoCuracion() {
 
-        VulneraSanentur vulneraSanentur = new VulneraSanentur("Vulnera Sanentur", 0, 40, 10, "curacion");
+        VulneraSanentur vulneraSanentur = new VulneraSanentur("Vulnera Sanentur", 0, 40, 10);
         hechizos.add(vulneraSanentur);
 
-        Reparifors reparifors = new Reparifors("Reparifors", 0, 20, 10, "curacion");
+        Reparifors reparifors = new Reparifors("Reparifors", 0, 20, 10);
         hechizos.add(reparifors);
     }
 
     public static void agregarHechizoDefensa() {
 
-        CaveInmicum caveInmicum = new CaveInmicum("Cave Inmicum", 0, 0, 10, "defensa");
+        CaveInmicum caveInmicum = new CaveInmicum("Cave Inmicum", 0, 0, 10);
         hechizos.add(caveInmicum);
 
-        Protego protego = new Protego("Protego", 0, 0, 10, "defensa");
+        Protego protego = new Protego("Protego", 0, 0, 10);
         hechizos.add(protego);
 
     }
 
     public static void agregarHechizoOcio() {
 
-        Alohomora alohomora = new Alohomora("Alohomora", 0, 0, 10,"ocio");
+        Alohomora alohomora = new Alohomora("Alohomora", 0, 0, 10);
         hechizos.add(alohomora);
 
-        WingardiumLeviosa wingardiumLeviosa = new WingardiumLeviosa("Wingardium Leviosa", 0, 0, 10, "ocio");
+        WingardiumLeviosa wingardiumLeviosa = new WingardiumLeviosa("Wingardium Leviosa", 0, 0, 10);
         hechizos.add(wingardiumLeviosa);
     }
 
     public static void agregarHechizoImperdonable() {
 
-        Crucio crucio = new Crucio("Crucio", 70, 0, 20, "imperdonable");
+        Crucio crucio = new Crucio("Crucio", 70, 0, 20);
         hechizos.add(crucio);
 
-        Imperio imperio = new Imperio("Imperio", 80, 0, 20, "imperdonable");
+        Imperio imperio = new Imperio("Imperio", 80, 0, 20);
         hechizos.add(imperio);
 
-        AvadaKedavra avadaKedabra = new AvadaKedavra("Avada Kedavra", 100, 0, 20, "imperdonable");
+        AvadaKedavra avadaKedabra = new AvadaKedavra("Avada Kedavra", 100, 0, 20);
         hechizos.add(avadaKedabra);
     }
 

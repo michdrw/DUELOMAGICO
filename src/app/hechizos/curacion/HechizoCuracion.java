@@ -7,9 +7,13 @@ import app.hechizos.Hechizo;
  */
 public abstract class HechizoCuracion extends Hechizo {
 
-    public HechizoCuracion(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica, String tipoHechizo) {
-        super(nombre, nivelDaño, nivelCuracion, nivelEnergiaMagica, tipoHechizo);
+    public HechizoCuracion(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica) {
+        super(nombre, nivelDaño, nivelCuracion, nivelEnergiaMagica);
     }
 
+    @Override
+    public String getTipoHechizo() {
+		return "curacion";
+	}
     
 }

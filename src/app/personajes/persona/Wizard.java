@@ -17,12 +17,12 @@ import app.transporte.Transporte;
  */
 public class Wizard extends Persona implements IHacerMagia {
 
-    public int energiaMagica;
+    private int energiaMagica;
     private Poder poderInicial;
     private Artefacto artefactoElegido;
     private Hechizo hechizoElegido;
     private Transporte transporteElegido;
-    public boolean esOscuro;
+    private boolean esOscuro;
 
     public Wizard(String nombre, int salud, int energiaMagica, Poder poderInicial, boolean esOscuro) {
         super(nombre, salud);
@@ -52,20 +52,15 @@ public class Wizard extends Persona implements IHacerMagia {
             this.curar(hechizo);
             return;
         case "defensa":
-            System.out.println("Fue un hechizo de defensa. Inutil");
             return;
         case "ocio":
-            System.out.println("Deja de jugar y pelea!!");
             return;
         default:
-            System.out.println("Ahora si sos un mago!");
             break;
         }
         if (esOscuro == false) {
             if (hechizoElegido.getNombre().equals("Crucio") || hechizoElegido.getNombre().equals("Imperio")
                     || hechizoElegido.getNombre().equals("Avada Kedavra")) {
-                System.out.println(this.getNombre() + " eligió " + hechizoElegido.getNombre()
-                        + " sin ser mago oscuro, no causa daño.");
                 return;
             } else if (artefactoElegido.getNombre().equals("Varita de Sauco")) {
                 enemigo.setSalud(
@@ -182,10 +177,20 @@ public class Wizard extends Persona implements IHacerMagia {
         this.artefactoElegido = artefacto;
     }
 
-    /*
-     * public boolean esOscuro() { boolean oscuro = false; if
-     * (this.nombre.equals("Lucius Malfoy") || this.nombre.equals("Severus Snape"))
-     * { oscuro = true; } return oscuro; }
-     */
+    public int getEnergiaMagica() {
+        return energiaMagica;
+    }
+
+    public void setEnergiaMagica(int energiaMagica) {
+        this.energiaMagica = energiaMagica;
+    }
+
+    public boolean isEsOscuro() {
+        return esOscuro;
+    }
+
+    public void setEsOscuro(boolean esOscuro) {
+        this.esOscuro = esOscuro;
+    }
 
 }

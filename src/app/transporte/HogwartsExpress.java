@@ -9,8 +9,4 @@ public class HogwartsExpress extends Transporte{
         super(nombre);
     }
 
-    @Override
-    public String getTipoDeTransporte() {
-        return "Terrestre";
-    }
 }

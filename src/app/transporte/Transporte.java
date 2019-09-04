@@ -19,8 +19,6 @@ public class Transporte {
         this.nombre = nombre;
     }
 
-    public String getTipoDeTransporte() {
-        return "Transporte Desconocido";
-    }
+    
 
 }
