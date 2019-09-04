@@ -7,7 +7,7 @@ package app.transporte;
 public class Transporte 
 {
 
-    public String nombre;
+    private String nombre;
 
     public Transporte(String nombre) {
         this.nombre = nombre;

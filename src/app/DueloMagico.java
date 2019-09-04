@@ -46,7 +46,7 @@ public class DueloMagico {
 
     public static Personaje elegirPersonaje1(String nombre) {
         for (Personaje p : DueloMagico.catalogoPersonajes) {
-            if (p.nombre.equals(nombre)) {
+            if (p.getNombre().equals(nombre)) {
                 return p;
             }
         }
@@ -55,7 +55,7 @@ public class DueloMagico {
 
     public static Personaje elegirPersonaje2(String nombre) {
         for (Personaje p : DueloMagico.catalogoPersonajes) {
-            if (p.nombre.equals(nombre)) {
+            if (p.getNombre().equals(nombre)) {
                 return p;
             }
         }
@@ -103,19 +103,13 @@ public class DueloMagico {
 
     public static void agregarPoder() {
 
-        Invisibilidad invisibilidad = new Invisibilidad();
-        invisibilidad.nombre = "Invisibilidad";
-        invisibilidad.nro = 1;
+        Invisibilidad invisibilidad = new Invisibilidad("Invisibilidad", 1);
         poderes.add(invisibilidad);
 
-        Metamorfosis metamorfosis = new Metamorfosis();
-        metamorfosis.nombre = "Metamorfosis";
-        metamorfosis.nro = 2;
+        Metamorfosis metamorfosis = new Metamorfosis("Metamorfosis", 2);
         poderes.add(metamorfosis);
 
-        ParselTongue parcelTongue = new ParselTongue();
-        parcelTongue.nombre = "ParselTongue";
-        parcelTongue.nro = 3;
+        ParselTongue parcelTongue = new ParselTongue("ParselTongue", 3);
         poderes.add(parcelTongue);
     }
 
@@ -123,7 +117,7 @@ public class DueloMagico {
         for (Personaje p : DueloMagico.catalogoPersonajes) {
             if ((p instanceof IHacerMagia)) {
                 for (Poder poder : poderes) {
-                    if (poder.nombre.equals(nombre))
+                    if (poder.getNombre().equals(nombre))
                         return poder;
                 }
                 return null;
@@ -151,7 +145,7 @@ public class DueloMagico {
         for (Personaje p : DueloMagico.catalogoPersonajes) {
             if ((p instanceof IHacerMagia)) {
                 for (Artefacto a : artefactos) {
-                    if (a.nombre.equals(nombre))
+                    if (a.getNombre().equals(nombre))
                         return a;
                 }
                 return null;
@@ -172,7 +166,7 @@ public class DueloMagico {
         for (Personaje p : DueloMagico.catalogoPersonajes) {
             if ((p instanceof IHacerMagia)) {
                 for (Transporte t : DueloMagico.transportes) {
-                    if (t.nombre.equals(nombre))
+                    if (t.getNombre().equals(nombre))
                         ;
                     return t;
                 }
@@ -192,51 +186,51 @@ public class DueloMagico {
 
     public static void agregarHechizoAtaque() {
 
-        SectumSempra sectumSempra = new SectumSempra("Sectum Sempra", 40, 0, 10);
+        SectumSempra sectumSempra = new SectumSempra("Sectum Sempra", 40, 0, 10, "ataque");
         hechizos.add(sectumSempra);
 
-        PetrificusTotalus petrificusTotalus = new PetrificusTotalus("Petrificus Totalus", 20, 0, 10);
+        PetrificusTotalus petrificusTotalus = new PetrificusTotalus("Petrificus Totalus", 20, 0, 10, "ataque");
         hechizos.add(petrificusTotalus);
 
     }
 
     public static void agregarHechizoCuracion() {
 
-        VulneraSanentur vulneraSanentur = new VulneraSanentur("Vulnera Sanentur", 0, 40, 10);
+        VulneraSanentur vulneraSanentur = new VulneraSanentur("Vulnera Sanentur", 0, 40, 10, "curacion");
         hechizos.add(vulneraSanentur);
 
-        Reparifors reparifors = new Reparifors("Reparifors", 0, 20, 10);
+        Reparifors reparifors = new Reparifors("Reparifors", 0, 20, 10, "curacion");
         hechizos.add(reparifors);
     }
 
     public static void agregarHechizoDefensa() {
 
-        CaveInmicum caveInmicum = new CaveInmicum("Cave Inmicum", 0, 0, 10);
+        CaveInmicum caveInmicum = new CaveInmicum("Cave Inmicum", 0, 0, 10, "defensa");
         hechizos.add(caveInmicum);
 
-        Protego protego = new Protego("Protego", 0, 0, 10);
+        Protego protego = new Protego("Protego", 0, 0, 10, "defensa");
         hechizos.add(protego);
 
     }
 
     public static void agregarHechizoOcio() {
 
-        Alohomora alohomora = new Alohomora("Alohomora", 0, 0, 10);
+        Alohomora alohomora = new Alohomora("Alohomora", 0, 0, 10,"ocio");
         hechizos.add(alohomora);
 
-        WingardiumLeviosa wingardiumLeviosa = new WingardiumLeviosa("Wingardium Leviosa", 0, 0, 10);
+        WingardiumLeviosa wingardiumLeviosa = new WingardiumLeviosa("Wingardium Leviosa", 0, 0, 10, "ocio");
         hechizos.add(wingardiumLeviosa);
     }
 
     public static void agregarHechizoImperdonable() {
 
-        Crucio crucio = new Crucio("Crucio", 70, 0, 20);
+        Crucio crucio = new Crucio("Crucio", 70, 0, 20, "imperdonable");
         hechizos.add(crucio);
 
-        Imperio imperio = new Imperio("Imperio", 80, 0, 20);
+        Imperio imperio = new Imperio("Imperio", 80, 0, 20, "imperdonable");
         hechizos.add(imperio);
 
-        AvadaKedavra avadaKedabra = new AvadaKedavra("Avada Kedavra", 100, 0, 20);
+        AvadaKedavra avadaKedabra = new AvadaKedavra("Avada Kedavra", 100, 0, 20, "imperdonable");
         hechizos.add(avadaKedabra);
     }
 

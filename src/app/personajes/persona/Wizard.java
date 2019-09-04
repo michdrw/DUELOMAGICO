@@ -104,19 +104,19 @@ public class Wizard extends Persona implements IHacerMagia {
                     this.setSalud(100);
                 }
             } else if (artefactoElegido.getNombre().equals("Varita de Sauco")) {
-                this.setSalud(this.getSalud() + (hechizo.getNivelCuracion() + artefactoElegido.getAmplificadorCuracion());
-                if (this.getSalud > 100) {
+                this.setSalud(this.getSalud() + (hechizo.getNivelCuracion() + artefactoElegido.getAmplificadorCuracion()));
+                if (this.getSalud() > 100) {
                     this.setSalud(100);
                 }
             } else if (artefactoElegido.getNombre().equals("Piedra de la Resurreción")) {
-                this.salud += (hechizo.getNivelCuracion() + artefactoElegido.getAmplificadorCuracion());
-                if (this.salud > 100) {
-                    this.salud = 100;
+                this.setSalud(this.getSalud() + hechizo.getNivelCuracion() + artefactoElegido.getAmplificadorCuracion());
+                if (this.getSalud() > 100) {
+                    this.setSalud(100);
                 }
             } else {
-                this.salud += hechizo.getNivelCuracion();
-                if (this.salud > 100) {
-                    this.salud = 100;
+                this.setSalud( this.getSalud() +hechizo.getNivelCuracion());
+                if (this.getSalud() > 100) {
+                    this.setSalud(100);
                 }
             }
         }
