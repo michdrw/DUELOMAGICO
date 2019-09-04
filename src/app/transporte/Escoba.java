@@ -9,5 +9,8 @@ public class Escoba extends Transporte{
         super(nombre);
     }
 
-    
+    @Override
+    public String getTipoDeTransporte() {
+        return "Volador";
+    }
 }

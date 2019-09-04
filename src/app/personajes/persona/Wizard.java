@@ -46,8 +46,22 @@ public class Wizard extends Persona implements IHacerMagia {
     }
 
     public void atacar(Personaje enemigo, Hechizo hechizo) {
-        if (esOscuro == false) {
 
+        switch (hechizo.getTipoHechizo()) {
+        case "curacion":
+            this.curar(hechizo);
+            return;
+        case "defensa":
+            System.out.println("Fue un hechizo de defensa. Inutil");
+            return;
+        case "ocio":
+            System.out.println("Deja de jugar y pelea!!");
+            return;
+        default:
+            System.out.println("Ahora si sos un mago!");
+            break;
+        }
+        if (esOscuro == false) {
             if (hechizoElegido.getNombre().equals("Crucio") || hechizoElegido.getNombre().equals("Imperio")
                     || hechizoElegido.getNombre().equals("Avada Kedavra")) {
                 System.out.println(this.getNombre() + " eligió " + hechizoElegido.getNombre()
@@ -93,28 +107,30 @@ public class Wizard extends Persona implements IHacerMagia {
                 enemigo.setSalud(0);
             }
         }
-
     }
 
     public void curar(Hechizo hechizo) {
         if (hechizoElegido.getNombre().equals("Vulnera Sanentur") || hechizoElegido.getNombre().equals("Reparifors")) {
             if (artefactoElegido.getNombre().equals("Capa de la Invisibilidad")) {
-                this.setSalud(this.getSalud() + (hechizo.getNivelCuracion() + artefactoElegido.getAmplificadorCuracion()))  ;
+                this.setSalud(
+                        this.getSalud() + (hechizo.getNivelCuracion() + artefactoElegido.getAmplificadorCuracion()));
                 if (this.getSalud() > 100) {
                     this.setSalud(100);
                 }
             } else if (artefactoElegido.getNombre().equals("Varita de Sauco")) {
-                this.setSalud(this.getSalud() + (hechizo.getNivelCuracion() + artefactoElegido.getAmplificadorCuracion()));
+                this.setSalud(
+                        this.getSalud() + (hechizo.getNivelCuracion() + artefactoElegido.getAmplificadorCuracion()));
                 if (this.getSalud() > 100) {
                     this.setSalud(100);
                 }
             } else if (artefactoElegido.getNombre().equals("Piedra de la Resurreción")) {
-                this.setSalud(this.getSalud() + hechizo.getNivelCuracion() + artefactoElegido.getAmplificadorCuracion());
+                this.setSalud(
+                        this.getSalud() + hechizo.getNivelCuracion() + artefactoElegido.getAmplificadorCuracion());
                 if (this.getSalud() > 100) {
                     this.setSalud(100);
                 }
             } else {
-                this.setSalud( this.getSalud() +hechizo.getNivelCuracion());
+                this.setSalud(this.getSalud() + hechizo.getNivelCuracion());
                 if (this.getSalud() > 100) {
                     this.setSalud(100);
                 }

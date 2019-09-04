@@ -57,6 +57,4 @@ public abstract class Hechizo {
 	public void setTipoHechizo(String tipoHechizo) {
 		this.tipoHechizo = tipoHechizo;
 	}
-
-
 }

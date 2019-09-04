@@ -4,9 +4,7 @@ package app.transporte;
 /**
  * Transporte
  */
-public class Transporte 
-{
-
+public class Transporte {
     private String nombre;
 
     public Transporte(String nombre) {
@@ -20,6 +18,9 @@ public class Transporte
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+
+    public String getTipoDeTransporte() {
+        return "Transporte Desconocido";
+    }
 
 }

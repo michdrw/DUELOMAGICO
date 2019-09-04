@@ -5,7 +5,7 @@ import app.hechizos.Hechizo;
 import app.interfaces.IHacerMagia;
 import app.personajes.Personaje;
 import app.personajes.persona.Wizard;
-/*import app.transporte.Transporte;*/
+import app.transporte.Transporte;
 
 public class App {
 
@@ -15,6 +15,7 @@ public class App {
                 DueloMagico.agregarPoder();
                 DueloMagico.agregarArtefactos();
                 DueloMagico.inicializarCatalogoHechizos();
+                DueloMagico.agregarTransportes();
                 DueloMagico.inicializarCatalogoPersonajes();
 
                 Personaje personajeElegido = (Personaje) DueloMagico.elegirPersonaje1("Fred Weasley");
@@ -109,14 +110,16 @@ public class App {
                 }
 
                 if (enemigoElegido.isEstaVivo() == false) {
-                        /*Transporte transporteElegido = ((Wizard) personajeElegido).getTransporte();*/
+                        Transporte transporteElegido = ((Wizard) personajeElegido).getTransporte();
                         System.out.println("¡¡¡¡ " + personajeElegido.getNombre() + " ganó el duelo !!!!");
-                        /*System.out.println(personajeElegido.nombre + "ha huido en " + transporteElegido.nombre);*/
+                        System.out.println(personajeElegido.getNombre() + " ha huido en " + transporteElegido.getNombre());
+                        System.out.println("El tipo de transporte es: " + transporteElegido.getTipoDeTransporte());
 
                 } else if (personajeElegido.isEstaVivo() == false) {
-                        /*Transporte transporteElegido = ((Wizard) enemigoElegido).getTransporte();*/
+                        Transporte transporteElegido = ((Wizard) enemigoElegido).getTransporte();
                         System.out.println("¡¡¡¡ " + enemigoElegido.getNombre() + " ganó el duelo !!!!");
-                        /*System.out.println(enemigoElegido.nombre + "ha huido en " + transporteElegido.nombre);*/
+                        System.out.println(enemigoElegido.getNombre() + " ha huido en " + transporteElegido.getNombre());
+                        System.out.println("El tipo de transporte es: " + transporteElegido.getTipoDeTransporte());
                 }
 
         }
