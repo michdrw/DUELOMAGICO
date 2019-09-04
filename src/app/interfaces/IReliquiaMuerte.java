@@ -3,7 +3,7 @@ package app.interfaces;
 /**
  * IReliquiaMuerte
  */
-public interface IReliquiaMuerte {
+public abstract interface IReliquiaMuerte {
 
     public boolean esReliquiaMuerte();
 }

@@ -20,12 +20,11 @@ public class Elfo extends Criatura implements IHacerMagia {
     private Artefacto artefacto;
     private Hechizo hechizoElegido;
 
-
     public Elfo(String nombre, int salud, int energiaMagica, Poder poderInicial) {
         super(nombre, salud);
         this.energiaMagica = energiaMagica;
         this.poderInicial = poderInicial;
-        
+
     }
 
     private List<Hechizo> hechizos = new ArrayList<Hechizo>();
@@ -41,14 +40,13 @@ public class Elfo extends Criatura implements IHacerMagia {
 
     public void atacar(Personaje enemigo, Hechizo hechizo) {
         if (hechizoElegido.getNombre().equals("Crucio") || hechizoElegido.getNombre().equals("Imperio")
-                    || hechizoElegido.getNombre().equals("Avada Kedavra")) {
-                return;
-            } 
-        else if (this.getSalud() < 100 && hechizoElegido.getNombre().equals("Vulnera Sanentur")
+                || hechizoElegido.getNombre().equals("Avada Kedavra")) {
+            return;
+        } else if (this.getSalud() < 100 && hechizoElegido.getNombre().equals("Vulnera Sanentur")
                 || this.getSalud() < 100 && hechizoElegido.getNombre().equals("Reparifors")) {
             this.setSalud(this.getSalud() + hechizo.getNivelCuracion());
         } else {
-        enemigo.setSalud(enemigo.getSalud() - hechizo.getNivelDaño());
+            enemigo.setSalud(enemigo.getSalud() - hechizo.getNivelDaño());
         }
     }
 
@@ -60,7 +58,6 @@ public class Elfo extends Criatura implements IHacerMagia {
         this.hechizos.add(hechizo);
     }
 
-    
     public Hechizo getHechizo() {
         int size = this.hechizos.size();
         Random rand = new Random();
@@ -78,5 +75,12 @@ public class Elfo extends Criatura implements IHacerMagia {
         this.artefacto = artefacto;
     }
 
+    public int getEnergiaMagica() {
+        return energiaMagica;
+    }
+
+    public void setEnergiaMagica(int energiaMagica) {
+        this.energiaMagica = energiaMagica;
+    }
 
 }

@@ -12,19 +12,19 @@ public class App {
         public static void main(String[] args) throws Exception {
 
                 System.out.println("Inicializando Catalogos");
-                DueloMagico.agregarPoder();
-                DueloMagico.agregarArtefactos();
-                DueloMagico.inicializarCatalogoHechizos();
-                DueloMagico.agregarTransportes();
-                DueloMagico.inicializarCatalogoPersonajes();
+                DueloMagico.AgregarPoder();
+                DueloMagico.AgregarArtefactos();
+                DueloMagico.InicializarCatalogoHechizos();
+                DueloMagico.AgregarTransportes();
+                DueloMagico.InicializarCatalogoPersonajes();
                 System.out.println("");
-                Personaje personajeElegido = (Personaje) DueloMagico.elegirPersonaje1("Ojoloco Moody");
+                Personaje personajeElegido = (Personaje) DueloMagico.ElegirPersonaje1("Ojoloco Moody");
                 Artefacto artefactoPersonaje = ((Wizard) personajeElegido).getArtefacto();
                 System.out.println("El personaje elegido es [" + personajeElegido.getNombre()
                                 + "] y el artefacto elegido es ["
                                 + artefactoPersonaje.getNombre() + "]");
                 System.out.println("");
-                Personaje enemigoElegido = (Personaje) DueloMagico.elegirPersonaje2("Severus Snape");
+                Personaje enemigoElegido = (Personaje) DueloMagico.ElegirPersonaje2("Severus Snape");
                 Artefacto artefactoEnemigo = ((Wizard) enemigoElegido).getArtefacto();
                 System.out.println("El enemigo elegido es [" + enemigoElegido.getNombre()
                                 + "] y el artefacto elegido es ["

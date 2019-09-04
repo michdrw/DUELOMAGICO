@@ -8,7 +8,7 @@ import app.poderes.Poder;
 /**
  * IHacerMagia
  */
-public interface IHacerMagia {
+public abstract interface IHacerMagia {
 
     public Poder getPoderInicial();
 

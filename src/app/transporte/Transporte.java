@@ -4,7 +4,7 @@ package app.transporte;
 /**
  * Transporte
  */
-public class Transporte {
+public abstract class Transporte {
     private String nombre;
 
     public Transporte(String nombre) {

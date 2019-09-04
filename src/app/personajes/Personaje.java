@@ -3,7 +3,7 @@ package app.personajes;
 /**
  * Personajes
  */
-public class Personaje {
+public abstract class Personaje {
     private int salud;
     private String nombre;
     private boolean estaVivo ;
