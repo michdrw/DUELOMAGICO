@@ -22,15 +22,17 @@ public class Elfo extends Criatura implements IHacerMagia {
     private Artefacto artefactoElegido;
     private Hechizo hechizoElegido;
     private Transporte transporteElegido;
+    private boolean esOscuro;
 
-    public Elfo(String nombre, int salud, int energiaMagica, Poder poderInicial) {
+    public Elfo(String nombre, int salud, int energiaMagica, Poder poderInicial, boolean esOscuro) {
         super(nombre, salud);
         this.energiaMagica = energiaMagica;
         this.poderInicial = poderInicial;
+        this.esOscuro = esOscuro;
 
     }
 
-    private List<Hechizo> hechizos = new ArrayList<Hechizo>();
+    public List<Hechizo> hechizos = new ArrayList<Hechizo>();
     public List<Artefacto> artefactos = new ArrayList<Artefacto>();
     public List<Transporte> transportes = new ArrayList<Transporte>();
 
@@ -50,29 +52,60 @@ public class Elfo extends Criatura implements IHacerMagia {
             this.curar(hechizo);
             return;
         case "defensa":
+        this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
             return;
         case "ocio":
+        this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
             return;
         default:
             break;
         }
-        if (hechizoElegido.getNombre().equals("Crucio") || hechizoElegido.getNombre().equals("Imperio")
-                || hechizoElegido.getNombre().equals("Avada Kedavra")) {
-            return;
+        if (esOscuro == false) {
+            if (hechizoElegido.getNombre().equals("Crucio") || hechizoElegido.getNombre().equals("Imperio")
+                    || hechizoElegido.getNombre().equals("Avada Kedavra")) {
+                        
+                return;
+            } else if (artefactoElegido.getNombre().equals("Varita de Sauco")) {
+                enemigo.setSalud(
+                        enemigo.getSalud() - (hechizo.getNivelDaño() + artefactoElegido.getAmplificadorDaño()));
+                        this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
+                if (enemigo.getSalud() < 0 || enemigo.getSalud() == 0) {
+                    enemigo.setEstaVivo(false);
+                    enemigo.setSalud(0);
+                }
+            } else if (artefactoElegido.getNombre().equals("Horrocrux")) {
+                enemigo.setSalud(
+                        enemigo.getSalud() - (hechizo.getNivelDaño() + artefactoElegido.getAmplificadorDaño()));
+                        this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
+                if (enemigo.getSalud() < 0 || enemigo.getSalud() == 0) {
+                    enemigo.setEstaVivo(false);
+                    enemigo.setSalud(0);
+                }
+            } else {
+                enemigo.setSalud(enemigo.getSalud() - hechizo.getNivelDaño());
+                this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
+                if (enemigo.getSalud() < 0 || enemigo.getSalud() == 0) {
+                    enemigo.setEstaVivo(false);
+                    enemigo.setSalud(0);
+                }
+            }
         } else if (artefactoElegido.getNombre().equals("Varita de Sauco")) {
             enemigo.setSalud(enemigo.getSalud() - (hechizo.getNivelDaño() + artefactoElegido.getAmplificadorDaño()));
+            this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
             if (enemigo.getSalud() < 0 || enemigo.getSalud() == 0) {
                 enemigo.setEstaVivo(false);
                 enemigo.setSalud(0);
             }
         } else if (artefactoElegido.getNombre().equals("Horrocrux")) {
             enemigo.setSalud(enemigo.getSalud() - (hechizo.getNivelDaño() + artefactoElegido.getAmplificadorDaño()));
+            this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
             if (enemigo.getSalud() < 0 || enemigo.getSalud() == 0) {
                 enemigo.setEstaVivo(false);
                 enemigo.setSalud(0);
             }
         } else {
             enemigo.setSalud(enemigo.getSalud() - hechizo.getNivelDaño());
+            this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
             if (enemigo.getSalud() < 0 || enemigo.getSalud() == 0) {
                 enemigo.setEstaVivo(false);
                 enemigo.setSalud(0);
@@ -85,23 +118,27 @@ public class Elfo extends Criatura implements IHacerMagia {
             if (artefactoElegido.getNombre().equals("Capa de la Invisibilidad")) {
                 this.setSalud(
                         this.getSalud() + (hechizo.getNivelCuracion() + artefactoElegido.getAmplificadorCuracion()));
+                        this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
                 if (this.getSalud() > 100) {
                     this.setSalud(100);
                 }
             } else if (artefactoElegido.getNombre().equals("Varita de Sauco")) {
                 this.setSalud(
                         this.getSalud() + (hechizo.getNivelCuracion() + artefactoElegido.getAmplificadorCuracion()));
+                        this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
                 if (this.getSalud() > 100) {
                     this.setSalud(100);
                 }
             } else if (artefactoElegido.getNombre().equals("Piedra de la Resurreción")) {
                 this.setSalud(
                         this.getSalud() + hechizo.getNivelCuracion() + artefactoElegido.getAmplificadorCuracion());
+                        this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
                 if (this.getSalud() > 100) {
                     this.setSalud(100);
                 }
             } else {
                 this.setSalud(this.getSalud() + hechizo.getNivelCuracion());
+                 this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
                 if (this.getSalud() > 100) {
                     this.setSalud(100);
                 }
@@ -127,11 +164,16 @@ public class Elfo extends Criatura implements IHacerMagia {
     }
 
     public Hechizo getHechizo() {
-        int size = this.hechizos.size();
+        int size = DueloMagico.hechizos.size();
         Random rand = new Random();
         int hechizoRandom = rand.nextInt(size);
-        this.hechizoElegido = this.hechizos.get(hechizoRandom);
+        this.hechizoElegido = DueloMagico.hechizos.get(hechizoRandom);
         return this.hechizoElegido;
+    }
+
+    public void setHechizo(Hechizo hechizo) {
+        this.hechizoElegido = hechizo;
+        this.aprender(hechizo);
     }
 
     public Artefacto getArtefacto() {
@@ -153,5 +195,18 @@ public class Elfo extends Criatura implements IHacerMagia {
 
     public void setEnergiaMagica(int energiaMagica) {
         this.energiaMagica = energiaMagica;
+    }
+
+    public boolean isEsOscuro() {
+        return esOscuro;
+    }
+
+    public void setEsOscuro(boolean esOscuro) {
+        this.esOscuro = esOscuro;
+    }
+
+
+    public void setHechizoElegido(Hechizo hechizoElegido) {
+        this.hechizoElegido = hechizoElegido;
     }
 }

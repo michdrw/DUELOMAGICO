@@ -52,8 +52,10 @@ public class Wizard extends Persona implements IHacerMagia {
             this.curar(hechizo);
             return;
         case "defensa":
+        this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
             return;
         case "ocio":
+        this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
             return;
         default:
             break;
@@ -61,10 +63,12 @@ public class Wizard extends Persona implements IHacerMagia {
         if (esOscuro == false) {
             if (hechizoElegido.getNombre().equals("Crucio") || hechizoElegido.getNombre().equals("Imperio")
                     || hechizoElegido.getNombre().equals("Avada Kedavra")) {
+                        
                 return;
             } else if (artefactoElegido.getNombre().equals("Varita de Sauco")) {
                 enemigo.setSalud(
                         enemigo.getSalud() - (hechizo.getNivelDaño() + artefactoElegido.getAmplificadorDaño()));
+                        this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
                 if (enemigo.getSalud() < 0 || enemigo.getSalud() == 0) {
                     enemigo.setEstaVivo(false);
                     enemigo.setSalud(0);
@@ -72,12 +76,14 @@ public class Wizard extends Persona implements IHacerMagia {
             } else if (artefactoElegido.getNombre().equals("Horrocrux")) {
                 enemigo.setSalud(
                         enemigo.getSalud() - (hechizo.getNivelDaño() + artefactoElegido.getAmplificadorDaño()));
+                        this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
                 if (enemigo.getSalud() < 0 || enemigo.getSalud() == 0) {
                     enemigo.setEstaVivo(false);
                     enemigo.setSalud(0);
                 }
             } else {
                 enemigo.setSalud(enemigo.getSalud() - hechizo.getNivelDaño());
+                this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
                 if (enemigo.getSalud() < 0 || enemigo.getSalud() == 0) {
                     enemigo.setEstaVivo(false);
                     enemigo.setSalud(0);
@@ -85,18 +91,21 @@ public class Wizard extends Persona implements IHacerMagia {
             }
         } else if (artefactoElegido.getNombre().equals("Varita de Sauco")) {
             enemigo.setSalud(enemigo.getSalud() - (hechizo.getNivelDaño() + artefactoElegido.getAmplificadorDaño()));
+            this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
             if (enemigo.getSalud() < 0 || enemigo.getSalud() == 0) {
                 enemigo.setEstaVivo(false);
                 enemigo.setSalud(0);
             }
         } else if (artefactoElegido.getNombre().equals("Horrocrux")) {
             enemigo.setSalud(enemigo.getSalud() - (hechizo.getNivelDaño() + artefactoElegido.getAmplificadorDaño()));
+            this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
             if (enemigo.getSalud() < 0 || enemigo.getSalud() == 0) {
                 enemigo.setEstaVivo(false);
                 enemigo.setSalud(0);
             }
         } else {
             enemigo.setSalud(enemigo.getSalud() - hechizo.getNivelDaño());
+            this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
             if (enemigo.getSalud() < 0 || enemigo.getSalud() == 0) {
                 enemigo.setEstaVivo(false);
                 enemigo.setSalud(0);
@@ -109,23 +118,27 @@ public class Wizard extends Persona implements IHacerMagia {
             if (artefactoElegido.getNombre().equals("Capa de la Invisibilidad")) {
                 this.setSalud(
                         this.getSalud() + (hechizo.getNivelCuracion() + artefactoElegido.getAmplificadorCuracion()));
+                        this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
                 if (this.getSalud() > 100) {
                     this.setSalud(100);
                 }
             } else if (artefactoElegido.getNombre().equals("Varita de Sauco")) {
                 this.setSalud(
                         this.getSalud() + (hechizo.getNivelCuracion() + artefactoElegido.getAmplificadorCuracion()));
+                        this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
                 if (this.getSalud() > 100) {
                     this.setSalud(100);
                 }
             } else if (artefactoElegido.getNombre().equals("Piedra de la Resurreción")) {
                 this.setSalud(
                         this.getSalud() + hechizo.getNivelCuracion() + artefactoElegido.getAmplificadorCuracion());
+                        this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
                 if (this.getSalud() > 100) {
                     this.setSalud(100);
                 }
             } else {
                 this.setSalud(this.getSalud() + hechizo.getNivelCuracion());
+                this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
                 if (this.getSalud() > 100) {
                     this.setSalud(100);
                 }

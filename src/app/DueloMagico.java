@@ -80,10 +80,10 @@ public class DueloMagico {
     }
 
     public static void AgregarElfo() {
-        Elfo duende = new Elfo("Dobby", 100, 100, DueloMagico.poderes.get(1));
+        Elfo duende = new Elfo("Dobby", 100, 100, DueloMagico.poderes.get(1), false);
         catalogoPersonajes.add(duende);
 
-        duende = new Elfo("Kreacher", 100, 100, DueloMagico.poderes.get(0));
+        duende = new Elfo("Kreacher", 100, 100, DueloMagico.poderes.get(0), false);
 
         catalogoPersonajes.add(duende);
 

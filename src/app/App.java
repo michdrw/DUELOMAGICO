@@ -19,14 +19,16 @@ public class App {
                 DueloMagico.AgregarTransportes();
                 DueloMagico.InicializarCatalogoPersonajes();
                 System.out.println("");
-                
+
+                /*Adecuar en artefactos el tipo de clase al que pertenecen los personajes y los enemigos*/
+
                 Personaje personajeElegido = (Personaje) DueloMagico.elegirPersonaje("Ojoloco Moody");
-                Artefacto artefactoPersonaje = ((Wizard) personajeElegido).getArtefacto();
+                Artefacto artefactoPersonaje = ((Wizard) personajeElegido).getArtefacto(); //si elegimos un elfo, cambiar a (Elfo)
                 System.out.println("El personaje elegido es [" + personajeElegido.getNombre()
                                 + "] y el artefacto elegido es [" + artefactoPersonaje.getNombre() + "]");
                 System.out.println("");
-                Personaje enemigoElegido = (Personaje) DueloMagico.elegirPersonaje("Severus Snape");
-                Artefacto artefactoEnemigo = ((Wizard) enemigoElegido).getArtefacto();
+                Personaje enemigoElegido = (Personaje) DueloMagico.elegirPersonaje("Dobby");
+                Artefacto artefactoEnemigo = ((Elfo) enemigoElegido).getArtefacto(); //si elegimos un wizard, cambiar a (Wizard)
                 System.out.println("El enemigo elegido es [" + enemigoElegido.getNombre()
                                 + "] y el artefacto elegido es [" + artefactoEnemigo.getNombre() + "]");
                 System.out.println("");
@@ -118,12 +120,12 @@ public class App {
                                         System.out.println("Conjura el hechizo " + hechizoElegido.getNombre()
                                                         + " que no resta ni suma salud.");
                                 }
-                                System.out.println("La salud de " + ((Elfo) personajeElegido).getNombre() + " es de "
-                                                + ((Elfo) personajeElegido).getSalud() + ".");
+                                System.out.println("La salud de " + personajeElegido.getNombre() + " es de "
+                                                + personajeElegido.getSalud() + ".");
                                 System.out.println("La salud de " + enemigoElegido.getNombre() + " es de "
                                                 + enemigoElegido.getSalud() + ".");
-                                System.out.println("La energia magica de " + ((Elfo) personajeElegido).getNombre()
-                                                + " es de " + ((Elfo) personajeElegido).getEnergiaMagica() + ".");
+                                System.out.println("La energia magica de " + personajeElegido.getNombre() + " es de "
+                                                + ((Elfo) personajeElegido).getEnergiaMagica() + ".");
                                 System.out.println("");
                         }
                         if (enemigoElegido instanceof Wizard && ((Wizard) enemigoElegido).getEnergiaMagica() > 0
@@ -175,8 +177,7 @@ public class App {
                                 System.out.println("La energia magica de " + enemigoElegido.getNombre() + " es de "
                                                 + ((Wizard) enemigoElegido).getEnergiaMagica() + ".");
                                 System.out.println("");
-                        }
-                        if (enemigoElegido instanceof Elfo && ((Elfo) enemigoElegido).getEnergiaMagica() > 0
+                        } else if (enemigoElegido instanceof Elfo && ((Elfo) enemigoElegido).getEnergiaMagica() > 0
                                         && enemigoElegido.getSalud() > 0) {
                                 System.out.println("");
                                 System.out.println("¡Turno de " + enemigoElegido.getNombre() + "!");
@@ -216,8 +217,8 @@ public class App {
                                 }
                                 System.out.println("La salud de " + enemigoElegido.getNombre() + " es de "
                                                 + enemigoElegido.getSalud() + ".");
-                                System.out.println("La salud de " + ((Elfo) personajeElegido).getNombre() + " es de "
-                                                + ((Elfo) personajeElegido).getSalud() + ".");
+                                System.out.println("La salud de " + personajeElegido.getNombre() + " es de "
+                                                + personajeElegido.getSalud() + ".");
                                 System.out.println("La energia magica de " + enemigoElegido.getNombre() + " es de "
                                                 + ((Elfo) enemigoElegido).getEnergiaMagica() + ".");
                                 System.out.println("");
@@ -240,12 +241,12 @@ public class App {
                         }
 
                 } else if (personajeElegido.isEstaVivo() == false) {
-                        if (personajeElegido instanceof Wizard) {
+                        if (enemigoElegido instanceof Wizard) {
                                 Transporte transporteElegido = ((Wizard) enemigoElegido).getTransporte();
                                 System.out.println(
                                                 "¡¡¡¡ " + enemigoElegido.getNombre() + " ganó el duelo y ha huido en "
                                                                 + transporteElegido.getNombre() + " !!!!");
-                        } else if (personajeElegido instanceof Elfo) {
+                        } else if (enemigoElegido instanceof Elfo) {
                                 Transporte transporteElegido = ((Elfo) enemigoElegido).getTransporte();
                                 System.out.println(
                                                 "¡¡¡¡ " + enemigoElegido.getNombre() + " ganó el duelo y ha huido en "
