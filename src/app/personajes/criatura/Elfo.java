@@ -65,38 +65,8 @@ public class Elfo extends Criatura implements IHacerMagia {
                     || hechizoElegido.getNombre().equals("Avada Kedavra")) {
                         
                 return;
-            } else if (artefactoElegido.getNombre().equals("Varita de Sauco")) {
-                enemigo.setSalud(
-                        enemigo.getSalud() - (hechizo.getNivelDaño() + artefactoElegido.getAmplificadorDaño()));
-                        this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
-                if (enemigo.getSalud() < 0 || enemigo.getSalud() == 0) {
-                    enemigo.setEstaVivo(false);
-                    enemigo.setSalud(0);
-                }
-            } else if (artefactoElegido.getNombre().equals("Horrocrux")) {
-                enemigo.setSalud(
-                        enemigo.getSalud() - (hechizo.getNivelDaño() + artefactoElegido.getAmplificadorDaño()));
-                        this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
-                if (enemigo.getSalud() < 0 || enemigo.getSalud() == 0) {
-                    enemigo.setEstaVivo(false);
-                    enemigo.setSalud(0);
-                }
-            } else {
-                enemigo.setSalud(enemigo.getSalud() - hechizo.getNivelDaño());
-                this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
-                if (enemigo.getSalud() < 0 || enemigo.getSalud() == 0) {
-                    enemigo.setEstaVivo(false);
-                    enemigo.setSalud(0);
-                }
-            }
-        } else if (artefactoElegido.getNombre().equals("Varita de Sauco")) {
-            enemigo.setSalud(enemigo.getSalud() - (hechizo.getNivelDaño() + artefactoElegido.getAmplificadorDaño()));
-            this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
-            if (enemigo.getSalud() < 0 || enemigo.getSalud() == 0) {
-                enemigo.setEstaVivo(false);
-                enemigo.setSalud(0);
-            }
-        } else if (artefactoElegido.getNombre().equals("Horrocrux")) {
+            } 
+        } else if (artefactoElegido.getNombre().equals("Varita de Sauco") || artefactoElegido.getNombre().equals("Horrocrux")) {
             enemigo.setSalud(enemigo.getSalud() - (hechizo.getNivelDaño() + artefactoElegido.getAmplificadorDaño()));
             this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
             if (enemigo.getSalud() < 0 || enemigo.getSalud() == 0) {
@@ -115,30 +85,16 @@ public class Elfo extends Criatura implements IHacerMagia {
 
     public void curar(Hechizo hechizo) {
         if (hechizoElegido.getNombre().equals("Vulnera Sanentur") || hechizoElegido.getNombre().equals("Reparifors")) {
-            if (artefactoElegido.getNombre().equals("Capa de la Invisibilidad")) {
+            if (artefactoElegido.getNombre().equals("Capa de la Invisibilidad") || artefactoElegido.getNombre().equals("Varita de Sauco") || artefactoElegido.getNombre().equals("Piedra de la Resurreción")) {
                 this.setSalud(
                         this.getSalud() + (hechizo.getNivelCuracion() + artefactoElegido.getAmplificadorCuracion()));
-                        this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
-                if (this.getSalud() > 100) {
-                    this.setSalud(100);
-                }
-            } else if (artefactoElegido.getNombre().equals("Varita de Sauco")) {
-                this.setSalud(
-                        this.getSalud() + (hechizo.getNivelCuracion() + artefactoElegido.getAmplificadorCuracion()));
-                        this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
-                if (this.getSalud() > 100) {
-                    this.setSalud(100);
-                }
-            } else if (artefactoElegido.getNombre().equals("Piedra de la Resurreción")) {
-                this.setSalud(
-                        this.getSalud() + hechizo.getNivelCuracion() + artefactoElegido.getAmplificadorCuracion());
                         this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
                 if (this.getSalud() > 100) {
                     this.setSalud(100);
                 }
             } else {
                 this.setSalud(this.getSalud() + hechizo.getNivelCuracion());
-                 this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
+                this.setEnergiaMagica(energiaMagica - hechizo.getNivelEnergiaMagica());
                 if (this.getSalud() > 100) {
                     this.setSalud(100);
                 }

@@ -5,11 +5,11 @@ package app.hechizos.defensa;
  */
 public class Protego extends HechizoDefensa {
 
-    public Protego(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica) {
-        super(nombre, nivelDaño, nivelCuracion, nivelEnergiaMagica);
+    public Protego(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica, boolean esOscuro) {
+        super(nombre, nivelDaño, nivelCuracion, nivelEnergiaMagica, esOscuro);
     }
     public Protego() {
-        super("Protego", 0, 0, 10);
+        super("Protego", 0, 0, 10, false);
     }
 
     @Override

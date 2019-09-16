@@ -7,8 +7,8 @@ public class WingardiumLeviosa extends HechizoOcio {
     
     
 
-    public WingardiumLeviosa(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica) {
-        super(nombre, nivelDaño, nivelCuracion, nivelEnergiaMagica);
+    public WingardiumLeviosa(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica, boolean esOscuro) {
+        super(nombre, nivelDaño, nivelCuracion, nivelEnergiaMagica, esOscuro);
     }
     
     @Override
@@ -17,6 +17,6 @@ public class WingardiumLeviosa extends HechizoOcio {
     }
     
     public WingardiumLeviosa() {
-        super("Wingardium Leviosa", 0, 0, 10);
+        super("Wingardium Leviosa", 0, 0, 10, false);
     }
 }

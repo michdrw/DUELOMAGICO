@@ -5,12 +5,12 @@ package app.hechizos.ataque;
  */
 public class SectumSempra extends HechizoAtaque {
 
-    public SectumSempra(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica) {
-        super(nombre, nivelDaño, nivelCuracion, nivelEnergiaMagica);
+    public SectumSempra(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica, boolean esOscuro) {
+        super(nombre, nivelDaño, nivelCuracion, nivelEnergiaMagica, esOscuro);
     }
 
     public SectumSempra() {
-        super("Sectum Sempra", 40, 0, 10);
+        super("Sectum Sempra", 40, 0, 10, false);
     }
 
     @Override

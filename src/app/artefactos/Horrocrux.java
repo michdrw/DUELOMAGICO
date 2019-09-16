@@ -1,9 +1,11 @@
 package app.artefactos;
 
+import app.interfaces.IReliquiaMuerte;
+
 /**
  * Horrocrux
  */
-public class Horrocrux extends Artefacto {
+public class Horrocrux extends Artefacto implements IReliquiaMuerte{
 
     public Horrocrux(String nombre, int amplificadorDaño, int amplificadorCuracion) {
         super(nombre, amplificadorDaño, amplificadorCuracion);
@@ -11,6 +13,11 @@ public class Horrocrux extends Artefacto {
 
     public Horrocrux() {
         super("Horrocrux", 20, 0);
+    }
+
+    
+    public boolean esReliquiaMuerte() {
+        return false;
     }
 
 	

@@ -22,19 +22,19 @@ public class App {
 
                 /*Adecuar en artefactos el tipo de clase al que pertenecen los personajes y los enemigos*/
 
-                Personaje personajeElegido = (Personaje) DueloMagico.elegirPersonaje("Ojoloco Moody");
+                Personaje personajeElegido = DueloMagico.elegirPersonaje("Ojoloco Moody");
                 Artefacto artefactoPersonaje = ((Wizard) personajeElegido).getArtefacto(); //si elegimos un elfo, cambiar a (Elfo)
                 System.out.println("El personaje elegido es [" + personajeElegido.getNombre()
                                 + "] y el artefacto elegido es [" + artefactoPersonaje.getNombre() + "]");
                 System.out.println("");
-                Personaje enemigoElegido = (Personaje) DueloMagico.elegirPersonaje("Dobby");
+                Personaje enemigoElegido = DueloMagico.elegirPersonaje("Dobby");
                 Artefacto artefactoEnemigo = ((Elfo) enemigoElegido).getArtefacto(); //si elegimos un wizard, cambiar a (Wizard)
                 System.out.println("El enemigo elegido es [" + enemigoElegido.getNombre()
                                 + "] y el artefacto elegido es [" + artefactoEnemigo.getNombre() + "]");
                 System.out.println("");
                 System.out.println("¡¡¡¡ Que comience el duelo !!!!");
                 while (personajeElegido.getSalud() > 0 && enemigoElegido.getSalud() > 0) {
-                        if (personajeElegido instanceof Wizard && ((Wizard) personajeElegido).getEnergiaMagica() > 0) {
+                        if (personajeElegido instanceof Wizard && ((Wizard) personajeElegido).getEnergiaMagica() > 0)  {
                                 System.out.println("");
                                 System.out.println("¡Turno de " + personajeElegido.getNombre() + "!");
                                 System.out.println("");

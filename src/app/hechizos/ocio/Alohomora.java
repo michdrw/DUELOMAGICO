@@ -5,8 +5,8 @@ package app.hechizos.ocio;
  */
 public class Alohomora extends HechizoOcio {
 
-    public Alohomora(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica) {
-        super(nombre, nivelDaño, nivelCuracion, nivelEnergiaMagica);
+    public Alohomora(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica, boolean esOscuro) {
+        super(nombre, nivelDaño, nivelCuracion, nivelEnergiaMagica, esOscuro);
     }
     
     @Override
@@ -15,6 +15,6 @@ public class Alohomora extends HechizoOcio {
     }
 
     public Alohomora() {
-        super("Alohomora", 0, 0, 10);
+        super("Alohomora", 0, 0, 10, false);
     }
 }

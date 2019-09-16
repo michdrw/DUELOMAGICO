@@ -9,12 +9,14 @@ public abstract class Hechizo {
 	private int nivelCuracion;
 	private int nivelEnergiaMagica;
 	private String tipoHechizo;
+    private boolean esOscuro;
 
-    public Hechizo(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica) {
-        this.nombre = nombre;
-        this.nivelDaño = nivelDaño;
+    public Hechizo(String nombre, int nivelDaño, int nivelCuracion, int nivelEnergiaMagica, boolean esOscuro) {
+		this.nombre = nombre;
+		this.nivelDaño = nivelDaño;
 		this.nivelCuracion = nivelCuracion;
 		this.nivelEnergiaMagica = nivelEnergiaMagica;
+		this.esOscuro = esOscuro;
 	}
 	
 
@@ -57,4 +59,14 @@ public abstract class Hechizo {
 	public void setTipoHechizo(String tipoHechizo) {
 		this.tipoHechizo = tipoHechizo;
 	}
+
+	public boolean isEsOscuro() {
+		return esOscuro;
+	}
+
+	public void setEsOscuro(boolean esOscuro) {
+		this.esOscuro = esOscuro;
+	}
+
+	
 }

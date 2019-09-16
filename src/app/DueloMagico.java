@@ -9,15 +9,15 @@ import app.artefactos.Horrocrux;
 import app.artefactos.PiedraResurreccion;
 import app.artefactos.VaritaSauco;
 import app.hechizos.Hechizo;
+import app.hechizos.ataque.AvadaKedavra;
+import app.hechizos.ataque.Crucio;
+import app.hechizos.ataque.Imperio;
 import app.hechizos.ataque.PetrificusTotalus;
 import app.hechizos.ataque.SectumSempra;
 import app.hechizos.curacion.Reparifors;
 import app.hechizos.curacion.VulneraSanentur;
 import app.hechizos.defensa.CaveInmicum;
 import app.hechizos.defensa.Protego;
-import app.hechizos.imperdonable.AvadaKedavra;
-import app.hechizos.imperdonable.Crucio;
-import app.hechizos.imperdonable.Imperio;
 import app.hechizos.ocio.Alohomora;
 import app.hechizos.ocio.WingardiumLeviosa;
 import app.interfaces.IHacerMagia;
@@ -174,57 +174,53 @@ public class DueloMagico {
         DueloMagico.AgregarHechizoCuracion();
         DueloMagico.AgregarHechizoDefensa();
         DueloMagico.AgregarHechizoOcio();
-        DueloMagico.AgregarHechizoImperdonable();
     }
 
     public static void AgregarHechizoAtaque() {
 
-        SectumSempra sectumSempra = new SectumSempra("Sectum Sempra", 40, 0, 10);
+        SectumSempra sectumSempra = new SectumSempra("Sectum Sempra", 40, 0, 10, false);
         hechizos.add(sectumSempra);
 
-        PetrificusTotalus petrificusTotalus = new PetrificusTotalus("Petrificus Totalus", 20, 0, 10);
+        PetrificusTotalus petrificusTotalus = new PetrificusTotalus("Petrificus Totalus", 20, 0, 10, false);
         hechizos.add(petrificusTotalus);
+
+        Crucio crucio = new Crucio("Crucio", 70, 0, 20, true);
+        hechizos.add(crucio);
+
+        Imperio imperio = new Imperio("Imperio", 80, 0, 20, true);
+        hechizos.add(imperio);
+
+        AvadaKedavra avadaKedabra = new AvadaKedavra("Avada Kedavra", 100, 0, 20, true);
+        hechizos.add(avadaKedabra);
 
     }
 
     public static void AgregarHechizoCuracion() {
 
-        VulneraSanentur vulneraSanentur = new VulneraSanentur("Vulnera Sanentur", 0, 40, 10);
+        VulneraSanentur vulneraSanentur = new VulneraSanentur("Vulnera Sanentur", 0, 40, 10, false);
         hechizos.add(vulneraSanentur);
 
-        Reparifors reparifors = new Reparifors("Reparifors", 0, 20, 10);
+        Reparifors reparifors = new Reparifors("Reparifors", 0, 20, 10, false);
         hechizos.add(reparifors);
     }
 
     public static void AgregarHechizoDefensa() {
 
-        CaveInmicum caveInmicum = new CaveInmicum("Cave Inmicum", 0, 0, 10);
+        CaveInmicum caveInmicum = new CaveInmicum("Cave Inmicum", 0, 0, 10, false);
         hechizos.add(caveInmicum);
 
-        Protego protego = new Protego("Protego", 0, 0, 10);
+        Protego protego = new Protego("Protego", 0, 0, 10, false);
         hechizos.add(protego);
 
     }
 
     public static void AgregarHechizoOcio() {
 
-        Alohomora alohomora = new Alohomora("Alohomora", 0, 0, 10);
+        Alohomora alohomora = new Alohomora("Alohomora", 0, 0, 10, false);
         hechizos.add(alohomora);
 
-        WingardiumLeviosa wingardiumLeviosa = new WingardiumLeviosa("Wingardium Leviosa", 0, 0, 10);
+        WingardiumLeviosa wingardiumLeviosa = new WingardiumLeviosa("Wingardium Leviosa", 0, 0, 10, false);
         hechizos.add(wingardiumLeviosa);
-    }
-
-    public static void AgregarHechizoImperdonable() {
-
-        Crucio crucio = new Crucio("Crucio", 70, 0, 20);
-        hechizos.add(crucio);
-
-        Imperio imperio = new Imperio("Imperio", 80, 0, 20);
-        hechizos.add(imperio);
-
-        AvadaKedavra avadaKedabra = new AvadaKedavra("Avada Kedavra", 100, 0, 20);
-        hechizos.add(avadaKedabra);
     }
 
 
